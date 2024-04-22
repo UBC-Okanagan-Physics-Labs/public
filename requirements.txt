@@ -1,3 +1,4 @@
+jupyter-book
 matplotlib
 altair
 vl-convert-python
@@ -6,5 +7,3 @@ numpy
 docopt>0.6.1
 PyYAML>5.4
 selenium<4.3
-linkify-it-py
-problem_bank_scripts
