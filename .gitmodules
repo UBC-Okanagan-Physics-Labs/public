@@ -1,0 +1,27 @@
+[submodule "content/lab0"]
+	path = content/lab0
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS_121_Lab_0.git
+[submodule "content/lab1"]
+	path = content/lab1
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-1.git
+[submodule "content/lab2"]
+	path = content/lab2
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-2.git
+[submodule "content/lab3"]
+	path = content/lab3
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-3.git
+[submodule "content/lab4"]
+	path = content/lab4
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-4.git
+[submodule "content/lab5"]
+	path = content/lab5
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-5.git
+[submodule "content/lab6"]
+	path = content/lab6
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-6.git
+[submodule "content/lab7"]
+	path = content/lab7
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-7.git
+[submodule "content/lab8"]
+	path = content/lab8
+	url = git@github.com:UBC-Okanagan-Physics-Labs/PHYS-121-Lab-8.git
