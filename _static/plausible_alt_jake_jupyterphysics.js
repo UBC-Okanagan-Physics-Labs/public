@@ -1,7 +1,7 @@
 var script = document.createElement("script");
 script.defer = true;
 script.src = "https://plausible.io/js/script.js";
-script.dataset.domain = "opbphysics";
+script.dataset.domain = "autogradedphysicslabs";
 
 // optional if using proxy
 // script.dataset.api = 'https://yourproxy.com/api/event';
