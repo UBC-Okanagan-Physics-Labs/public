@@ -1,0 +1,12 @@
+format: jb-book
+root: files/home
+parts:
+- caption: About this Project
+  chapters:
+  - file: files/about
+    title: About
+  - file: files/bio
+    title: Project Team
+# - caption: Labs
+#   chapters:
+#   - file: content/
