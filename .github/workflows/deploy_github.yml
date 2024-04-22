@@ -19,6 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    with:
+      submodules: recursive
+    - name: Checkout submodules
+      run: git submodule sync && git submodule update --init --recursive
 
     # Install dependencies
     - name: Set up Python 3.12
