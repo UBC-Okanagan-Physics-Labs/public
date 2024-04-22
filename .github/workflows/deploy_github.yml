@@ -35,6 +35,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    - name: Get submodules
+      run: |
+        git submodule init
         
     # Build the book
     - name: Build the book
