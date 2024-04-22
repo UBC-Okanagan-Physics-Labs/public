@@ -1,0 +1,1703 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 121 Lab #8 \(\to\) (19 possible marks) &#8212; Autograded Physics labs with Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css?v=def72667" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css?v=5f6255d3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "UBC-Okanagan-Physics-Labs/public");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab8/PHYS 121 - Lab 8';</script>
+    <script src="../../_static/plausible_alt_jake_jupyterphysics.js?v=ae2bec75"></script>
+    <link rel="canonical" href="https://firas.moosvi.com/oer/autograded_physics_labs/content/lab8/PHYS 121 - Lab 8.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="PHYS 121 Lab #7 \(\to\) (12 possible marks)" href="../lab7/PHYS%20121%20-%20Lab%207.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../files/home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/noun-physics-6249939.png" class="logo__image only-light" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>
+    <script>document.write(`<img src="../../_static/noun-physics-6249939.png" class="logo__image only-dark" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../files/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../files/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/bio.html">Project Team</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab0/PHYS%20121%20-%20Lab%200.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab1/PHYS%20121%20-%20Lab%201.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab2/PHYS%20121%20-%20Lab%202.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab3/PHYS%20121%20-%20Lab%203.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab4/PHYS%20121%20-%20Lab%204.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab5/PHYS%20121%20-%20Lab%205.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab6/PHYS%20121%20-%20Lab%206.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab7/PHYS%20121%20-%20Lab%207.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UBC-Okanagan-Physics-Labs/public/main?urlpath=lab/tree/content/lab8/PHYS 121 - Lab 8.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/edit/main/content/lab8/PHYS 121 - Lab 8.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/issues/new?title=Issue%20on%20page%20%2Fcontent/lab8/PHYS 121 - Lab 8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab8/PHYS 121 - Lab 8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #8<span style="color:red"> \to (19 possible marks)</span> </span></div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#faraday-s-law-eddy-currents">Faraday’s Law &amp; Eddy Currents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (15 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-magnetic-braking-data-collection-50-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Magnetic Braking - Data Collection (50 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-magnetic-braking-data-analysis-30-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Magnetic Braking - Data Analysis (30 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong><span style="color:blue">Summary</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-cathode-ray-tubes-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Cathode Ray Tubes (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-gradercheck-statements-for-questions-4-1-and-4-2-only-check-that-answers-have-been-entered-in-the-correct-format"><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 4.1</strong> and <strong>4.2</strong>,  only check that answers have been entered in the correct format.</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-do-not-check-that-you-ve-entered-the-correct-answer"><span style="color:purple">They do <strong>NOT</strong> check that you’ve entered the correct answer.</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-check-your-answers-by-doing-the-experiments-at-the-back-of-the-room"><span style="color:purple">You can check your answers by doing the experiments at the back of the room!</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-statement-of-contributions-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5- Statement of contributions (10 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-student-surveys-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Student Surveys (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-3-experience-in-the-lab-end-of-term">Survey #3 - Experience in the Lab (End-of-Term)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-4-ta-quality-end-of-term">Survey #4 - TA Quality (End-of-Term)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Playground (optional)</span></div></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phys-121-lab-8-to-19-possible-marks">
+<h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div><a class="headerlink" href="#phys-121-lab-8-to-19-possible-marks" title="Link to this heading">#</a></h1>
+<p><font size ="4"><span style="color:purple">We recommend that you complete this notebook using either the <a class="reference external" href="https://www.google.com/intl/en_ca/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Mozilla Firefox</a> browser.  Chrome and Firefox are both available for Windows, Mac, and Linux operating systems.  The PHYS 121 Jupyter notebooks should work in other browsers, but we have specifically verfied that they work well in both Chrome and Firefox.</span></font></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="faraday-s-law-eddy-currents">
+<h1>Faraday’s Law &amp; Eddy Currents<a class="headerlink" href="#faraday-s-law-eddy-currents" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Quantitatively study and model the motion of a strong magnet sliding down a conducting track.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Observe static magnetic fields exerting a force on moving charges.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Observe changing magnetic fields inducing currents.</span></b></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="autograding">
+<h2>Autograding:<a class="headerlink" href="#autograding" title="Link to this heading">#</a></h2>
+<p>The PHYS 121 Pre-lab assignments and Labs will make use of some autograding.  To make the autograding work, the two cells below needs to be executed.  The first one installs the required packages and the second imports required packages/modules.  If ‘PHYS121.Installer()’ reports that some functions have been installed, the user should restart the “kernel” and then exectute the PHYS121.Installer() cell a second time.  The second time the installer function is run, it should report that <strong>“All packages already installed. Please proceed”</strong>.</p>
+<p>If necessary, the kernel can be restarted by selecting <strong>Kernel</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Restart Kernel</strong> from the menu options at to the top of the page.  Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/restartKernel.gif">GIF</a> showing how to restart the kernel.</p>
+<p>The ‘PHYS121.Installer()’ command requires the file ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’, which you should see included in the list of files along the left-hand side of the screen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab8/PHYS121.py:396: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:516: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:518: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:518: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:768: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:770: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:798: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:802: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:806: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:810: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:893: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:914: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:917: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:920: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:923: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab8/PHYS121.py:1014: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1014: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1015: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1015: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1022: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1022: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1023: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1023: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab8/PHYS121.py:396: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:516: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:518: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:518: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:768: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:770: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:798: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:802: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:806: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:810: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab8/PHYS121.py:893: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:914: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:917: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:920: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab8/PHYS121.py:923: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab8/PHYS121.py:1014: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1014: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1015: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1015: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1016: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1022: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1022: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1023: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab8/PHYS121.py:1023: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">lab8</span><span class="o">/</span><span class="n">PHYS121</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 8.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="import-modules">
+<h2>Import Modules:<a class="headerlink" href="#import-modules" title="Link to this heading">#</a></h2>
+<p>Execute the cell below to import a number of useful pre-built Python modules that will be used in the PHYS 121 pre-labs and labs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># Display all DataFrame rows</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;q0.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="name-student-number">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div><a class="headerlink" href="#name-student-number" title="Link to this heading">#</a></h1>
+<p>To ensure that both you and your partner receive credit for you lab work, both your name and student number and your partner’s name and student number need to appear in the notebooks used during the labs.  In the cells below this text, enter your name and student number and your partner’s name and student number as strings (i.e. place your names and student numbers between single or double quotes.</p>
+<p>Examples of valid entries are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</pre></div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<section id="partner-1-0-5-marks">
+<h2><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-1-0-5-marks" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="partner-2-0-5-marks">
+<h2><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-2-0-5-marks" title="Link to this heading">#</a></h2>
+<p>If you are working on your own, leave all of last_name_2, first_name_2, and student_number_2 as …  Please still exectute these cells and then run the ‘grader.check(“name_and_student_number_2”)’ cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">last_name_1</span><span class="p">,</span> <span class="n">first_name_1</span><span class="p">,</span> <span class="n">student_number_1</span><span class="p">,</span> <span class="n">last_name_2</span><span class="p">,</span> <span class="n">first_name_2</span><span class="p">,</span> <span class="n">student_number_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;last_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_1&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;name_and_student_number&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-introduction-15-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (15 minutes)</span></div><a class="headerlink" href="#part-1-introduction-15-minutes" title="Link to this heading">#</a></h1>
+<p>Electromagnetism can be unintuitive at times - this lab will help demonstrate a few principles from electromagnetism so that even if you think they are <em>strange</em>, you can at least clearly observe their effects.  Many of the concepts relevant to this lab have not been covered in the lecture yet.  That’s okay.  In research, it’s common for experimental work to predate a full theoretical understanding.  For example, superconductivity was first observed in mercury in 1911, but a theoretical understanding of the phenomenon wasn’t fully developed until 1957 in the so-called BSC (Bardeen, Cooper, and Schrieffer) Theory of Superconductivity.  A new class of <em>high-temperature</em> superconductors was discovered in 1987.  A microscope understanding of the mechanism driving superconductivity in these materials still eludes physicists to this day.</p>
+<blockquote>
+<div><p><strong>Today’s lab will be used to motivate the topics that will be discussed in the PHYS 121 lectures over the remaining few weeks in the term.</strong> 😉</p>
+</div></blockquote>
+<p>Recall that electrical currents are a <em>source</em> of magnetic fields.  We will see that <strong>Ampère’s law</strong> gives us a way to calculate the magnetic field produced by an arrangement of currents.  In Lab #7, we used the fact that a current in a solenoid produces a uniform magnetic field within the bore of the solenoid.  <strong>Faraday’s law</strong> describes a complementary process in which magnetic fields produce electrical currents. Mathematically, this effect is expressed as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ca33cdb1-d7f7-48f8-93a1-81f594010aff">
+<span class="eqno">(24)<a class="headerlink" href="#equation-ca33cdb1-d7f7-48f8-93a1-81f594010aff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\mathcal{E} = -\frac{d\Phi_B}{dt}
+\tag{1}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Phi_B\)</span> is the <strong>magnetic flux</strong> through a closed conducting loop and <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> is the <strong>electromotive force</strong> or <strong>emf</strong> produced in the loop.  The term <strong>emf</strong> is just used to represent a voltage <em>induced</em> by a changing magnetic flux.  The units of <strong>emf</strong> are volts: <span class="math notranslate nohighlight">\([\mathcal{E}]=\rm\ V\)</span>.  Notice from Eq. (1) that, if the magnetic flux <span class="math notranslate nohighlight">\(\Phi_B\)</span> is constant, then <span class="math notranslate nohighlight">\(\mathcal{E}=0\)</span>.</p>
+<p>One important observation is that we now have a second way of producing voltage differences.  Previously, we always had to rely on batteries to provide a voltage difference to drive current in a circuit.  It now appears that a changing magnetic field (or more precisely, magnetic flux) can be used to establish a voltage differnce to drive current in a circuit.  This phenomenon is the basis for electric generators which convert mechanical energy into electrical energy.</p>
+<p>A second important observation is that:</p>
+<ul class="simple">
+<li><p>only <em>moving</em> charges create magnetic fields</p></li>
+<li><p>only a <em>changing</em> magnetic flux can induce an emf</p></li>
+</ul>
+<p>A charge at rest produces no magetic field and a constant magnetic flux produces no emf.</p>
+<p>The magnetic flux through a surface is determined by the component of the magnetic field that is perpendicular to the surface. For flat surfaces, <span class="math notranslate nohighlight">\(\Phi_B = BA\cos\theta\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is the area of the surface and  <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\vec{B}\)</span> and a vector normal to the surface. <strong>Figure 1</strong>, shows three surfaces with identical areas <span class="math notranslate nohighlight">\(A\)</span> in the same uniform magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>.</p>
+<ul class="simple">
+<li><p>Surface A is perpendicular to the field, such that <span class="math notranslate nohighlight">\(\theta = 0\)</span>, <span class="math notranslate nohighlight">\(\cos\theta = 1\)</span>, and <span class="math notranslate nohighlight">\(\Phi_B = BA\)</span>.</p></li>
+<li><p>The normal to surface B (the blue vector) is at an angle <span class="math notranslate nohighlight">\(\theta\)</span> with respect to <span class="math notranslate nohighlight">\(\vec{B}\)</span>, such that <span class="math notranslate nohighlight">\(\Phi_B = BA\cos\theta = BA_{\perp}\)</span>, where <span class="math notranslate nohighlight">\(A_{\perp}\)</span> is the area of the projected surface surrounded by dashed lines and <span class="math notranslate nohighlight">\(\perp\)</span> to <span class="math notranslate nohighlight">\(\vec{B}\)</span> in <strong>Fig. 1</strong>.</p></li>
+<li><p>Surface C is parallel to <span class="math notranslate nohighlight">\(\vec{B}\)</span> such that its normal vector is perpendicular to the magnetic the field (<span class="math notranslate nohighlight">\(\theta = 90^\circ\)</span>). Since <span class="math notranslate nohighlight">\(\cos 90 = 0\)</span>,  <span class="math notranslate nohighlight">\(\Phi_B = 0\)</span> in this case.</p></li>
+</ul>
+<br>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/flux.png" style="width: 60%" /><br>  
+<b>Fig. 1:  Although the surfaces A, B and C experience the same uniform magnetic field $\vec{B}$ and have the same surface area $A$, the magnetic flux $\Phi_B$ through each depends on their orientation with respect to the magnetic field. </b></center>
+</p>
+<p>If these surfaces were replaced by conducting loops, we would <em>still not</em> expect a current to be generated because the magnetic flux through each loop/surface is constant: the induced emf in Eq. (1) depends on the <em>time-rate of change</em> of the <span class="math notranslate nohighlight">\(\Phi_B\)</span>, and not the flux itself. If these loops/surfaces were fixed in space and <span class="math notranslate nohighlight">\(\vec{B}\)</span> was constant, there would be no emf and hence no induced current.</p>
+<p>Since, for a flat surface, <span class="math notranslate nohighlight">\(\Phi_B = BA\cos\theta\)</span>, there are three different ways to make a <em>changing</em> magnetic flux.  We could manipulate any of <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(A\)</span>, or <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<ul class="simple">
+<li><p>We could change the strength of the magnetic field.  For example, as shown in <strong>Fig. 2</strong>, moving a permanent magnet towards or away from a loop of wire will change the magetic flux through the loop which induces and emf that establishes a current in the loop.  Effectively, this is the effect that you’ll investigate in today’s lab.</p></li>
+</ul>
+<p>
+<center>
+<img src="https://github.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/blob/main/Lab-8/images/Faraday.jpg?raw=true" style="width: 60%" /><br>  
+<b>Fig. 2:  Moving a permanent magnetic towards or away from a coil of wire induces a current in the wire.  Figure taken from <a href = "https://phys.libretexts.org/Courses/Muhlenberg_College/Physics_122%3A_General_Physics_II_%28Collett%29/09%3A_Electromagnetic_Induction/9.02%3A_Faradays_Law">LibreTexts</a>. </b></center>
+</p>
+<ul class="simple">
+<li><p>Alternatively, we could change the area of a loop suspended in a uniform magnetic field.  For example, <strong>Fig. 3</strong> shows a square loop of wire in a uniform magnetic field.  If one was to close the loop by pulling opposite corners away from one another, there would be an induced current in the loop during the time it takes area to go from <span class="math notranslate nohighlight">\(L^2\)</span> to zero.</p></li>
+</ul>
+<p>
+<center>
+<img src="https://github.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/blob/main/Lab-8/images/Faraday1.png?raw=true" style="width: 40%" /><br>  
+<b>Fig. 3:  Changing the area of a loop in a uniform magnetic field will result in an induced emf and current.</b></center>
+</p>
+<ul class="simple">
+<li><p>Finally, as shown in <strong>Fig. 4</strong>, we could also change the angle <span class="math notranslate nohighlight">\(\theta\)</span> that the normal to the loop makes with <span class="math notranslate nohighlight">\(\vec{B}\)</span>.  At the instant the loop is perpendicular <span class="math notranslate nohighlight">\(\vec{B}\)</span>, the magnetic flux is a maximum and <em>decreasing</em>.  When the loop is parallel to <span class="math notranslate nohighlight">\(\vec{B}\)</span>, the flux is a minimum and <em>increasing</em>.  <strong>Figure 4</strong> demonstrates the basic idea behind electric generators which supply nearly all of the power in electric power grids.</p></li>
+</ul>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/59bb1e708915cfd509d6d150ff0c9f7c1e355ad0/Lab-8/images/Faraday2.svg" style="width: 33%" /><br>  
+<b>Fig. 4:  Rotating a loop of fixed area in a uniform magnetic field will result in an induced emf and current.  Figure adapted from an image taken from <a href = "https://commons.wikimedia.org/wiki/File:Electric-generator-3D-with-load.svg">Wikimedia Commons</a>.</b></center>
+</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-2-magnetic-braking-data-collection-50-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Magnetic Braking - Data Collection (50 minutes)</span></div><a class="headerlink" href="#part-2-magnetic-braking-data-collection-50-minutes" title="Link to this heading">#</a></h1>
+<p>In the first part of this lab, you will explore one effect of Faraday’s Law of induction.  <strong>Figure 5</strong> shows a magnet sliding along a copper plate with velocity <span class="math notranslate nohighlight">\(\vec{v}\)</span>. Since copper is a conductor, any circle embedded in the copper sheet can be considered a conducting loop.  The sliding magnet, and its magnetic field, are moving away from the loop on the left causing the magnetic flux through the left loop to <em>decrease</em>.  On the other hand, the magnet is approaching the loop on the right causing the magnetic flux to <em>increase</em> in this loop.</p>
+<br>
+<p>
+<center>
+<img src="https://github.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/blob/main/Lab-8/images/eddy.png?raw=true" style="width: 55%" /><br>
+<b>Fig. 5: Schematic diagram of the eddy currents and resulting magnetic fields produced by a magnet sliding along a copper sheet.  </b>
+</center>
+</p>
+<p>Notice that the induced currents in these two loops have been drawn in opposite directions.  Remember also that currents create magnetic fields.  Therefore, we have the following situation:</p>
+<ul class="simple">
+<li><p>A changing magnetic flux induces an emf <span class="math notranslate nohighlight">\(\mathcal{E}\)</span></p></li>
+<li><p>The induced emfs drive currents <span class="math notranslate nohighlight">\(I_\mathrm{ind}\)</span> in the copper strip</p></li>
+<li><p>The induced currents create their own magnetic fields <span class="math notranslate nohighlight">\(\vec{B}_\mathrm{ind}\)</span></p></li>
+</ul>
+<p><strong>Lenz’s law</strong> states that the induced magnetic fields act to <strong>oppose</strong> the original change in magnetic flux.  In <strong>Fig. 5</strong>, the magnetic flux in the left loop is decreasing.  The original magnetic field due to the sliding magnet was pointing up.  <span class="math notranslate nohighlight">\(I_\mathrm{ind}\)</span> in this loop acts to oppose this change in flux and, hence, produces a <span class="math notranslate nohighlight">\(\vec{B}_\mathrm{ind}\)</span> that also points <em>up</em>.  The situation is the opposite for the right loop:  The magnetic flux is increasing and the induced current creates a <span class="math notranslate nohighlight">\(\vec{B}_\mathrm{ind}\)</span> that points <em>down</em> to oppose this change.  Little bar magnets have been added to the figure to emphasize the directions of the magnetic fields due to the sliding magnet and the left and right current loops.  The south pole at the bottom of the sliding magnet will be attracted to the north pole of the left current loop and repelled by the south pole of the right current loop.  As a result, even in the absence of friction, the sliding magnet will slow down and eventually come to a stop, a demostration of <em>magnetic braking</em>.</p>
+<p>We will attempt to model the magnetic braking force as a drag force.  Specifically, we assume that the braking/drag force <span class="math notranslate nohighlight">\(F_\mathrm{d}\)</span> will be proportional to the speed of the magnet.  This assumption makes sense because, if the magnet is moving fast, the magntic flux will be changing quickly (large <span class="math notranslate nohighlight">\(d\Phi_B/dt\)</span>) and the induced emf will be large.  Thefore:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a576828-e5b7-4407-91a5-c1ada49159f5">
+<span class="eqno">(25)<a class="headerlink" href="#equation-9a576828-e5b7-4407-91a5-c1ada49159f5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+F_{d} = -bv
+\tag{2}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(v\)</span> is the velocity and <span class="math notranslate nohighlight">\(b\)</span> is a drag coefficient.  Recall that a similar model was used for the drag force in PHYS 111 when you investigated the drag acting on a coffee filter dropped from some height above the ground.  Of course, there will also be kinetic friction between the magnet and copper track.  <strong>Figure 6</strong> shows a complete free-body diagram of the forces acting on the magnet as it slides down an inclined ramp.  <span class="math notranslate nohighlight">\(\mu_\mathrm{k}\)</span> is the coefficient of kinetic friction, and <span class="math notranslate nohighlight">\(\vec{N}\)</span> is the normal force.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/FBD.png" style="width: 40%" /><br>
+<b>Fig. 6: Free-body diagram for the magnet sliding down an inclined copper ramp.  </b></center>
+</p>
+<p>Applying Newton’s 2<span class="math notranslate nohighlight">\(^\mathrm{nd}\)</span> law to this system leads to <span class="math notranslate nohighlight">\(N = mg\cos\alpha\)</span> and:</p>
+<div class="math notranslate nohighlight">
+\[
+ma = mg\sin\alpha -\mu_\mathrm{k}mg\cos\alpha -bv
+\tag{3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the magnitude of the acceleration down the ramp.  If the magnet is released from rest, its speed will initially increase until it reaches a terminal velocity <span class="math notranslate nohighlight">\(v_\mathrm{T}\)</span> at which point <span class="math notranslate nohighlight">\(a=0\)</span>.  Setting <span class="math notranslate nohighlight">\(a=0\)</span> in Eq. (3) leads to:</p>
+<div class="math notranslate nohighlight">
+\[
+v_\mathrm{T} = \frac{mg}{b}\left(\sin\alpha - \mu_\mathrm{k}\cos\alpha\right)
+\tag{4}
+\]</div>
+<p>Substituting this expression for <span class="math notranslate nohighlight">\(v_\mathrm{T}\)</span> back into Eq. (3) lead to:</p>
+<div class="math notranslate nohighlight">
+\[
+ma = b\left(v_\mathrm{T} - v\right)
+\tag{5}
+\]</div>
+<p>By recognizing that <span class="math notranslate nohighlight">\(a=\dfrac{dv}{dt}\)</span> and <span class="math notranslate nohighlight">\(v=\dfrac{dx}{dt}\)</span>, it is possible to solve Eq. (5) for the speed <span class="math notranslate nohighlight">\(v\)</span> and position <span class="math notranslate nohighlight">\(x\)</span> of the sliding magnet as a function of time.  The results are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cb724eb3-781d-4cdf-a5d1-cbcb263a0a50">
+<span class="eqno">(26)<a class="headerlink" href="#equation-cb724eb3-781d-4cdf-a5d1-cbcb263a0a50" title="Permalink to this equation">#</a></span>\[\begin{align}
+v(t) &amp;= v_\mathrm{T}\left(1-e^{-t/\tau}\right)\tag{6}\\
+x(t) &amp; = v_\mathrm{T}\tau\left[\dfrac{t}{\tau} - 1 + e^{-t/\tau}\right]\tag{7}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau = m/b\)</span> is the time constant that determines how quickly the magnet approaches the terminal velocity.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.1</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>What would you expect a graph of <span class="math notranslate nohighlight">\(x(t)\)</span> just after the magnet is released and it’s <em>approaching</em> terminal velocity? If you’re having trouble working this out from Eq. (7), try using your intuition, and then refer back to the equation to make your statement more precise.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 2.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.2</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Describe the expected shape of the graph of <span class="math notranslate nohighlight">\(x(t)\)</span> <em>after</em> the magnet has reached terminal velocity.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 2.2:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+<p>On your table, you’ll find magnet and a ramp with three copper tracks. There’s also enough space between two of the copper tracks to slide the magnet down a plastic track with no copper beneath it.  The three copper stips have different thicknesses.  Referring to <strong>Fig. 7</strong>, from left to right, the thickness of the copper tracks are:</p>
+<ul class="simple">
+<li><p>Thin  <span class="math notranslate nohighlight">\(\Longrightarrow 0.006\rm\ inches = 0.152\rm\ mm\)</span> (copper foil)</p></li>
+<li><p>Medium <span class="math notranslate nohighlight">\(\Longrightarrow 0.021\rm\ inches = 0.533\rm\ mm\)</span></p></li>
+<li><p>Thick <span class="math notranslate nohighlight">\(\Longrightarrow 0.0625\rm\ inches = 1.59\rm\ mm\)</span></p></li>
+</ul>
+<p>In <strong>Fig. 7</strong>, the plastic track is between the thin and medium copper tracks.  For some of the ramps in the lab, the plastic track is between the medium and thick copper tracks.</p>
+<p>
+<center>
+<img src="https://github.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/blob/main/Lab-8/images/ramps.png?raw=true" style="width: 65%" /><br>
+<b>Fig. 7: Materials for Part 2 of this lab. Left: Top and bottom of the permanent magnet. The top has a dot to facilitate video tracking, and the bottom is covered with Teflon to reduce kinetic friction. Right: Ramp with three copper tracks and one plastic track.</b></center>
+</p><!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.3</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>We have introduced an unknown parameter (the drag coefficient) <span class="math notranslate nohighlight">\(b\)</span> into our expression for the drag force. The value of <span class="math notranslate nohighlight">\(b\)</span> sets the strength of the magnetic braking effect - if <span class="math notranslate nohighlight">\(b\)</span> is large, the effect will be strong. Rank the four tracks (three copper and one plastic) in terms of the expected value of <span class="math notranslate nohighlight">\(b\)</span>.  Order your ranking from the largest value of <span class="math notranslate nohighlight">\(b\)</span> to the smallest. Briefly explain your choice.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 2.3:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+<p>Using the provided phone, you will record the magnet sliding down each of these tracks. <strong>In order to accurately track the magnet’s motion, you will need to adjust the camera to its slow-motion setting.</strong>  When in the slow-motion mode, you won’t be able to adjust the zoom setting of the camera.  Instead, you’ll need to adjust the height that the phone is held above the track to a suitable distance.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/slomo.jpg" style="width: 25%" /><br>
+<b>Fig. 8: With the camera app opened, scroll to the "More" tab to switch to the slow motion setting.  </b></center>
+</p>
+<p>Before filming, ensure that the phone is oriented parallel to the ramp and that you’ve maximized the region of the ramp in view of the camera. You wil record four separate videos and then upload them to the desktop computer at your station. The following steps will guide you through using Tracker to collect data from your videos.</p>
+<ol class="arabic simple">
+<li><p>Move your videos from the DCIM folder to the home drive on the computer (H:)</p></li>
+<li><p>Open Tracker.</p></li>
+<li><p>For each of your recordings, complete steps 3 - 12 below.  It is best if you keep the videos short.  It will save time when importing the recordings into Tracker.</p></li>
+<li><p>Click File -&gt; Import -&gt; Video… and navigate to the appropriate folder to import your video</p></li>
+<li><p>The video will may be oriented in the wrong way. To fix this, Right-click on video -&gt; Filters -&gt; New -&gt; Rotate</p></li>
+<li><p>To set the frame-rate, right click Video -&gt; Clip Settings… and change the framerate from <span class="math notranslate nohighlight">\(30\rm\ FPS\)</span> to <span class="math notranslate nohighlight">\(240\rm\ FPS\)</span>.</p></li>
+<li><p>Find the first frame of the video after the magnet was released. You can click and drag the scrollbar or use Ctrl+mouse wheel to move through the frames. Take note of the frame number, and then move the left-hand black arrow to this frame.</p></li>
+<li><p>Do the same thing for the indicator of the ending time. Tracker will only consider the frames between the start and stop indicators. Click the black return arrow on the left side of the scroll bar to return to the first marked frame.  See <strong>Fig. 9</strong>.  <strong>Note: Your results will be best if you track the position of the magnet for only the first <span class="math notranslate nohighlight">\(0.3\)</span> to <span class="math notranslate nohighlight">\(0.4\rm\ s\)</span> of its motion after it is released.</strong>  This corresponds to about 100 frames of the video clip.</p></li>
+</ol>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/scrollbar.png" style="width: 60%" /><br>
+<b>Fig. 9: Scrollbar before and after steps 7 and 8. The black arrows on the bottom bound the segment that you want to measure.  </b></center>
+</p>
+<ol class="arabic simple" start="9">
+<li><p>Place your axes so that the origin is at the centre of your magnet in the first frame. Rotate the axes so that the magnet will be sliding in the positive x-direction.</p></li>
+<li><p>To set the length scale, press the calibration icon, then New -&gt; Calibration Stick. Click and drag the calibration stick to align it with the orange ruler on your ramp and set the distance to <span class="math notranslate nohighlight">\(0.150\rm\ m\)</span>.  See <strong>Fig. 10</strong>. (For added precision, use the mouse wheel to zoom in and out.)</p></li>
+</ol>
+<p>
+<center>
+<img src="https://github.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/blob/main/Lab-8/images/axes_scale.jpg?raw=true" style="width: 35%" /><br>
+<b>Fig. 10: Guide to the icons used in steps 9, and 10.  </b></center>
+</p>
+<ol class="arabic simple" start="10">
+<li><p>Now set up your tracker. Click Track -&gt; New -&gt; Point Mass and then open the auto-tracker. On the first frame, Shift-Ctrl-Click the centre of your magnet. The inner circle is the “template” - this is what the auto-tracker will look for as the frames advance. It should be large enough to show a clear distinction between the black dot and the pink paper. The outer square is the area in which the auto-tracker will look for a match to the initial template. If your magnet is going very fast by the end of the video, or if the lighting changes abruptly, autotracker may lose sight of the dot. If the suggested mark is accurate, you can press “Accept” to continue. If it isn’t, you can manually mark the problem frames using Shift+Click or define a new template entirely using Shift+Ctrl+Click. Another option is to increase the “Evolve” value: Tracker updates the template after each new frame by superposing the old template with the new matches. By increasing “Evolve”, you permit more drastic updates. Be careful not to do this unless absolutely necessary, as it may cause inaccuracies. See <strong>Fig. 11</strong>.</p></li>
+</ol>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/autotracker.png" style="width: 60%" /><br>
+<b>Fig. 11: To set up the autotracker, you'll need to define both the template and the search region.  </b></center>
+</p>
+<ol class="arabic simple" start="11">
+<li><p>Click File -&gt; Export -&gt; Data… and change “Number Format” to “Full Precision”, “Delimiter” to “Comma”, and “Columns” to “t,x” (<strong>make sure you had your axes set appropriately at the beginning of the video! It’s not too late to rotate them so that the trajectory is along the positive x-axis</strong>). Once you’ve exported the .txt file, move it to the same folder as this notebook (drag and drop the file into the frame along the left-hand side of the notebook).  In order for your work to be graded properly, you must name your exported files <strong>thin.txt</strong>, <strong>medium.txt</strong>, <strong>thick.txt</strong>, and <strong>plastic.txt</strong>.</p></li>
+<li><p>Click File -&gt; New Tab and repeat.</p></li>
+</ol>
+<p>In case it’s helpful, here are links to the Tracker YouTube videos that were included in Pre-Lab #8</p>
+<ul class="simple">
+<li><p><a href = "https://youtu.be/MrAZ1PbB_ek">Importing and rotating videos</a></p></li>
+<li><p><a href = "https://youtu.be/6cvNUosIac0">Calibrating the length scale</a></p></li>
+<li><p><a href = "https://youtu.be/XlbKkyvWlr4">Setting the origin and orientation of the coordinate axes</a></p></li>
+<li><p><a href = "https://youtu.be/O5_AMa4OL9s">Setting the start and stop limits</a></p></li>
+<li><p><a href = "https://youtu.be/6FhGTUuTIMY">Setting up and using the auto-track feature</a></p></li>
+<li><p><a href = "https://youtu.be/kxEvWegEKOM">Exporting the data</a></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-3-magnetic-braking-data-analysis-30-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Magnetic Braking - Data Analysis (30 minutes)</span></div><a class="headerlink" href="#part-3-magnetic-braking-data-analysis-30-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.1</span></strong>  <strong><span style="color:red">(4 marks)</span></strong></p>
+<p>The first cell below contains a template for loading your <strong>thin.txt</strong> file into a DataFrame. Follow this template to upload the rest of your data.  You just need to change the file name <code class="docutils literal notranslate"><span class="pre">&quot;thin.txt&quot;</span></code> appropriately.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data for the thin copper track.</span>
+<span class="n">thin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;thin.txt&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+
+<span class="c1"># Display the dataFrame.</span>
+<span class="n">thin</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data for medium copper track</span>
+<span class="n">medium</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the dataFrame.</span>
+<span class="n">medium</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data for the thick copper track</span>
+<span class="n">thick</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the dataFrame.</span>
+<span class="n">thick</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data for plastic track</span>
+<span class="n">plastic</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the dataFrame.</span>
+<span class="n">plastic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<p>Consider Eq. (7) once more, which is repeated below. It shows exponential behaviour in the approach to terminal velocity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-021e9866-d21c-4bc5-a8b7-42d33543aed9">
+<span class="eqno">(27)<a class="headerlink" href="#equation-021e9866-d21c-4bc5-a8b7-42d33543aed9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+x(t) = v_\mathrm{T}\tau\left( \frac{t}{\tau} - 1 + \exp ( -t/\tau ) \right)
+\tag{8}
+\end{equation}\]</div>
+<p>It’s common practice to consider <em>limiting cases</em>. What happens when our parameter <span class="math notranslate nohighlight">\(\tau = m/b\)</span> is very large or very small? Recall that:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0ce57763-ddd0-46c2-b14e-a2488e339835">
+<span class="eqno">(28)<a class="headerlink" href="#equation-0ce57763-ddd0-46c2-b14e-a2488e339835" title="Permalink to this equation">#</a></span>\[\begin{equation}
+v_\mathrm{T}  = \tau g\left( \sin\alpha - \mu_\mathrm{k} \cos\alpha \right) 
+\end{equation}\]</div>
+<p>In the limit <span class="math notranslate nohighlight">\(\tau \to \infty\)</span> (<span class="math notranslate nohighlight">\(m &gt;&gt; b\)</span> or <span class="math notranslate nohighlight">\(b \to 0\)</span>) it is possible to show that <span class="math notranslate nohighlight">\(x(t)\propto t^2\)</span>, which is what we expect for an object experiencing a constant acceleration due to gravity  and kinetic friction:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9221e17c-491d-49d9-be5b-e758dc8c2cab">
+<span class="eqno">(29)<a class="headerlink" href="#equation-9221e17c-491d-49d9-be5b-e758dc8c2cab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim\limits_{\tau\to\infty}x(t) \approx \frac{v_\mathrm{T}}{2\tau}t^2 = \frac{1}{2} gt^2 \left( \sin \alpha - \mu_\mathrm{k} \cos \alpha \right)
+\tag{9}
+\end{equation}\]</div>
+<p>At the opposite extreme, as <span class="math notranslate nohighlight">\(\tau \to 0\)</span> (<span class="math notranslate nohighlight">\(b &gt;&gt; m\)</span> or <span class="math notranslate nohighlight">\(b \to \infty\)</span>) we see that <span class="math notranslate nohighlight">\(x(t)\)</span> is linear, suggesting that terminal velocity is reached almost instantly when the magnetic braking is strong:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07c32b49-c07b-4dbd-88db-ffbb8b740549">
+<span class="eqno">(30)<a class="headerlink" href="#equation-07c32b49-c07b-4dbd-88db-ffbb8b740549" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lim\limits_{\tau\to 0}x(t) = v_\mathrm{T}t
+\tag{10}
+\end{equation}\]</div>
+<section id="summary">
+<h2><strong><span style="color:blue">Summary</span></strong><a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>Recall that <span class="math notranslate nohighlight">\(b\)</span> is the drag coefficient that slows the magnet as it slides down the track.</p>
+<ul class="simple">
+<li><p>In the <span class="math notranslate nohighlight">\(b\to 0\)</span> limit, there is no magnetic braking and <span class="math notranslate nohighlight">\(x(t)\propto t^2\)</span></p></li>
+<li><p>In the large-<span class="math notranslate nohighlight">\(b\)</span> limit, the magnetic braking is strong, the magnet quickly reaches terminal velocity, and <span class="math notranslate nohighlight">\(x(t)\propto t\)</span></p></li>
+<li><p>In the intermediate regime, <span class="math notranslate nohighlight">\(x(t)\)</span> is given by Eq. (8)</p></li>
+</ul>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.2</span></strong>  <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Answer the following questions based on the discussion above and your observations during the experiment. As always, explain your answers.</p>
+<ul class="simple">
+<li><p>(a) For which tracks (if any) do you expect Eq. (9) to be appropriate?</p></li>
+<li><p>(b) For which tracks (if any) do you expect Eq. (10) to be appropriate?</p></li>
+<li><p>(c) For which tracks (if any) do you expect <em>neither</em> approximation to be appropriate?</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 3.2:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+<p>Below, we provide three templates for you to use when analyzing your data: a linear fit, a power-law fit, and a fit designed specifically for Eq. (8).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linear fit template. </span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+                                      <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                      <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> 
+                                      <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> 
+                                      <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                                      <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+
+<span class="c1"># Power law fit template.</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">dA</span><span class="p">,</span> <span class="n">dN</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> 
+                                            <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> 
+                                            <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                                            <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+
+<span class="c1"># Eq. (7) fit template.</span>
+<span class="n">v_T</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">dv_T</span><span class="p">,</span> <span class="n">dtau</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Braking</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> 
+                                            <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> 
+                                            <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                                            <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember, the access a specific column from a dataFrame called df, you use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;column_name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For the following four questoins, use the templates above to perform the appropriate fit for each of your four datasets. You’re welcome to try multiple fits on a dataset and take the one that provides the <em>simplest</em> result without sacrificing accuracy.  If you find that your results contradict your answers from <strong>Question 3.2</strong>, comment on this fact in the question that follows the fits.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.3</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Complete the fit for the thin copper track.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Thin copper track</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.4</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Complete the fit for the medium copper track.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Medium copper track.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.5</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Complete the fit for the thick copper track.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Thick copper track</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.6</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Complete the fit for the plastic track.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plastic track.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.7</span></strong>  <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>(a) Comment on the quality of your fits.  Did your fits match your expectations from <strong>Question 3.2</strong>?</p>
+<p>(b) Based on your results, what can you say about the relative value of <span class="math notranslate nohighlight">\(b\)</span> for each track? How does this compare to your answer from <strong>Question 2.3</strong>?</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 3.7:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+<p>At the back of the room, we have set up a track made of actual coils of wire.  These coils are connected to light-emitting diodes (LEDs).  When current is induced in the coil in one direction a green LED lights up.  When current is induced in the opposite direction, a red LED lights up.  We won’t ask you any questions about this demo, but feel free to play with the set up.  The magnet moves pretty quickly which makes it difficult to see precisely when the LEDs turn off and on.  Executing the cell below will open a YouTube video that has slow-motion recordings of the magnet’s motion and LEDs turning off and on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;7qMgMOK3uec&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-4-cathode-ray-tubes-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Cathode Ray Tubes (20 minutes)</span></div><a class="headerlink" href="#part-4-cathode-ray-tubes-20-minutes" title="Link to this heading">#</a></h1>
+<p>Prior to the invention of liquid crystal displays (LCDs), <strong>cathode ray tubes</strong> (or <strong>CRT</strong>s) were the primary component in television sets. These simple devices were once ubiquitous - in fact, the first invention that might be recognized as a video game was the <em>cathode ray amusement device</em>, <a class="reference external" href="https://www.popularmechanics.com/culture/gaming/a20129/the-very-first-video-game/">patented in 1948 by Thomas Goldsmith</a>. CRTs also have a profound legacy within physics – experiments with cathode ray tubes led to the 1897 discovery of the electron by JJ Thomson. This discovery and a few other puzzling experimental and theoretical developments from the late 19th century would eventually culminate in the quantum revolution of the 1920s.</p>
+<p><strong>Figure 12</strong> shows a simplified diagram of a cathode ray tube. A tungsten heating element (much like the filament of an incandescent lightbulb) is used to heat up a nearby cathode, typically made from barium carbonate. A voltage source creates a slight excess of electrons in the cathode. The kinetic energy of these electrons increases with temperature until the most energetic electrons are released from the cathode in a process called <strong>thermionic emission</strong>.</p>
+<p>The emitted cloud of electrons is concentrated into a beam and accelerated by an electric field. Magnetic fields established by deflecting coils are used to steer the beam as it is fired towards a phosphorescent screen which begins to glow a dull green.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/crt.png" style="width: 65%" /><br>
+<b>Fig. 12: Simplified diagram of a cathode ray tube. Note that phosphorence is the same phenomenon exploited by glow-in-the-dark materials.  </b></center>
+</p><p>There will be stations in the lab room with CRTs and bar magnets. You are free to experiment with these, and you should attempt to predict what will happen before you try different things. Recall that the force on a moving charge is given by:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f6f46309-fa78-496c-82cf-ec1dd95cca65">
+<span class="eqno">(31)<a class="headerlink" href="#equation-f6f46309-fa78-496c-82cf-ec1dd95cca65" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\vec{F}_B = q \vec{v} \times \vec{B} 
+\tag{8}
+\end{equation}\]</div>
+<p>for a charge <span class="math notranslate nohighlight">\(q\)</span> moving with velocity <span class="math notranslate nohighlight">\(\vec{v}\)</span> through a magnetic field <span class="math notranslate nohighlight">\(\vec{B}\)</span>. Recall also that the <strong>right-hand rule</strong> tells you how to determine the direction of the cross product of two vectors:</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/rhr.png" style="width: 35%" /><br>
+<b>Fig. 10: The right-hand rule for determining the direction of $\vec{a}\times\vec{b}$, the cross product of vectors $\vec{a}$ and $\vec{b}$. From <a href="https://commons.wikimedia.org/wiki/File:Right_hand_rule_cross_product.svg">Wikimedia Commons</a>, licenced under <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="license">CC BY-SA 3.0</a>.  </b>
+</center>
+</p>
+<p>The following questions are purely qualitative and require no calculations, but you still must explain as specifically as possible <em>why</em> one would expect the observed behaviour.</p>
+<section id="the-phys121-gradercheck-statements-for-questions-4-1-and-4-2-only-check-that-answers-have-been-entered-in-the-correct-format">
+<h2><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 4.1</strong> and <strong>4.2</strong>,  only check that answers have been entered in the correct format.</span><a class="headerlink" href="#the-phys121-gradercheck-statements-for-questions-4-1-and-4-2-only-check-that-answers-have-been-entered-in-the-correct-format" title="Link to this heading">#</a></h2>
+</section>
+<section id="they-do-not-check-that-you-ve-entered-the-correct-answer">
+<h2><span style="color:purple">They do <strong>NOT</strong> check that you’ve entered the correct answer.</span><a class="headerlink" href="#they-do-not-check-that-you-ve-entered-the-correct-answer" title="Link to this heading">#</a></h2>
+</section>
+<section id="you-can-check-your-answers-by-doing-the-experiments-at-the-back-of-the-room">
+<h2><span style="color:purple">You can check your answers by doing the experiments at the back of the room!</span><a class="headerlink" href="#you-can-check-your-answers-by-doing-the-experiments-at-the-back-of-the-room" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Bring the bar magnet towards the CRT as shown:</p>
+<br>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/crtmag1.png" style="width: 19%" />
+</center>
+</p>
+<p>What (if anything) will happen to the beam of electrons, as shown by the dot on the phosphorescent screen?  The <em>negative</em> beam of electrons is moving out of the screen.  Also remember that magentic field lines exit north poles and enter south poles.</p>
+<ul class="simple">
+<li><p>(a) The beam will be deflected upwards</p></li>
+<li><p>(b) The beam will be deflected downwards</p></li>
+<li><p>(c) The beam will be deflected to the left</p></li>
+<li><p>(d) The beam will be deflected to the right</p></li>
+<li><p>(e) The beam will <strong>not</strong> be deflected</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.1:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a4_1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a4_1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q4.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.2</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<br>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-8/images/crtmag2.png" style="width: 25%" />
+</center>
+</p>
+<p>If you bring the bar magnet in from the side (as in the figure above) what happens? (Hint: try picturing the magnetic field lines around the bar magnet)</p>
+<ul class="simple">
+<li><p>(a) The beam will be deflected upwards</p></li>
+<li><p>(b) The beam will be deflected downwards</p></li>
+<li><p>(c) The beam will be deflected to the left</p></li>
+<li><p>(d) The beam will be deflected to the right</p></li>
+<li><p>(e) The beam will <strong>not</strong> be deflected</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.2:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a4_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a4_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q4.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Finally, here’s another short YouTube video.  It is a recording from the same CRT used in the lab.  Watch what happens when a rotating magnetic field is placed near the electron beam.  Again, we won’t ask any more questions, just enjoy the intricate interplay between electrcity and magnetism!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;UgMZC8fT0zM&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-5-statement-of-contributions-10-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5- Statement of contributions (10 minutes)</span></div><a class="headerlink" href="#part-5-statement-of-contributions-10-minutes" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Below, you will briefly summarize the contributions that you and your partner made when completely this lab.  Please ensure that both partners have a chance to engage in all types of lab activities (developing the experimental methods/data collection strategies, hands-on interaction with the apparatus/data collection, and data processing/analysis in the Jupyter notebook).  Note that statements of contributions are common in science.  The figure below shows one example taken from a 2021 paper published in the journal <em>Nature Physics</em>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/contributions.jpg" alt="image info" style="width: 60%; height: auto;" /><br>
+<b>Fig. 4: A sample statement of author contributions from a recent journal article.</b></center>
+</p><!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1(a):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #1</strong> to this lab.  For example, worked with the experimental apparatus to collect data for Part 1 of the lab, entered and processed the data in the Jupyter notebook for Part 2 of the lab, …</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 5.1(a):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #1</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1(b):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #2</strong> to this lab.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 5.1(b):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #2</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-6-student-surveys-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Student Surveys (20 minutes)</span></div><a class="headerlink" href="#part-6-student-surveys-20-minutes" title="Link to this heading">#</a></h1>
+<p>The last thing that we’d like to ask you to do in the PHYS 121 Lab is complete two online surveys.  You responses will help us evaluate what’s working well in the PHYS 121 labs and areas that are in need of improvement.</p>
+<section id="survey-3-experience-in-the-lab-end-of-term">
+<h2>Survey #3 - Experience in the Lab (End-of-Term)<a class="headerlink" href="#survey-3-experience-in-the-lab-end-of-term" title="Link to this heading">#</a></h2>
+<p>The first survey is used to collect feedback about the lab activities and the Jupyter notebook-based lab manuals.  The lab activities and method of delivery are both new, so we really do value your feedback.</p>
+<p>Here is the link to <a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_2o8U4lBTz74KDmS">Survey #3 - Experience in the Lab (End-of-Term)</a></p>
+</section>
+<section id="survey-4-ta-quality-end-of-term">
+<h2>Survey #4 - TA Quality (End-of-Term)<a class="headerlink" href="#survey-4-ta-quality-end-of-term" title="Link to this heading">#</a></h2>
+<p>The second survey is used to collect feedback about the quality of your TA.  The anonymous feedback will be shared with your TA so that in future courses they can keep doing the things that you like while simultaneously trying to improve any weaknesses.</p>
+<p>Here is the link to <a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_9M53F8dCITGCVVk">Survey #4 - TA Quality (End-of-Term)</a></p>
+<p>Both of these surveys are also available in the <strong>PHYS 121 Labs 2022W2</strong> <a class="reference external" href="https://canvas.ubc.ca/">Canvas</a> shell.  In Canvas, click on “Modules” and then scroll down to the bottom of the page to find the “Feedback” module. If your partner is using the lab computer to complete the surveys, feel free to log into Canvas to complete the two surveys.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 6.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Partner #1 and Partner #2 (if applicable), completed both of the online surveys.</p>
+<p>(a) True<br />
+(b) False</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 6.1:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, T, or F) between single or double quotes.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a6_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a6_1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a6_1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q6.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-7-submission-5-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Submission (5 minutes)</span></div><a class="headerlink" href="#part-7-submission-5-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 7.1:</span></strong></p>
+<p>We welcome your feedback on the PHYS 121 labs!  Please feel free to include any comments you have about this lab in the cell below.  Your comments will be taken into consideration when revising/improving the PHYS 121 labs.  You can suggest improvements, point out anything that was unclear, comment on the strengths and weaknesses of the lab, …</p>
+<p>This question is optional and will have no impact on your lab grade.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 7.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Once you’ve completed this notebook:</p>
+<ul class="simple">
+<li><p>Save your work.</p></li>
+<li><p>Run ‘grader.check_all()’ to confirm that you’ve completed all required tasks.</p></li>
+<li><p>Run ‘grader.export()’ to generate a .zip file containing all of the materials that you will submit.</p></li>
+<li><p>Download the generated .zip file using the link that appears <strong>below</strong> the <code class="docutils literal notranslate"><span class="pre">grader.check_all(...)</span></code> cell.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Leftarrow\)</span> Please do <strong>NOT</strong> download the zip file from the frame along the left-hand side of the screen.</p></li>
+<li><p>Upload the .zip file to the PHYS 121 Canvas gradebook.</p></li>
+<li><p><strong>Do NOT change the name of the .zip file.</strong></p></li>
+<li><p><strong>Do NOT modify the contents of the .zip file.</strong></p></li>
+</ul>
+<p>Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/Submission.gif">GIF</a> showing how these steps are completed.  Once your completed notebook has been uploaded to the Canvas gradebook, you’re done!</p>
+<hr class="docutils" />
+<p>To double-check your work, the cell below will rerun all of the autograder tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">())</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">saveMessage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. <strong>Please save before exporting!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your notebook first, then run this cell to export your submission.</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">waitMessage</span><span class="p">()</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;thin.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;medium.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;thick.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;plastic.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;PHYS121_DataLogger.txt&quot;</span><span class="p">])</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">proceedMessage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-8-playground-optional">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Playground (optional)</span></div><a class="headerlink" href="#part-8-playground-optional" title="Link to this heading">#</a></h1>
+<p>Feel free to add as many cells as you like below and use them as a playground for further independent investigations.  These cells won’t be graded, so feel free to use them in any way that you like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an empty code cell that you can use.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s another empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s yet another empty code cell that you can use.  </span>
+<span class="c1"># If you need more, you can add cells using the &#39;+&#39; icon in the menu bar at to the top of the screen.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" style="width: 500px;" /></a>
+<p>Last update: March 23, 2024</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lab8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab7/PHYS%20121%20-%20Lab%207.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#faraday-s-law-eddy-currents">Faraday’s Law &amp; Eddy Currents</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (15 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-magnetic-braking-data-collection-50-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Magnetic Braking - Data Collection (50 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-magnetic-braking-data-analysis-30-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Magnetic Braking - Data Analysis (30 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong><span style="color:blue">Summary</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-cathode-ray-tubes-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Cathode Ray Tubes (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-gradercheck-statements-for-questions-4-1-and-4-2-only-check-that-answers-have-been-entered-in-the-correct-format"><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 4.1</strong> and <strong>4.2</strong>,  only check that answers have been entered in the correct format.</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-do-not-check-that-you-ve-entered-the-correct-answer"><span style="color:purple">They do <strong>NOT</strong> check that you’ve entered the correct answer.</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-check-your-answers-by-doing-the-experiments-at-the-back-of-the-room"><span style="color:purple">You can check your answers by doing the experiments at the back of the room!</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-statement-of-contributions-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5- Statement of contributions (10 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-student-surveys-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Student Surveys (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-3-experience-in-the-lab-end-of-term">Survey #3 - Experience in the Lab (End-of-Term)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-4-ta-quality-end-of-term">Survey #4 - TA Quality (End-of-Term)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Playground (optional)</span></div></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jake Bobowski and Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

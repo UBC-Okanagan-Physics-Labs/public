@@ -1,0 +1,1519 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 121 Lab #3 \(\to\) (14 possible marks) &#8212; Autograded Physics labs with Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css?v=def72667" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css?v=5f6255d3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "UBC-Okanagan-Physics-Labs/public");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab3/PHYS 121 - Lab 3';</script>
+    <script src="../../_static/plausible_alt_jake_jupyterphysics.js?v=ae2bec75"></script>
+    <link rel="canonical" href="https://firas.moosvi.com/oer/autograded_physics_labs/content/lab3/PHYS 121 - Lab 3.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PHYS 121 Lab #4 \(\to\) (24 possible marks)" href="../lab4/PHYS%20121%20-%20Lab%204.html" />
+    <link rel="prev" title="PHYS 121 Lab #2 \(\to\) (22 possible marks)" href="../lab2/PHYS%20121%20-%20Lab%202.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../files/home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/noun-physics-6249939.png" class="logo__image only-light" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>
+    <script>document.write(`<img src="../../_static/noun-physics-6249939.png" class="logo__image only-dark" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../files/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../files/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/bio.html">Project Team</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab0/PHYS%20121%20-%20Lab%200.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab1/PHYS%20121%20-%20Lab%201.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab2/PHYS%20121%20-%20Lab%202.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab4/PHYS%20121%20-%20Lab%204.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab5/PHYS%20121%20-%20Lab%205.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab6/PHYS%20121%20-%20Lab%206.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab7/PHYS%20121%20-%20Lab%207.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab8/PHYS%20121%20-%20Lab%208.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UBC-Okanagan-Physics-Labs/public/main?urlpath=lab/tree/content/lab3/PHYS 121 - Lab 3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/edit/main/content/lab3/PHYS 121 - Lab 3.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/issues/new?title=Issue%20on%20page%20%2Fcontent/lab3/PHYS 121 - Lab 3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab3/PHYS 121 - Lab 3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> \to (14 possible marks)</span></div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-potential-electric-fields">Electric Potential &amp; Electric Fields</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-the-electric-field-as-a-gradient-field-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - The Electric Field as a Gradient Field (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-gradercheck-statements-for-questions-1-1-and-1-2-only-check-that-answers-have-been-entered-in-the-correct-format-they-do-not-check-that-you-ve-entered-the-correct-answer"><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 1.1</strong> and <strong>1.2</strong>,  only check that answers have been entered in the correct format.  They do <strong>NOT</strong> check that you’ve entered the correct answer.</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-electric-potential-electric-field-map-60-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Electric Potential &amp; Electric Field Map (60 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-the-electric-potential-electric-field-map">Generate the Electric Potential &amp; Electric Field Map</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-second-electric-potential-electric-field-map-40-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Second Electric Potential &amp; Electric Field Map (40 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-student-surveys-25-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Student Surveys (25 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-1-experience-in-the-lab">Survey #1 - Experience in the Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-2-quality-of-your-ta">Survey #2 - Quality of your TA</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-mapping-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Mapping Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-example-implementation">Mapping Example Implementation</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phys-121-lab-3-to-14-possible-marks">
+<h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div><a class="headerlink" href="#phys-121-lab-3-to-14-possible-marks" title="Link to this heading">#</a></h1>
+<p><font size ="4"><span style="color:purple">We recommend that you complete this notebook using either the <a class="reference external" href="https://www.google.com/intl/en_ca/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Mozilla Firefox</a> browser.  Chrome and Firefox are both available for Windows, Mac, and Linux operating systems.  The PHYS 121 Jupyter notebooks should work in other browsers, but we have specifically verfied that they work well in both Chrome and Firefox.</span></font></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="electric-potential-electric-fields">
+<h1>Electric Potential &amp; Electric Fields<a class="headerlink" href="#electric-potential-electric-fields" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Extract information about a physical system from a contour plot of a scalar field.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Determine the electric field in a region of space from a map of the electric potential.</span></b></p></li>
+</ul>
+<p>In this lab you will create maps of electric potentials on 2-D surfaces generated by various patterns of electrodes and conductors.  From these maps, you will identify lines of constant potential (i.e. equipotential lines) and deduce the configuration of the corresponding electric field.  Your measurements will be made using a sheet of conducting carbon paper, a DC power supply, and a handheld multimeter.</p>
+</section>
+<hr class="docutils" />
+<section id="autograding">
+<h2>Autograding:<a class="headerlink" href="#autograding" title="Link to this heading">#</a></h2>
+<p>The PHYS 121 Pre-lab assignments and Labs will make use of some autograding.  To make the autograding work, the two cells below needs to be executed.  The first one installs the required packages and the second imports required packages/modules.  If ‘PHYS121.Installer()’ reports that some functions have been installed, the user should restart the “kernel” and then exectute the PHYS121.Installer() cell a second time.  The second time the installer function is run, it should report that <strong>“All packages already installed. Please proceed”</strong>.</p>
+<p>If necessary, the kernel can be restarted by selecting <strong>Kernel</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Restart Kernel</strong> from the menu options at to the top of the page.  Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/restartKernel.gif">GIF</a> showing how to restart the kernel.</p>
+<p>The ‘PHYS121.Installer()’ command requires the file ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’, which you should see included in the list of files along the left-hand side of the screen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab3/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab3/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab3/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab3/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab3/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab3/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab3/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">lab3</span><span class="o">/</span><span class="n">PHYS121</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 3.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="import-modules">
+<h2>Import Modules:<a class="headerlink" href="#import-modules" title="Link to this heading">#</a></h2>
+<p>Execute the cell below to import a number of useful pre-built Python modules that will be used in the PHYS 121 pre-labs and labs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="name-student-number">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div><a class="headerlink" href="#name-student-number" title="Link to this heading">#</a></h1>
+<p>To ensure that both you and your partner receive credit for you lab work, both your name and student number and your partner’s name and student number need to appear in the notebooks used during the labs.  In the cells below this text, enter your name and student number and your partner’s name and student number as strings (i.e. place your names and student numbers between single or double quotes.</p>
+<p>Examples of valid entries are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</pre></div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<section id="partner-1-0-5-marks">
+<h2><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-1-0-5-marks" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="partner-2-0-5-marks">
+<h2><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-2-0-5-marks" title="Link to this heading">#</a></h2>
+<p>If you are working on your own, leave all of last_name_2, first_name_2, and student_number_2 as …  Please still exectute these cells and then run the ‘grader.check(“name_and_student_number_2”)’ cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">last_name_1</span><span class="p">,</span> <span class="n">first_name_1</span><span class="p">,</span> <span class="n">student_number_1</span><span class="p">,</span> <span class="n">last_name_2</span><span class="p">,</span> <span class="n">first_name_2</span><span class="p">,</span> <span class="n">student_number_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;last_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_1&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;name_and_student_number&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-the-electric-field-as-a-gradient-field-10-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - The Electric Field as a Gradient Field (10 minutes)</span></div><a class="headerlink" href="#part-1-the-electric-field-as-a-gradient-field-10-minutes" title="Link to this heading">#</a></h1>
+<p>For the pre-lab, you were introduced to scalar fields and vectors fields by thinking about the terrain around a rock quarry. Recall that if we define the altitude above sea level at a position <span class="math notranslate nohighlight">\((x,y)\)</span> by the function <span class="math notranslate nohighlight">\(h(x,y)\)</span>, the vector field
+<br></p>
+<div class="amsmath math notranslate nohighlight" id="equation-2fa424d6-36cc-470a-841b-819cb400768b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-2fa424d6-36cc-470a-841b-819cb400768b" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathbf{s}(x,y) = \frac{dh}{dx}\,\hat\imath + \frac{dh}{dy}\,\hat\jmath,
+\end{align}\]</div>
+<br>
+points in the direction of steepest ascent from the point $(x,y)$ and has a magnitude $\left|\mathbf{s}(x,y)\right|$ equal to the slope at that point along the direction of steepest accent. 
+<p>Now, suppose you stand on a hill and release a ball from rest. It should spontaneously begin to roll in the direction of steepest <em>descent</em> - that is, it will initially roll in the direction of the vector field <span class="math notranslate nohighlight">\(-\mathbf{s}(x,y)\)</span>.</p>
+<p>Analogously, a positive charge released from rest will move in the direction that the electric potential <em>decreases</em> the most rapidly. This is exactly the direction the electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> points since, for a two-dimensional electric potential <span class="math notranslate nohighlight">\(V(x,y)\)</span>
+<br></p>
+<div class="amsmath math notranslate nohighlight" id="equation-185efcc2-da8d-48ad-83fc-4b21969f8a57">
+<span class="eqno">(6)<a class="headerlink" href="#equation-185efcc2-da8d-48ad-83fc-4b21969f8a57" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathbf{E}(x,y) = -\left( \frac{dV}{dx}\,\hat\imath + \frac{dV}{dy}\,\hat\jmath \right)
+\end{align}\]</div>
+<br>
+<p>That is, when we look at our electrical field maps, one way to interpret them is to think about what would happen to a <em>positive</em> charge if released from rest in the field. We can also see this in the Lorentz force law, where the force on a charged particle due to an electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> (and in the absence of a magnetic field) is given by
+<br></p>
+<div class="amsmath math notranslate nohighlight" id="equation-9908dac1-4c47-41af-b158-73212ae31b51">
+<span class="eqno">(7)<a class="headerlink" href="#equation-9908dac1-4c47-41af-b158-73212ae31b51" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathbf{F}(x,y) = q\mathbf{E}(x,y) = -q\left( \frac{dV}{dx}\,\hat\imath + \frac{dV}{dy}\,\hat\jmath \right)
+\end{align}\]</div>
+<br>
+<p>Notice that this equation also tells us that a <em>negative</em> charge (<span class="math notranslate nohighlight">\(q &lt; 0\)</span>) will move in the opposite direction that a positive charge would move.</p>
+<p>In the following three questions, you’ll get a bit of practice thinking about the electric field around a variety of systems of point charges. If you like, you can map the electric field using this <a class="reference external" href="https://phet.colorado.edu/en/simulations/charges-and-fields">simulation</a> to help you answer these questions, but you should try to use your imagination to picture the electrical field beforehand.</p>
+<section id="the-phys121-gradercheck-statements-for-questions-1-1-and-1-2-only-check-that-answers-have-been-entered-in-the-correct-format-they-do-not-check-that-you-ve-entered-the-correct-answer">
+<h2><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 1.1</strong> and <strong>1.2</strong>,  only check that answers have been entered in the correct format.  They do <strong>NOT</strong> check that you’ve entered the correct answer.</span><a class="headerlink" href="#the-phys121-gradercheck-statements-for-questions-1-1-and-1-2-only-check-that-answers-have-been-entered-in-the-correct-format-they-do-not-check-that-you-ve-entered-the-correct-answer" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>The positive charge shown at the centre of the figure is fixed in place.  A second <strong>positive</strong> charge is released from rest at the position indicated by the <strong>X</strong>.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/config1.png"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/config1.png" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/config1.png" style="width: 750px;" /></a>
+<p>After it is released, the poitive charge placed at <strong>X</strong>:</p>
+<p>(a) moves in a straight-line path away from the fixed charge. <br>
+(b) moves in a straight-line path towards from the fixed charge. <br>
+(c) moves away from the fixed charge, but follows a curved path.<br>
+(d) moves towards the fixed charge, but follows a curved path.<br>
+(e) follows a circular path around the fixed charge.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 1.1:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a1_1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a1_1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>A <strong>negative</strong> charge is released from rest at the position indicated by the <strong>X</strong> (all other charges shown are fixed in place).</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/econfig2.png"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/econfig2.png" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/econfig2.png" style="width: 550px;" /></a>
+<p>After it is released, the negative charge placed at <strong>X</strong>:</p>
+<p>(a) moves in a straight-line path towards the collection of positive charges. <br>
+(b) moves in a straight-line path towards the collection of negative charges. <br>
+(c) moves towards the collection of positive charges, but follows a curved path.<br>
+(d) moves towards the collection of negative charges, but follows a curved path.<br>
+(e) follows an erratic/unpredictable path.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 1.2:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a1_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a1_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-2-electric-potential-electric-field-map-60-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Electric Potential &amp; Electric Field Map (60 minutes)</span></div><a class="headerlink" href="#part-2-electric-potential-electric-field-map-60-minutes" title="Link to this heading">#</a></h1>
+<p>In this part of the lab, you will create maps of the electric potential and electric field on a conductive 2-D surface.  The main pieces of equipment that you will work with are:</p>
+<ul class="simple">
+<li><p>Sheets of carbon paper.  Various patterns of conducting electrodes have been added to the carbon paper using a silver paint.</p></li>
+<li><p>A DC power supply used to apply fixed voltages (or potentials) to the electrodes.</p></li>
+<li><p>A digital multimeter used to probe the value of the electric potential at various points on the carbon paper.</p></li>
+<li><p>Various wires.</p></li>
+</ul>
+<section id="procedure">
+<h2>Procedure:<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Select one of the seven available carbon paper graphs.</p></li>
+<li><p>Using the DC power supply, connect <span class="math notranslate nohighlight">\(10\rm\ V\)</span> to the red wire that is anchored to your graph and <span class="math notranslate nohighlight">\(0\rm\ V\)</span> (the black output of the power supply labeled ‘<span class="math notranslate nohighlight">\(-\)</span>’) to the black wire.</p></li>
+<li><p>Set the multimeter to ‘DC Voltage’ mode and use the free of end of the red banana cable connected to measure the voltage at different points on the carbon paper.  Avoid placing the end of the banana cable directly on the grid lines of the carbon paper.  The grid lines are not good conductors and lead to unreliable measurements.</p></li>
+</ul>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/Fluke115.jpg" width="200"/>
+<br>
+<b>Fig. 1: A Fluke 115 handheld multimeter set to 'DC Volatge' mode.</b></center>
+</p>
+<ul class="simple">
+<li><p>You should have plenty of time to complete this lab, so collect lots of data to produce maps that are as detailed and accurate as possible.  The sheets of carbon paper contain grid lines that define the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> positions on the paper in units of centimeters.  If you were to collect data at <span class="math notranslate nohighlight">\(2\rm\ cm\)</span> intervals (recommended), you’d end up with approximately 144 data points for each graph.</p></li>
+</ul>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/images/carbon_paper.png" width="600"/>
+<br>
+<b>Fig. 2: Photograph of one of the carbon-paper sheets mounted to a plastic board.  The grid on the sheet spans $0$ to $25\rm\ cm$ in the $x$-direction and $0$ to $20\rm\ cm$ in the $y$-direction.</b></center>
+</p>
+<ul class="simple">
+<li><p>Collect the data.  The <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> positions that you enter must be in units of <strong>centimeters</strong> and the voltages must be in units of <strong>volts</strong>.</p></li>
+<li><p>Because we need to collect a lot of data points, it is easiest to first enter the data into a spreadsheet.  We will use Google Sheets.  These data can then be written to a csv (<strong>c</strong>omma-<strong>s</strong>eparated-<strong>v</strong>alues) file and then imported into the Jupyter notebook as a Pandas dataframe.  An Google Sheets template file called “Lab #3 mapping spreadsheet” has been created for you.  Here’s a <a class="reference external" href="https://docs.google.com/spreadsheets/d/1IixIRP0p8YziNJ6h00YMnZZiSsF1xJUtjhxSrMJ6jLs/copy?usp=sharing">link to the template</a>.  You can use this file to enter your data.  It has been pre-populated with column names and some recommend <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinate values.  Feel free to use the suggested coordinates, or to delete them and enter your own.  However, please leave the names at the top of the columns unchanged.</p></li>
+</ul>
+<p>Here is a GIF showing how to save the data as a csv file after it has been entered into the Google Sheets document.  The data entered in the GIF is garbage data made up for the purposes of creating the GIF.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-3/gifs/csv.gif" width="1250"/>
+</center>
+</p><!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Exectute the cell below to import the data from the csv file into a Pandas dataframe.  Replace the … with the name of the csv file between single or double quotes.  For example, if the csv file is called map1.csv, then the code in the cell below would look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part2_filename</span> <span class="o">=</span> <span class="s1">&#39;map1.csv&#39;</span>
+<span class="n">part2_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part2_filename</span><span class="p">)</span>
+
+<span class="c1"># Display the dataframe</span>
+<span class="n">part2_map</span>
+</pre></div>
+</div>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">part2_filename</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">part2_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part2_filename</span><span class="p">)</span>
+
+<span class="c1"># Display the dataframe</span>
+<span class="c1"># The first line below is used to ensure that the entire contents of the dataframe is displaced.</span>
+<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">part2_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+</section>
+<section id="generate-the-electric-potential-electric-field-map">
+<h2>Generate the Electric Potential &amp; Electric Field Map<a class="headerlink" href="#generate-the-electric-potential-electric-field-map" title="Link to this heading">#</a></h2>
+<p>To create the desired false-colour plot for the electric potential and the vector field plot for the electric field, the ‘Mapping’ function will be used.  Roughly speaking, the ‘Mapping’ function uses an interpolation to fill in the gaps in the electric potential data that you acquired.  The interpolated data is then used to</p>
+<ol class="arabic simple">
+<li><p>produce a false-colour plot with some contour lines</p></li>
+<li><p>calculate and plot the corresponding electric field</p></li>
+</ol>
+<p>For additional information about the ‘Mapping’ function, see <strong>Appendix A</strong> near the end of this notebook.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.2</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Execute the cell below to generate the map of equipotential and electric field.</p>
+<p><strong>In the cell below, delete the … and replace it with the Graph Number of the carbon paper that you’re using.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete the ... in the line below and replace it with the Graph Number of the carbon paper that you&#39;re using.</span>
+<span class="n">graphNumber</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Call a function that creates a filename that will be used to save the equipotential and electric field map that will be generated. </span>
+<span class="n">part2_fig_name</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">extension</span><span class="p">([</span><span class="n">part2_filename</span><span class="p">],</span> <span class="s2">&quot;png&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># The line below assumes that the columns of the spreadsheet that you created are named &#39;x (cm)&#39;, &#39;y (cm)&#39;, and &#39;potential (V)&#39;.</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span><span class="n">part2_map</span><span class="p">[</span><span class="s2">&quot;x (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">part2_map</span><span class="p">[</span><span class="s2">&quot;y (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">part2_map</span><span class="p">[</span><span class="s2">&quot;potential (V)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">graphNumber</span><span class="p">,</span> 
+                <span class="kc">True</span><span class="p">,</span>
+                <span class="n">part2_fig_name</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<p>If there are holes in your electric potential map, or you want to add more detailed measurements in one area of the plot, you can go back and add more data to your DataFrame, either manually or by editing your .csv file.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>(a) In the electric potential/electric field map you created above, in which direction does the electric field point?  From high to low potential, or from low to high potential?</p>
+<p>(b) What is the direction of the electric field relative to the lines of constant potential (equipotential lines)?</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 2.3:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-3-second-electric-potential-electric-field-map-40-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Second Electric Potential &amp; Electric Field Map (40 minutes)</span></div><a class="headerlink" href="#part-3-second-electric-potential-electric-field-map-40-minutes" title="Link to this heading">#</a></h1>
+<p>In <strong>Part 3</strong> of the lab, you will simply repeat the measurements of <strong>Part 2</strong> using one of the other carbon paper graphs.  Specifically:</p>
+<ul class="simple">
+<li><p>Select a carbon paper sheet with a graph number that is different than the one you used in <strong>Part 2</strong>.</p></li>
+<li><p>Measure the electric potential as a function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position.</p></li>
+<li><p>Here, again, is the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1IixIRP0p8YziNJ6h00YMnZZiSsF1xJUtjhxSrMJ6jLs/copy?usp=sharing">link to the Google Sheets template</a>.</p></li>
+<li><p>Use the ‘Mapping’ function to produce electric potential and electric field maps.</p></li>
+</ul>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Exectute the cell below to import the data from the csv file into a Pandas dataframe.  Replace the … with the name of the csv file between single or double quotes.  For example, if the csv file is called map2.csv, then the code in the cell below would look like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">part3_filename</span> <span class="o">=</span> <span class="s1">&#39;map2.csv&#39;</span>
+<span class="n">part3_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part3_filename</span><span class="p">)</span>
+
+<span class="c1"># Display the dataframe</span>
+<span class="n">part3_map</span>
+</pre></div>
+</div>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">part3_filename</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">part3_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part3_filename</span><span class="p">)</span>
+
+<span class="c1"># Display the dataframe</span>
+<span class="c1"># The first line below is used to ensure that the entire contents of the dataframe is displaced.</span>
+<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">part3_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.2</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Execute the cell below to generate the map of equipotential and electric field.</p>
+<p><strong>In the cell below, delete the … and replace it with the Graph Number of the carbon paper that you’re using.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete the ... in the line below and replace it with the Graph Number of the carbon paper that you&#39;re using.</span>
+<span class="n">graphNumber</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Call a function that creates a filename that will be used to save the equipotential and electric field map that will be generated. </span>
+<span class="n">part3_fig_name</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">extension</span><span class="p">([</span><span class="n">part3_filename</span><span class="p">],</span> <span class="s2">&quot;png&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># The line below assumes that the columns of the spreadsheet that you created are named &#39;x (cm)&#39;, &#39;y (cm)&#39;, and &#39;potential (V)&#39;.</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span><span class="n">part3_map</span><span class="p">[</span><span class="s2">&quot;x (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">part3_map</span><span class="p">[</span><span class="s2">&quot;y (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">part3_map</span><span class="p">[</span><span class="s2">&quot;potential (V)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                <span class="n">graphNumber</span><span class="p">,</span> 
+                <span class="kc">True</span><span class="p">,</span>
+                <span class="n">part3_fig_name</span>
+                <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<p>If there are holes in your electric potential map, or you want to add more detailed measurements in one area of the plot, you can go back and add more data to your DataFrame, either manually or by editing your .csv file.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-4-reflection-and-statement-of-contributions-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div><a class="headerlink" href="#part-4-reflection-and-statement-of-contributions-20-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<p>Questions 4.1 to 4.3  are used to reflect on the learning objectives stated at beginning of the notebook.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/93f29aaaec97a4eca7c20253be8c3f8510228118/Lab-3/images/chargedConductors.svg" alt="image info" style="width: 65%; height: auto;" /><br>
+<b>Fig. 3: The map of the electric potential in the region surrounding a pair of charged conducting spheres.  Figure adapted from <a href = "https://commons.wikimedia.org/wiki/File:VFPt_metal_balls_largesmall_potential%2Bcontour.svg">Wikimedia Commons</a></b></center>
+</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Is the electric field stronger at point <span class="math notranslate nohighlight">\(P_1\)</span> or point <span class="math notranslate nohighlight">\(P_2\)</span> in Fig. 3?  Explain your reasoning using a couple of short sentences.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>What is the direction of the electric field at point <span class="math notranslate nohighlight">\(P_3\)</span> in Fig. 3?  Explain your reasoning using a couple of short sentences.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.2:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/93f29aaaec97a4eca7c20253be8c3f8510228118/Lab-3/images/charged-rod.svg" alt="image info" style="width: 65%; height: auto;" /><br>
+<b>Fig. 4: The electric field of a uniformly-charged rod.  Figure taken from <a href = "https://commons.wikimedia.org/wiki/File:VFPt_charged-rod.svg">Wikimedia Commons</a>.
+</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.3</span></strong>  <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In Fig. 4, does the electric potential change most rapidly (i) near the centre of the rod, (ii) near the ends of the rod, or (iii) at a point very far from the rod.  Explain your reasoning using a couple of short sentences.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.3:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Below, you will briefly summarize the contributions that you and your partner made when completely this lab.  Please ensure that both partners have a chance to engage in all types of lab activities (developing the experimental methods/data collection strategies, hands-on interaction with the apparatus/data collection, and data processing/analysis in the Jupyter notebook).  Note that statements of contributions are common in science.  The figure below shows one example taken from a 2021 paper published in the journal <em>Nature Physics</em>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/contributions.jpg" alt="image info" style="width: 60%; height: auto;" /><br>
+<b>Fig. 5: A sample statement of author contributions from a recent journal article.</b></center>
+</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.4(a):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #1</strong> to this lab.  For example, worked with the experimental apparatus to collect data for Part 1 of the lab, entered and processed the data in the Jupyter notebook for Part 2 of the lab, …</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.4(a):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #1</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.4(b):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #2</strong> to this lab.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.4(b):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #2</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-5-student-surveys-25-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Student Surveys (25 minutes)</span></div><a class="headerlink" href="#part-5-student-surveys-25-minutes" title="Link to this heading">#</a></h1>
+<p>The last thing that we’d like to ask you to do as part of Lab #3 is complete the following two online surveys:</p>
+<section id="survey-1-experience-in-the-lab">
+<h2>Survey #1 - Experience in the Lab<a class="headerlink" href="#survey-1-experience-in-the-lab" title="Link to this heading">#</a></h2>
+<p>The first survey is used to collect feedback about the lab activities and the Jupyter notebook-based lab manuals.  The lab activities and method of delivery are both new, so we really do value your feedback.</p>
+<p>Here is the link to <a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_ahLqXpi0lfic1Om">Survey #1 - Experience in the Lab</a></p>
+</section>
+<section id="survey-2-quality-of-your-ta">
+<h2>Survey #2 - Quality of your TA<a class="headerlink" href="#survey-2-quality-of-your-ta" title="Link to this heading">#</a></h2>
+<p>The second survey is used to collect feedback about the quality of your TA.  The anonymous feedback will be shared with your TA so that they can keep doing the things that you like while simultaneously trying to improve any weaknesses.</p>
+<p>Here is the link to <a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_1C6F1YitYpCkAHY">Survey #2 - TA Quality</a></p>
+<p>Both of these surveys are also available in the <strong>PHYS 121 Labs 2022W2</strong> <a class="reference external" href="https://canvas.ubc.ca/">Canvas</a> shell. If your partner is using the lab computer to complete the surveys, feel free to log into Canvas to complete the two surveys.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Partner #1 and Partneer #2 (if applicable), completed both of the online surveys.</p>
+<p>(a) True<br />
+(b) False</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 5.1:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, T, or F) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a5_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a5_1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a5_1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q5.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-6-submission-5-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Submission (5 minutes)</span></div><a class="headerlink" href="#part-6-submission-5-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 6.1:</span></strong></p>
+<p>We welcome your feedback on the PHYS 121 labs!  Please feel free to include any comments you have about this lab in the cell below.  Your comments will be taken into consideration when revising/improving the PHYS 121 labs.  You can suggest improvements, point out anything that was unclear, comment on the strengths and weaknesses of the lab, …</p>
+<p>This question is optional and will have no impact on your lab grade.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 6.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Once you’ve completed this notebook:</p>
+<ul class="simple">
+<li><p>Save your work.</p></li>
+<li><p>Run ‘grader.check_all()’ to confirm that you’ve completed all required tasks.</p></li>
+<li><p>Run ‘grader.export()’ to generate a .zip file containing all of the materials that you will submit.</p></li>
+<li><p>Download the generated .zip file.</p></li>
+<li><p>Upload the .zip file to the PHYS 121 Canvas gradebook.</p></li>
+<li><p><strong>Do NOT change the number of the .zip file.</strong></p></li>
+<li><p><strong>Do NOT modify the contents of the .zip file.</strong></p></li>
+</ul>
+<p>Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/Submission.gif">GIF</a> showing how these steps are completed.  Once your completed notebook has been uploaded to the Canvas gradebook, you’re done!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. <strong>Please save before exporting!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your notebook first, then run this cell (place your cursor in the cell and then hit Shift + Enter) to export </span>
+<span class="c1"># your submission.  Uploaded the .zip file that is generated to the gradebook of the Canvas shell for the PHYS 121 lab.</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">part2_filename</span><span class="p">,</span> <span class="n">part3_filename</span><span class="p">,</span> <span class="n">part2_fig_name</span><span class="p">,</span> <span class="n">part3_fig_name</span><span class="p">,</span> <span class="s1">&#39;PHYS121_DataLogger.txt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-7-playground-optional">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Playground (optional)</span></div><a class="headerlink" href="#part-7-playground-optional" title="Link to this heading">#</a></h1>
+<p>Feel free to add as many cells as you like below and use them as a playground for further independent investigations.  These cells won’t be graded, so feel free to use them in any way that you like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an empty code cell that you can use.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s another empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s yet another empty code cell that you can use.  </span>
+<span class="c1"># If you need more, you can add cells using the &#39;+&#39; icon in the menu bar at to the top of the screen.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="quadappendix-a-the-mapping-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Mapping Function…</div><a class="headerlink" href="#quadappendix-a-the-mapping-function" title="Link to this heading">#</a></h2>
+<p>A function for producing false-colour plots of electric potential and then calculating and displaying the corresponding electric field map.  The <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position data must be entered in units of centimeters.  The <span class="math notranslate nohighlight">\(x\)</span> data should span <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(25\rm\ cm\)</span> and the <span class="math notranslate nohighlight">\(y\)</span> data should span <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(20\rm\ cm\)</span>.  The electric potential data should be in units of volts and span the range from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(10\rm\ V\)</span>.  The function is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Mapping</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">graphNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vectorField</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">fig_file_name</span> <span class="o">=</span> <span class="s1">&#39;figure.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘x’, ‘y’, and ‘V’ inputs are lists or arrays of floats and are all required.  ‘graphNum’ is an optional integer input.  If an integer from 1 to 7 is entered, the approximate positions of the silver-paint electrodes will be shown on the final plot.  If other optional input ‘vectorField’ is equal to True, then the electric field plot will be shown.  The function returns the a single output (the formatted figure):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</section>
+<section id="mapping-example-implementation">
+<h2>Mapping Example Implementation<a class="headerlink" href="#mapping-example-implementation" title="Link to this heading">#</a></h2>
+<p>The code block below shows an implementation of ‘Mapping’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">PHYS121</span>
+
+<span class="n">map1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Graph1Data.csv&quot;</span><span class="p">)</span>
+
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span><span class="n">map1</span><span class="p">[</span><span class="s2">&quot;x (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">map1</span><span class="p">[</span><span class="s2">&quot;y (cm)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">map1</span><span class="p">[</span><span class="s2">&quot;potential (V)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;fig1.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you’re interested in generating your own contour plots with customized formatting, see the following Python-based tutorial: <a class="reference external" href="https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter%20Surface%20Plots.html">https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter Surface Plots.html</a>.</p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" style="width: 500px;" /></a>
+<p>Last update: February 6, 2024</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lab3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab2/PHYS%20121%20-%20Lab%202.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lab4/PHYS%20121%20-%20Lab%204.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-potential-electric-fields">Electric Potential &amp; Electric Fields</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-the-electric-field-as-a-gradient-field-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - The Electric Field as a Gradient Field (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-gradercheck-statements-for-questions-1-1-and-1-2-only-check-that-answers-have-been-entered-in-the-correct-format-they-do-not-check-that-you-ve-entered-the-correct-answer"><span style="color:purple">The ‘PHYS121.graderCheck(…)’ statements for <strong>Questions 1.1</strong> and <strong>1.2</strong>,  only check that answers have been entered in the correct format.  They do <strong>NOT</strong> check that you’ve entered the correct answer.</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-electric-potential-electric-field-map-60-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Electric Potential &amp; Electric Field Map (60 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-the-electric-potential-electric-field-map">Generate the Electric Potential &amp; Electric Field Map</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-second-electric-potential-electric-field-map-40-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Second Electric Potential &amp; Electric Field Map (40 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-student-surveys-25-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Student Surveys (25 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-1-experience-in-the-lab">Survey #1 - Experience in the Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-2-quality-of-your-ta">Survey #2 - Quality of your TA</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-mapping-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Mapping Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-example-implementation">Mapping Example Implementation</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jake Bobowski and Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

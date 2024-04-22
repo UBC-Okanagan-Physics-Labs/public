@@ -1,0 +1,1664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 121 Lab #0 \(\to\) (15 possible marks) &#8212; Autograded Physics labs with Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css?v=def72667" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css?v=5f6255d3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "UBC-Okanagan-Physics-Labs/public");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab0/PHYS 121 - Lab 0';</script>
+    <script src="../../_static/plausible_alt_jake_jupyterphysics.js?v=ae2bec75"></script>
+    <link rel="canonical" href="https://firas.moosvi.com/oer/autograded_physics_labs/content/lab0/PHYS 121 - Lab 0.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PHYS 121 Lab #1 \(\to\) (22 possible marks)" href="../lab1/PHYS%20121%20-%20Lab%201.html" />
+    <link rel="prev" title="Title" href="../../files/bio.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../files/home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/noun-physics-6249939.png" class="logo__image only-light" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>
+    <script>document.write(`<img src="../../_static/noun-physics-6249939.png" class="logo__image only-dark" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../files/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../files/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/bio.html">Project Team</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab1/PHYS%20121%20-%20Lab%201.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab2/PHYS%20121%20-%20Lab%202.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab3/PHYS%20121%20-%20Lab%203.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab4/PHYS%20121%20-%20Lab%204.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab5/PHYS%20121%20-%20Lab%205.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab6/PHYS%20121%20-%20Lab%206.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab7/PHYS%20121%20-%20Lab%207.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab8/PHYS%20121%20-%20Lab%208.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UBC-Okanagan-Physics-Labs/public/main?urlpath=lab/tree/content/lab0/PHYS 121 - Lab 0.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/edit/main/content/lab0/PHYS 121 - Lab 0.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/issues/new?title=Issue%20on%20page%20%2Fcontent/lab0/PHYS 121 - Lab 0.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab0/PHYS 121 - Lab 0.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #0<span style="color:red"> \to (15 possible marks)</span> </span></div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-learning-outcomes">Lab Learning Outcomes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manuals">Lab Manuals:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-installing-importing-packages-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Installing &amp; Importing Packages (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-installer-function">The ‘PHYS121.Installer()’ Function:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages-modules">Importing Packages/Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-auto-grading-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Auto-Grading (5 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-lab-logistics-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Lab Logistics (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-quiz-45-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 Quiz (45 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-mathematical-operations-in-python-30-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Mathematical Operations in Python (30 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-calling-functions-contained-in-phys121-py-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Calling Functions Contained in PHYS121.py (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-statement-of-contributions-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Statement of contributions (15 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-feedback-and-submission-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Feedback and Submission (15 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 9 - Playground (optional)</span></div></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phys-121-lab-0-to-15-possible-marks">
+<h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div><a class="headerlink" href="#phys-121-lab-0-to-15-possible-marks" title="Link to this heading">#</a></h1>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-0/gifs/PHYS121.gif" alt="image info" style="width: 85%; height: auto;" />
+</center>
+</p>
+<p><font size ="4"><span style="color:purple">We recommend that you complete this notebook using either the <a class="reference external" href="https://www.google.com/intl/en_ca/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Mozilla Firefox</a> browser.  Chrome and Firefox are both available for Windows, Mac, and Linux operating systems.  The PHYS 121 Jupyter notebooks should work in other browsers, but we have specifically verfied that they work well in both Chrome and Firefox.</span></font></p>
+<hr class="docutils" />
+<section id="lab-learning-outcomes">
+<h2>Lab Learning Outcomes:<a class="headerlink" href="#lab-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>By the end of the PHYS 121 lab, the successful student will be able to:</p>
+<ul class="simple">
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Take familiar concepts and techniques used to solve a problem in one field physics and use them to gain insights about problems from other, seemingly unrelated, fields of physics.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Use basic/inexpensive equipment to conduct careful physics experiments that produce meaningful results that uncover something about the behaviour of nature.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Revise and repeat experiments using improved measurement techniques to collect precision data that uncovers new insights about the physical system being studied.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Use Python and Jupyter Notebooks to analyze the experimental data that you collect.</span></b></p></li>
+</ul>
+</section>
+<section id="lab-manuals">
+<h2>Lab Manuals:<a class="headerlink" href="#lab-manuals" title="Link to this heading">#</a></h2>
+<p>The PHYS 121 lab manuals have been created using interactive <strong>Jupyter Notebooks</strong> (<a class="reference external" href="https://en.wikipedia.org/wiki/Project_Jupyter">https://en.wikipedia.org/wiki/Project_Jupyter</a>).  These notebooks, which have an <strong>.ipynb</strong> extension, allow one to enter, analyze/process, and display experimental data.  You will be provided with links that will open the electronic notebook/lab manual.  You will enter your data and do your analysis within these notebooks.  At the end of each lab, you will upload a <strong>.zip</strong> file to the PHYS 121 Lab Canvas page.  The .zip file will be generated for you, and it will contain the .ipynb file that you filled in with your data and anaylsis and a pdf file with some of the results from your analysis.</p>
+<p>Jupter notebooks have “cells” that are used to enter text, do calculations, and/or analyze data.  To execute a Juyter cell, place your cursor within the cell and then hit SHIFT + ENTER (hold down SHIFT and then press ENTER).  Each cell can contain more than one line of text/code.  To start a new line, simply hit ENTER (without holding down the SHIFT key).</p>
+<p>The Jupyter Notebooks that we will use in PHYS 121 will execute code written in the Python programming language (<a class="reference external" href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a>).  You do <strong>NOT</strong> need to know Python or have any programming experience to successfully complete the PHYS 121 labs.  We will provide you with the code needed to complete the lab exercises.  Comments can be entered into a code cell by preceeding the comment with ‘#’.  Any text following the comment tag will not be executed as code when the user hits SHIFT + ENTER.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-installing-importing-packages-10-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Installing &amp; Importing Packages (10 minutes)</span></div><a class="headerlink" href="#part-1-installing-importing-packages-10-minutes" title="Link to this heading">#</a></h1>
+<section id="the-phys121-installer-function">
+<h2>The ‘PHYS121.Installer()’ Function:<a class="headerlink" href="#the-phys121-installer-function" title="Link to this heading">#</a></h2>
+<p><strong>Part 1</strong> of this introductory lab is used to install and import some packages that we will use throughout PHYS 121.  The installation will be done by calling a function called ‘Installer()’ which is contained within the file ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’.  In order to use ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’, the file must be located in the same directory as the active Jupyter notebook (i.e. the .ipynb file) and then it must be imported into the notebook.  The ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’ file should already be among the files listed in the frame along the left-hand side of the screen.  The file can be imported using the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+</pre></div>
+</div>
+<p>The ‘Installer()’ function can then be called using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>These two line of code have already been entered into the cell below.</p>
+<p>‘PHYS121.Installer()’ checks to see if some required Python packages/modules are already installed.  If they are, then the function outputs a message saying that its okay to proceed.  If one or more of the packages are missing, the function attempts to install them and then outputs a message that says the user should exectute the PHYS121.Installer() cell a second time.  The second time the installer function is run, it should simply confirm that the required packages are already installed.</p>
+<p>If necessary, the user can “restart the kernel” start with a fresh notebook in which no cells have been executed.  To restart the kernel, select <strong>Kernel</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Restart Kernel</strong> from the menu options at to the top of the page.  Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/restartKernel.gif">GIF</a> showing how to restart the kernel.</p>
+<p>Run ‘PHYS121.Installer()’ by placing you’re cursor inside the code cell below and then hitting ‘Shift’+’Enter’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab0/PHYS121.py:393: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:513: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:515: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:515: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:765: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:767: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:795: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:799: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:890: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:911: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:914: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:917: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:920: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab0/PHYS121.py:1011: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1011: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1012: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1012: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1018: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1018: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab0/PHYS121.py:393: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:513: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:515: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:515: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:765: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:767: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:795: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:799: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab0/PHYS121.py:890: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:911: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:914: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:917: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab0/PHYS121.py:920: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab0/PHYS121.py:1011: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1011: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1012: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1012: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1013: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1018: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1018: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab0/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">lab0</span><span class="o">/</span><span class="n">PHYS121</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-packages-modules">
+<h2>Importing Packages/Modules:<a class="headerlink" href="#importing-packages-modules" title="Link to this heading">#</a></h2>
+<p>Once the packages are installed, they can be imported using the notation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">packageName</span>
+</pre></div>
+</div>
+<p>where ‘packageName’ is the name of the package to be imported.  In the cell below, we import some of the packages that were installed by ‘PHYS121.Installer()’ and others that are preinstalled within UBC’s Open Jupyter.</p>
+<p>Execute the import statements below by placing your cursor within the code cell and hitting ‘Shift’ + ‘Enter’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import required and commonly-used modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">uncertainties</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-2-auto-grading-5-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Auto-Grading (5 minutes)</span></div><a class="headerlink" href="#part-2-auto-grading-5-minutes" title="Link to this heading">#</a></h1>
+<p>The PHYS 121 Pre-Lab Assignments and Lab Notebooks will make use of both auto-graded questions and manually-graded questions.  In order to facilitate the auto-grading and generate the files for manual grading, the ‘otter’ package has to be imported and then initiallized using the commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 0.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Execute the cell below (SHIFT + ENTER) to import and initialize the auot-grading.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Otter for the purposes of autograding</span>
+<span class="kn">import</span> <span class="nn">otter</span>
+
+<span class="c1"># Initialize Otter (for the purposes of auto-grading some cells)</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 0.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-3-lab-logistics-10-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Lab Logistics (10 minutes)</span></div><a class="headerlink" href="#part-3-lab-logistics-10-minutes" title="Link to this heading">#</a></h1>
+<p>In the PHYS 121 lab, most of you will be working with a partner.  <strong>If you are working with a partner, you only need to upload a single copy of the zip file to Canvas when submitting your work.</strong>  The zip file can be uploaded to either your Canvas shell or your partner’s Canvas shell.  Once the submission has been graded, the same mark will be entered for both you and your partner.  Note that you need to complete the <strong>pre-lab assignments independently</strong>.  The pre-labs will also be completed using Jupyter notebooks.  For the pre-labs, every student in the PHYS 121 lab must upload their own zip file to Canvas.</p>
+<p>To ensure that both you and your partner receive credit for you lab work, both your name and student number and your partner’s name and student number need to appear in the notebooks used during the labs.  In the cells below this text, enter your name and student number and your partner’s name and student number.</p>
+<p>After your names and student numbers have been entered, execute the cells containing</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;name_and_student_number_1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;name_and_student_number_2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These fucntions are part of the auto-grader and are desiged to check for errors in the data that you entered.  For example, the student number should be a string (enclosed in single or double quotes) of exactly 8 characters and all of the characters have to be integers.  If the data that you entered is okay, you should get a message indicating that all of the checks have passed.  If anything fails, you should search for the <strong>message</strong> in the output and use it to fix the error(s) in the values that you entered.</p>
+<p>Examples of valid entries are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</pre></div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<section id="partner-1-0-5-marks">
+<h2><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-1-0-5-marks" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;name_and_student_number_1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+</section>
+<section id="partner-2-0-5-marks">
+<h2><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-2-0-5-marks" title="Link to this heading">#</a></h2>
+<p>If you are working on your own, leave all of last_name_2, first_name_2, and student_number_2 as …  Please still exectute these cells and then run the ‘grader.check(“name_and_student_number_2”)’ cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;name_and_student_number_2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-4-quiz-45-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 Quiz (45 minutes)</span></div><a class="headerlink" href="#part-4-quiz-45-minutes" title="Link to this heading">#</a></h1>
+<p>In order for you to get familiar with the Jupyter Notebook lab manuals and the PHYS 121 policies, you will complete the short quiz below.</p>
+<p>First, access the PHYS 121 Lab Canvas page.  Navigate the to “Lab 0” folder within the “Modules” section of Canvas and read the pdf documents there.  These documents contain the answers to most of the questions in the quiz.</p>
+<p>To enter a response to the quiz questions, replace the dots (…) with the your answer (keep the answer within the singe quotes ‘ ‘).  Text inside of single quotes (’ ‘) or double quotes (” “) are called strings.  The autograder expects your answers to be enter as strings.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+What is a passing grade for the PHYS 121 lab?</p>
+<ul class="simple">
+<li><p>(a) 35%</p></li>
+<li><p>(b) 40%</p></li>
+<li><p>(c) 50%</p></li>
+<li><p>(d) 60%</p></li>
+<li><p>(e) 65%</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.1</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+There are no exemptions for the PHYS 121 lab.</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.2</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, t, or f) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+I am not required to attend every lab in person.</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.3</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, t or f) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_3</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.4</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+What is the due date and time for this lab?</p>
+<ul class="simple">
+<li><p>(a) 1 hour after the start of the lab.</p></li>
+<li><p>(b) 3 hours after the start of the lab.</p></li>
+<li><p>(c) 15 minutes after the end of the lab.</p></li>
+<li><p>(d) 23:59 the day before the next lab starts.</p></li>
+<li><p>(e) By the end of the term.</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.4</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_4</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+To make special arrangements with your TA or the Physics Lab Team, I should:</p>
+<ul class="simple">
+<li><p>(a) make the arrangements verbally.</p></li>
+<li><p>(b) ask my friend.</p></li>
+<li><p>(c) have my mom or dad contact the university.</p></li>
+<li><p>(d) use the Qualtrics form (<a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_bNJfeDCS8TW0FwO">Link to Form</a>).</p></li>
+<li><p>(e) Special arrangements are not needed.  I can just show up to another lab section.</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.5</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_5</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.6</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+For each calendar day that a lab is submitted late, there is late penalty deduction of:</p>
+<ul class="simple">
+<li><p>(a) 0%</p></li>
+<li><p>(b) 10%</p></li>
+<li><p>(c) 15%</p></li>
+<li><p>(d) 20%</p></li>
+<li><p>(e) 25%</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.6</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_6</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.6&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.7</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+To be considered for a make-up lab, when you miss a lab you must declare your absence using the Qualtrics form (<a class="reference external" href="https://ubc.ca1.qualtrics.com/jfe/form/SV_bNJfeDCS8TW0FwO">Link to Form</a>) within how many calendar days from the date of the lab that you missed?</p>
+<ul class="simple">
+<li><p>(a) 1 day</p></li>
+<li><p>(b) 2 days</p></li>
+<li><p>(c) 3 days</p></li>
+<li><p>(d) 4 days</p></li>
+<li><p>(e) 5 days</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.7</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_7</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.7&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.8</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+An act of dishonesty (such as plagiarism) is not allowed. For this reason, it may result in a failing grade or mark of zero on the assignment or in the course. Cases of academic dishonesty will be reported to the Dean’s office.</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.8</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, t, or f) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_8</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.9</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+The due date for finalizing lab grades is April 9. You must talk to your TAs to discuss any issues related to the lab marks before this date. We will not discuss it after the finalizing date.</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.9</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, t, or f) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_9</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.9&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.10</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+I am able to make a special arrangement at the end of term so that I can submit assignments that I did not hand earlier in the term to increase my grade just enough to pass the lab component of PHYS 121.</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
+<p><strong><span style="color:blue">Answer 4.10</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, t, or f) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_10</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.11</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+Enter the lab section that you are registered in.</p>
+<p><strong><span style="color:blue">Answer 4.11</span></strong><br />
+Replace the … in the cell below with your answer.  Your answer should be a string of 3 characters (‘L04’, for example).<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a4_11</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.12</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+Enter your TAs first and last name.</p>
+<p><strong><span style="color:blue">Answer 4.12</span></strong><br />
+Replace the … in the cell below with your answers.  Your answers should be strings (i.e. between single or double quotes).<br />
+*** Please do not change anything to the left of the equals signs. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TA_FIRST_name</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">TA_LAST_name</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q4.12&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-5-mathematical-operations-in-python-30-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Mathematical Operations in Python (30 minutes)</span></div><a class="headerlink" href="#part-5-mathematical-operations-in-python-30-minutes" title="Link to this heading">#</a></h1>
+<p>In Python, you can evaluate most basic mathematical operations in the way that you’d expect.  For example, try executing the cells below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In many programming languages (and on Texas Instruments graphing calculators), a number is raised to a power using the notation <span class="math notranslate nohighlight">\(x\hat{}y\)</span>.  For example, <span class="math notranslate nohighlight">\(2\hat{}3\)</span> would imply <span class="math notranslate nohighlight">\(2^3 = 8\)</span>.  In Python, however, a number is raised to a power by repeating the multiplication symbol as in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">**</span><span class="n">y</span>
+</pre></div>
+</div>
+<p>Confirm this behaviour by executing the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Special function such as <span class="math notranslate nohighlight">\(\sin x\)</span>, <span class="math notranslate nohighlight">\(\cos x\)</span>, <span class="math notranslate nohighlight">\(\ln x\)</span>, <span class="math notranslate nohighlight">\(\exp(x)\)</span> and so on will also not work as expected.  These functions, however, are defined within very nice modules or packages that have been written and are available for us to use.  One package that we’ll almost always want to use is called <strong>NumPy</strong> (<a class="reference external" href="https://en.wikipedia.org/wiki/NumPy">https://en.wikipedia.org/wiki/NumPy</a>).  The constant <span class="math notranslate nohighlight">\(\pi\)</span> is also defined within NumPy.  To use this package, we first need to import it.  NumPy is usually given the shorthand name ‘np’.  To import the package and give it the name np, we need to execute the following line of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>This has already been done in <strong>Part 1</strong> of this lab, so we don’t need to repeat it here.  Execute the cells below to see how to use NumPy and special functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If we want, we can put a number of statements on a single line.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the in Python, and other programming languages as well, <span class="math notranslate nohighlight">\(\log x\)</span> is used to denote the <em>natural logarithm</em> of <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(\ln x\)</span>.  For example, executing the cell below should result in and answer of <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To take the logaritm of a number using in the base-10 number system, one would use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>as in the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span> <span class="mi">100</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span> <span class="mi">10</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s practice basic mathematical operations by trying a <strong>simple math trick</strong>.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+Pick any 3-digit integer.  Write the number twice in a row and enter it into the cell below (eg. <span class="math notranslate nohighlight">\(372 \to 372372\)</span>).</p>
+<p><strong><span style="color:blue">Answer 5.1</span></strong><br />
+Replace the … in the cell below with your answer.  For this answer, an integer should be entered and quotation marks are not needed.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q5.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong><br />
+Take which ever number you picked from <strong>Question 5.1</strong> (<span class="math notranslate nohighlight">\(x\)</span>) and in the code cell below divide it first by 13, then divide by 11, and lastly divide by 7.</p>
+<p><strong><span style="color:blue">Answer 5.2</span></strong><br />
+Replace the … with a mathematical expression that will, all at once, preform the entire operation described above.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Print the result of the calculation.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q5.2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-6-calling-functions-contained-in-phys121-py-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Calling Functions Contained in <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> (20 minutes)</span></div><a class="headerlink" href="#part-6-calling-functions-contained-in-phys121-py-20-minutes" title="Link to this heading">#</a></h1>
+<p><strong>Part 6</strong> is just for fun and won’t be graded.  It is designed to show you how to call functions contained within the file <a class="reference external" href="http://PHYS121.py">PHYS121.py</a>.  We will rely on many of the functions in <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> to help us analyze the experimental data that we collect through the term in the PHYS 121 lab.</p>
+<p>First, execute the cell below.  It calls a function contained in <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> called ‘printDigits()’.  In order to call this function (or any other function in the file), we first have to import <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+</pre></div>
+</div>
+<p>This import was already done in <strong>Part 1</strong> of the lab, so we don’t have to do it again.  The ‘printDigits()’ function generates a random list of integers between 1 and 9.  The list of integers will contain between 25 and 35 entries.  If, for some reason, you don’t like the set of integers that was generated, you can simply keeping executing the cell until you get a set of numbers that you like.  ‘printDigits()’ will also calculate the product of the set of integers that you generated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">printDigits</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Next, take the product from the previous step and change any <strong>non-zero</strong> digit in that product to zero.  For example, if your product was <span class="math notranslate nohighlight">\(340202565\)</span>, you might decide to change the <span class="math notranslate nohighlight">\(4\)</span> to zero such that your product gets changed to <span class="math notranslate nohighlight">\(300202565\)</span>.</p>
+<p>The next function that we’ll make use of is called ‘chase()’.  It is called in the same way as the previous function, except this time we need to pass an <em>arugument</em> or <em>parameter</em> to the function.  The argument is passed by entering your number as a string (i.e. between single or double quotes) between the brackets as in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="s1">&#39;300202565&#39;</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">chase</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Call the ‘chase()’ function and pass the modified product (the product after changing one non-zero digit to zero) as the argument.  ‘chase()’ should be able to tell you which digit to secretly changed to zero.</p>
+<p>Replace … with your modified product formatted as a string.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">chase</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s2">&quot;Q6.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-7-statement-of-contributions-15-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Statement of contributions (15 minutes)</span></div><a class="headerlink" href="#part-7-statement-of-contributions-15-minutes" title="Link to this heading">#</a></h1>
+<p>Below, you will briefly summarize the contributions that you and your partner made when completely this lab.  Please ensure that both partners have a chance to engage in all types of lab activities (developing the experimental methods/data collection strategies, hands-on interaction with the apparatus/data collection, and data processing/analysis in the Jupyter notebook).  Note that statements of contributions are common in science.  The figure below shows one example taken from a 2021 paper published in the journal <em>Nature Physics</em>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/contributions.jpg" alt="image info" style="width: 60%; height: auto;" /><br>
+<b>Figure: A sample statement of author contributions from a recent journal article.</b></center>
+</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 7.1(a):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #1</strong> to this lab.  For example, worked with the experimental apparatus to collect data for Part 1 of the lab, entered and processed the data in the Jupyter notebook for Part 2 of the lab, …</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 7.1(a):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #1</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 7.1(b):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner #2</strong> to this lab.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 7.1(b):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner #2</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-8-feedback-and-submission-15-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Feedback and Submission (15 minutes)</span></div><a class="headerlink" href="#part-8-feedback-and-submission-15-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 8.1:</span></strong></p>
+<p>We welcome your feedback on the PHYS 121 labs!  Please feel free to include any comments you have about this lab in the cell below.  Your comments will be taken into consideration when revising/improving the PHYS 121 labs.  You can suggest improvements, point out anything that was unclear, comment on the strengths and weaknesses of the lab, …</p>
+<p>This question is optional and will have no impact on your lab grade.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 8.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Once you’ve completed this notebook:</p>
+<ul class="simple">
+<li><p>Save your work.</p></li>
+<li><p>Run ‘grader.check_all()’ to confirm that you’ve completed all required tasks.</p></li>
+<li><p>Run ‘grader.export()’ to generate a .zip file containing all of the materials that you will submit.</p></li>
+<li><p>Download the generated .zip file.</p></li>
+<li><p>Upload the .zip file to the PHYS 121 Canvas gradebook.</p></li>
+<li><p><strong>Do NOT change the number of the .zip file.</strong></p></li>
+<li><p><strong>Do NOT modify the contents of the .zip file.</strong></p></li>
+</ul>
+<p>Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/Submission.gif">GIF</a> showing how these steps are completed.  Once your completed notebook has been uploaded to the Canvas gradebook, you’re done!</p>
+<hr class="docutils" />
+<p>To double-check your work, the cell below will rerun all of the autograder tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. <strong>Please save before exporting!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your notebook first, then run this cell to export your submission.</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-9-playground-optional">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 9 - Playground (optional)</span></div><a class="headerlink" href="#part-9-playground-optional" title="Link to this heading">#</a></h1>
+<p>Feel free to add as many cells as you like below and use them as a playground for further independent investigations.  These cells won’t be graded, so feel free to use them in any way you like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s another empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s yet another empty code cell that you can use.</span>
+<span class="c1"># If you need more, you can add cells using the &#39;+&#39; icon in the menu bar at to the top of the screen.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" style="width: 500px;" /></a>
+<p>Last update: January 5, 2024</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lab0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../files/bio.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Title</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lab1/PHYS%20121%20-%20Lab%201.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-learning-outcomes">Lab Learning Outcomes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-manuals">Lab Manuals:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-installing-importing-packages-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Installing &amp; Importing Packages (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phys121-installer-function">The ‘PHYS121.Installer()’ Function:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages-modules">Importing Packages/Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-auto-grading-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Auto-Grading (5 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-lab-logistics-10-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Lab Logistics (10 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-quiz-45-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 Quiz (45 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-mathematical-operations-in-python-30-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Mathematical Operations in Python (30 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-calling-functions-contained-in-phys121-py-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Calling Functions Contained in PHYS121.py (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-statement-of-contributions-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 7 - Statement of contributions (15 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-feedback-and-submission-15-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 8 - Feedback and Submission (15 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 9 - Playground (optional)</span></div></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jake Bobowski and Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

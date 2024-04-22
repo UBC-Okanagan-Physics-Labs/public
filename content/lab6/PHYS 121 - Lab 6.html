@@ -1,0 +1,1818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 121 Lab #6 \(\to\) (18 possible marks) &#8212; Autograded Physics labs with Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css?v=def72667" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css?v=5f6255d3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "UBC-Okanagan-Physics-Labs/public");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab6/PHYS 121 - Lab 6';</script>
+    <script src="../../_static/plausible_alt_jake_jupyterphysics.js?v=ae2bec75"></script>
+    <link rel="canonical" href="https://firas.moosvi.com/oer/autograded_physics_labs/content/lab6/PHYS 121 - Lab 6.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PHYS 121 Lab #7 \(\to\) (12 possible marks)" href="../lab7/PHYS%20121%20-%20Lab%207.html" />
+    <link rel="prev" title="PHYS 121 Lab #5 \(\to\) (24 possible marks)" href="../lab5/PHYS%20121%20-%20Lab%205.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../files/home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/noun-physics-6249939.png" class="logo__image only-light" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>
+    <script>document.write(`<img src="../../_static/noun-physics-6249939.png" class="logo__image only-dark" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../files/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../files/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/bio.html">Project Team</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab0/PHYS%20121%20-%20Lab%200.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab1/PHYS%20121%20-%20Lab%201.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab2/PHYS%20121%20-%20Lab%202.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab3/PHYS%20121%20-%20Lab%203.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab4/PHYS%20121%20-%20Lab%204.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab5/PHYS%20121%20-%20Lab%205.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab7/PHYS%20121%20-%20Lab%207.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab8/PHYS%20121%20-%20Lab%208.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UBC-Okanagan-Physics-Labs/public/main?urlpath=lab/tree/content/lab6/PHYS 121 - Lab 6.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/edit/main/content/lab6/PHYS 121 - Lab 6.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/issues/new?title=Issue%20on%20page%20%2Fcontent/lab6/PHYS 121 - Lab 6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab6/PHYS 121 - Lab 6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #6<span style="color:red"> \to (18 possible marks)</span> </span></div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-rc-circuits">Electric <span class="math notranslate nohighlight">\(RC\)</span> Circuits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-data-collection">Automated Data Collection…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadboards">Breadboards…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors…</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-charging-a-capacitor-at-a-constant-rate-60-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Charging a Capacitor at a Constant Rate (60 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-discharging-a-capacitor-40-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Discharging a Capacitor (40 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part  - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-multiscatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The MultiScatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiscatter-example-implmentation">MultiScatter Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-b-the-linearfit-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The LinearFit Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unweighted-fit-example-implmentation">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-fit-example-implmentation">Weighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-c-the-scatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The Scatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-example-implmentation">Scatter Example Implmentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phys-121-lab-6-to-18-possible-marks">
+<h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div><a class="headerlink" href="#phys-121-lab-6-to-18-possible-marks" title="Link to this heading">#</a></h1>
+<p><font size ="4"><span style="color:purple">We recommend that you complete this notebook using either the <a class="reference external" href="https://www.google.com/intl/en_ca/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Mozilla Firefox</a> browser.  Chrome and Firefox are both available for Windows, Mac, and Linux operating systems.  The PHYS 121 Jupyter notebooks should work in other browsers, but we have specifically verfied that they work well in both Chrome and Firefox.</span></font></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="electric-rc-circuits">
+<h1>Electric <span class="math notranslate nohighlight">\(RC\)</span> Circuits<a class="headerlink" href="#electric-rc-circuits" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Implement automated data collection to acquire large sets of high-quality data in a short period of time.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Assemble and study <span class="math notranslate nohighlight">\(RC\)</span> circuits using breadboads.</span></b></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="autograding">
+<h2>Autograding:<a class="headerlink" href="#autograding" title="Link to this heading">#</a></h2>
+<p>The PHYS 121 Pre-lab assignments and Labs will make use of some autograding.  To make the autograding work, the two cells below needs to be executed.  The first one installs the required packages and the second imports required packages/modules.  If ‘PHYS121.Installer()’ reports that some functions have been installed, the user should restart the “kernel” and then exectute the PHYS121.Installer() cell a second time.  The second time the installer function is run, it should report that <strong>“All packages already installed. Please proceed”</strong>.</p>
+<p>If necessary, the kernel can be restarted by selecting <strong>Kernel</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Restart Kernel</strong> from the menu options at to the top of the page.  Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/restartKernel.gif">GIF</a> showing how to restart the kernel.</p>
+<p>The ‘PHYS121.Installer()’ command requires the file ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’, which you should see included in the list of files along the left-hand side of the screen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab6/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab6/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab6/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab6/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab6/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab6/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab6/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">lab6</span><span class="o">/</span><span class="n">PHYS121</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 6.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="import-modules">
+<h2>Import Modules:<a class="headerlink" href="#import-modules" title="Link to this heading">#</a></h2>
+<p>Execute the cell below to import a number of useful pre-built Python modules that will be used in the PHYS 121 pre-labs and labs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="name-student-number">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div><a class="headerlink" href="#name-student-number" title="Link to this heading">#</a></h1>
+<p>To ensure that both you and your partner receive credit for you lab work, both your name and student number and your partner’s name and student number need to appear in the notebooks used during the labs.  In the cells below this text, enter your name and student number and your partner’s name and student number as strings (i.e. place your names and student numbers between single or double quotes.</p>
+<p>Examples of valid entries are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</pre></div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<section id="partner-1-0-5-marks">
+<h2><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-1-0-5-marks" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="partner-2-0-5-marks">
+<h2><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-2-0-5-marks" title="Link to this heading">#</a></h2>
+<p>If you are working on your own, leave all of last_name_2, first_name_2, and student_number_2 as …  Please still exectute these cells and then run the ‘grader.check(“name_and_student_number_2”)’ cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">last_name_1</span><span class="p">,</span> <span class="n">first_name_1</span><span class="p">,</span> <span class="n">student_number_1</span><span class="p">,</span> <span class="n">last_name_2</span><span class="p">,</span> <span class="n">first_name_2</span><span class="p">,</span> <span class="n">student_number_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;last_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_1&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;name_and_student_number&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-introduction-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (20 minutes)</span></div><a class="headerlink" href="#part-1-introduction-20-minutes" title="Link to this heading">#</a></h1>
+<section id="automated-data-collection">
+<h2>Automated Data Collection…<a class="headerlink" href="#automated-data-collection" title="Link to this heading">#</a></h2>
+<p>So far in the PHYS 121 lab, we have intentionally had you collect data manually so as to help develop your data-collection skills.  However, there are many situations in which automating the data collection with the help of appropriate hardware and software has clear advantages.  Some examples include:</p>
+<ul class="simple">
+<li><p>when one is required to repeat a measurement many thousands of times, it is obviously not practical to do it manually</p></li>
+<li><p>when one is required to collect data over many days, weeks, months, or years; it is not practical for an individual to continuously monitor the experiment</p></li>
+<li><p>when data must be collected over very short time intervals, we need to make use of fast electronics to collect the data for us</p></li>
+</ul>
+<p>In today’s lab, you will collect data while a capacitor charges (<strong>Part 2</strong>) and discharges (<strong>Part 3</strong>).  You will collect hundreds of data points over the span of about one minute.  The maximum data collection rate you will use is <span class="math notranslate nohighlight">\(10\rm\ samples~per~second\)</span>.  Clearly, we’re not able to collect data manually at that rate.  In order to automate the data collection we will use hardware and software (LoggerPro) developed by Vernier.  If you completed PHYS 111 at UBCO, you will already have some familiarity with this equipment.</p>
+</section>
+<section id="breadboards">
+<h2>Breadboards…<a class="headerlink" href="#breadboards" title="Link to this heading">#</a></h2>
+<p>In this lab, you will use a <em>breadboard</em> to build the circuits that you will study. A schematic diagram of the layout of a breadboard is shown in <strong>Fig. 1</strong>.  Breadboards contain arrays of terminals (holes/receptacles) that can be used to quickly assemble and prototype circuits.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/1e4ae36bc6d64d6d1f3264ac008dfa197d472459/Lab-6/images/breadboard.svg" alt="Series RC Circuit" style="width: 20%; height: auto;" /><br>
+<b>Fig. 1: Schematic diagram of a breadboad used to build and test circuits.  Image taken from FreeSVG.org: <a href = "https://freesvg.org/breadboardexplained">https://freesvg.org/breadboardexplained</a>.</b>
+</center>
+</p>
+<p><strong>Figure 1</strong> shows that the columns of terminals are labeled <span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, a, b, c, d, e, f, g, h, i, and j.  If you look carefully at the figure, or look at the breadboard at your station, every fifth row of “terminal strips” is numbered.  Here’s what you need to know about the breadboard terminals:</p>
+<ul class="simple">
+<li><p>All of the terminals in a single column labelled <span class="math notranslate nohighlight">\(+\)</span> are connected to one another.  These “power terminals” are next to a <span style="color:red">red</span> line.</p></li>
+<li><p>All of the terminals in a single column labelled <span class="math notranslate nohighlight">\(-\)</span> are connected to one another.  These “power terminals” are next to a <span style="color:blue">blue</span> line.</p></li>
+<li><p>The <span class="math notranslate nohighlight">\(+\)</span> and <span class="math notranslate nohighlight">\(-\)</span> power terminals are <strong>NOT</strong> connected to one another.  That is, they’re <strong>isolated</strong> from one another.</p></li>
+<li><p>If there are multiple columns of <span class="math notranslate nohighlight">\(+\)</span> power terminals, they are <strong>isolated</strong> from one another.</p></li>
+<li><p>If there are multiple columns of <span class="math notranslate nohighlight">\(-\)</span> power terminals, they are <strong>isolated</strong> from one another.</p></li>
+<li><p>The a, b, c, d, and e terminals in a <em>single</em> row/”terminal strip” are connected to one another.</p></li>
+<li><p>The f, g, h, i, and j terminals in a <em>single</em> row/”terminal strip” are connected to one another.</p></li>
+<li><p>The a, b, c, d, and e terminals in a particular row are <strong>isolated</strong> from the f, g, h, i, and j terminals in same row.  Put another way, “terminal strips” on either side of a “divider” are <strong>NOT</strong> connected, even if they are in the same row.</p></li>
+<li><p>Terminal strips in different rows are always isolated from one another.</p></li>
+</ul>
+<p>Once you become comfortable with the layout of breadboards and the internal connections between terminals, they can be used to very quickly assemble and study electric circuits.</p>
+</section>
+<section id="resistors">
+<h2>Resistors…<a class="headerlink" href="#resistors" title="Link to this heading">#</a></h2>
+<p>In this lab, you study circuits made of resistors and capacitors.  Resistors typically have coloured lines painted on them.  These colours are used to indicate the nominal value of the resistor and its tolerance.  <strong>Figure 2</strong> below shows how to decipher the resistor colour code.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/fc60f70a48f3b1631c735f58fdb20747a1dd89cc/Lab-6/images/resistorcolourv.svg" alt="Resistor colour code" style="width: 30%; height: auto;" /><br>
+<b>Fig. 2: Colour code used to read the nominal value of a resistor and its tolerance.  Image taken from FreeSVG.org: <a href = "https://freesvg.org/resistorcolourv4">https://freesvg.org/resistorcolourv4</a>.</b>
+</center>
+</p>
+<p>You will be using resistors with four bands of colour as shown at the top of the figure.  As you can see from the figure, one of the bands (the one on the right) has a noticeably larger gap between it and the next nearest colour.  This band is used to specify the tolorance of the resistor.  The resistor that you’ll be using probably has a <span style="color:gold">gold</span> tolerance band which means that the tolerance is <span class="math notranslate nohighlight">\(\pm 5\%\)</span>.  The other three bands are used to specify the value of the resistance.  Starting from the left:</p>
+<ul class="simple">
+<li><p>The first band gives the first digit in the value of the resistance.  It is the <span class="math notranslate nohighlight">\(X\)</span> in <span class="math notranslate nohighlight">\(R = (XY)\times(\mathrm{multiplier})\)</span>.  In <strong>Fig. 2</strong>, the leftmost band of the top resistor is <span style="color:green">green</span> which corresponds to <span class="math notranslate nohighlight">\(X = 5\)</span></p></li>
+<li><p>The second band gives the second digit in the value of the resistance.  It is the <span class="math notranslate nohighlight">\(Y\)</span> in <span class="math notranslate nohighlight">\(R = (XY)\times(\mathrm{multiplier})\)</span>.  In <strong>Fig. 2</strong>, the second band of the top resistor is <span style="color:blue">blue</span> which corresponds to <span class="math notranslate nohighlight">\(Y = 6\)</span></p></li>
+<li><p>The third band gives the value of the <span class="math notranslate nohighlight">\(\mathrm{multiplier}\)</span> in <span class="math notranslate nohighlight">\(R = (XY)\times(\mathrm{multiplier})\)</span>.  In <strong>Fig. 2</strong>, the third band of the top resistor is <span style="color:orange">orange</span> which corresponds to a <span class="math notranslate nohighlight">\(\mathrm{multiplier}\)</span> of <span class="math notranslate nohighlight">\(1\rm k = 1000\)</span>.</p></li>
+<li><p>As already discussed, the rightmost band is <span style="color:gold">gold</span> which corresponds to a tolerance of <span class="math notranslate nohighlight">\(\pm 5\%\)</span>.</p></li>
+</ul>
+<p>Therefore, the value of the top resistor in <strong>Fig. 2</strong> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-27ca7284-3ea8-4bb7-b0c0-fe423f226c8c">
+<span class="eqno">(13)<a class="headerlink" href="#equation-27ca7284-3ea8-4bb7-b0c0-fe423f226c8c" title="Permalink to this equation">#</a></span>\[\begin{align}
+R &amp;= (XY)\times(\mathrm{multiplier})\pm\mathrm{tolerance}\\
+ &amp;= (56)\times(1000)\rm\ \Omega\pm 5\%\\
+ &amp;= \left(56,000\pm 3,000\right)\rm\ \Omega\\
+\therefore R &amp;= \left(56\pm 3\right)\rm\ k\Omega
+\end{align}\]</div>
+<p>Another way to think about the resistor colour code is <span class="math notranslate nohighlight">\(R = \left(XY\right)\times 10^N\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> specifiues the value of the power.  The values of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are exactly as describe above and <span class="math notranslate nohighlight">\(N\)</span> is given by the colour of the third band.  For the top resistor in <strong>Fig. 2</strong>, the third band is <span style="color:orange">orange</span> which corresponds to <span class="math notranslate nohighlight">\(N = 3\)</span> such that:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-16f12b4d-6341-4ab2-9432-a57f07cdf21b">
+<span class="eqno">(14)<a class="headerlink" href="#equation-16f12b4d-6341-4ab2-9432-a57f07cdf21b" title="Permalink to this equation">#</a></span>\[\begin{align}
+R &amp;= (XY)\times 10^N\pm\mathrm{tolerance}\\
+ &amp;= (56)\times 10^3\rm\ \Omega\pm 5\%\\
+\therefore R &amp;= \left(56\pm 3\right)\rm\ k\Omega
+\end{align}\]</div>
+<p>exactly as before.  The advantage of this method is that one only needs to remember the number assigned to each colour (there’s no separate multiplier value to remember).  <strong>Figure 3</strong> gives the sequence of colours and their corresponding assigned numbers.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/roygbiv.jpg" alt="RoyGBiv" style="width: 12.5%; height: auto;" /><br>
+<b>Fig. 3: The resistor colour code when using $R = \left(XY\right)\times 10^N$.  Image obtained and adapted from flickr: <a href = "https://www.flickr.com/photos/plusea/35822892803/in/photostream/">https://www.flickr.com/photos/plusea/35822892803/in/photostream/</a></b>
+</center>
+</p>
+<p>A minor disadvantage of this method is that it doesn’t work if the third band is gold or silver, but those are very uncommon cases.</p>
+<p>The observant student may have noticed that the sequence of colours in <strong>Fig. 3</strong> at least partially reproduces the sequence of colours in the rainbow as shown below in <strong>Fig. 4</strong>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/rainbow.svg" alt="Rainbow" style="width: 40%; height: auto;" /><br>
+<b>Fig. 4: The sequence of colours in a rainbow.  Image obtained from the Wikimedia Commons collection: <a href = "https://commons.wikimedia.org/wiki/File:SVG_Rainbow_half_arc_continous_colors-purpleinside.svg">https://commons.wikimedia.org/wiki/File:SVG_Rainbow_half_arc_continous_colors-purpleinside.svg</a></b>
+</center>
+</p>
+<p>A common acronym for remembering the sequence of colours in the rainbow or, equivalently, the sequence of colours in the visible-light spectrum is: <strong>Roy G. Biv</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77308ab4-dd7a-4901-b7f4-4aee04590dc5">
+<span class="eqno">(15)<a class="headerlink" href="#equation-77308ab4-dd7a-4901-b7f4-4aee04590dc5" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{R} \to&amp;\, \mathbf{R}\mathrm{ed}\\
+\mathrm{o} \to&amp;\, \mathbf{o}\mathrm{range}\\
+\mathrm{y} \to&amp;\, \mathbf{y}\mathrm{ellow}\\
+\\
+\mathrm{G} \to&amp;\, \mathbf{G}\mathrm{reen}\\
+\\
+\mathrm{B} \to&amp;\, \mathbf{B}\mathrm{lue}\\
+\mathrm{i} \to&amp;\, \mathbf{i}\mathrm{ndigo}\\
+\mathrm{v} \to&amp;\, \mathbf{v}\mathrm{iolet}
+\end{align}\]</div>
+<p>It can be difficult to distinguish between <span style="color:indigo">indigo</span> and <span style="color:violet">violet</span>, so the resistor colour code omits <span style="color:indigo">indigo</span>.  You also have to remember that the resistor code starts with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-53326cac-a01c-4e5e-a951-9fa291270b38">
+<span class="eqno">(16)<a class="headerlink" href="#equation-53326cac-a01c-4e5e-a951-9fa291270b38" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{black}\to&amp;\, 0\\
+\mathrm{brown}\to&amp;\, 1
+\end{align}\]</div>
+<p>and then ends with:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ba438e0f-6d1e-4f85-a54a-75e05857d5a9">
+<span class="eqno">(17)<a class="headerlink" href="#equation-ba438e0f-6d1e-4f85-a54a-75e05857d5a9" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathrm{grey}\to&amp;\, 8\\
+\mathrm{white}\to&amp;\, 9
+\end{align}\]</div>
+<p>If it helps, one way to remember these parts of the colour code is that the dark colours (black and brown) are synonymous with the absence of light and come first in the sequence.  On the other hand, the light colours (white and grey) are the blend of all colours and come at the end of the sequence.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Consider the resistor shown below.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/resistor.svg" alt="Resistor" style="width: 35%; height: auto;" /><br>
+<b>Fig. 6: A resistor with four colour bands colour.  Image obtained and adapted from FreeSVG.org: <a href = "https://freesvg.org/resistor-114185">https://freesvg.org/resistor-114185</a>.</b>
+</center>
+</p>
+<p>Based the resistor colour code, the value and tolerance of this resistor is:</p>
+<p>(a) <span class="math notranslate nohighlight">\(R = \left(670\pm 70\right)\rm\ \Omega\)</span><br />
+(b) <span class="math notranslate nohighlight">\(R = \left(670\pm 3\right)\rm\ k\Omega\)</span><br />
+(c) <span class="math notranslate nohighlight">\(R = \left(67\pm 7\right)\rm\ k\Omega\)</span><br />
+(d) <span class="math notranslate nohighlight">\(R = \left(670\pm 30\right)\rm\ k\Omega\)</span><br />
+(e) <span class="math notranslate nohighlight">\(R = \left(670\pm 70\right)\rm\ k\Omega\)</span></p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 1.1:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, or e) between single or double quotes.</p>
+<p>For this question, grader.check() only checks that a valid response has been entered.  It does <strong>not</strong> check if the correct response has been entered.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a1_1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a1_1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="capacitors">
+<h2>Capacitors…<a class="headerlink" href="#capacitors" title="Link to this heading">#</a></h2>
+<p>A capacitor is a device that stores electric potential energy. Any two conductors separated by an insulating medium (which could be air) can be considered a capacitor. This experiment is designed to allow you to experimentally explore some of the properties of capacitors.  There are many different types of capacitors.  The style that will be used in this lab is called an <em>electrolytic</em> capacitor and is shown in <strong>Fig. 7</strong>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/cap.png" alt="Capacitor" style="width: 25%; height: auto;" /><br>
+<b>Fig. 7: An example of the type of "electrolytic" capacitor used in this lab. These capacitors are polarized meaning they must be placed in the circuit with a specific orientation. The longer lead is the "+" side while the shorter lead is the "-" side. Many electrolytic capacitors also have a series "$-$" symbols along one side of the capacitor to indicate which lead is negative.  The $-$ signs can be seen in the figure inside the grey band that runs along the length of the capacitor.</b>
+</center>
+</p>
+<p>The capacitance <span class="math notranslate nohighlight">\(C\)</span> is defined to be the ratio of the charge <span class="math notranslate nohighlight">\(q\)</span> on each conductor of the capacitor to the voltage difference <span class="math notranslate nohighlight">\(V_C\)</span> across the pair of conductors:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81cf0cac-7eea-40bc-b28a-e351f6b03944">
+<span class="eqno">(18)<a class="headerlink" href="#equation-81cf0cac-7eea-40bc-b28a-e351f6b03944" title="Permalink to this equation">#</a></span>\[\begin{align}
+C = {\dfrac{q}{V_C}}
+\label{eq:charge} \tag{1}
+\end{align}\]</div>
+<p>Capacitance has SI units of Farads <span class="math notranslate nohighlight">\((\rm F)\)</span>. A capacitor with a capacitance of one Farad is capable of storing a large amount of energy. Typical capacitors found in electrical circuits range in values from <span class="math notranslate nohighlight">\(10^{-12}\rm\ F\)</span> <span class="math notranslate nohighlight">\((1 \rm pF)\)</span> to <span class="math notranslate nohighlight">\(10^{-3}\rm\ F\)</span> <span class="math notranslate nohighlight">\((1 \rm mF)\)</span>.  You will be working with capacitances that are in the milli-Farad range.</p>
+<p>In this lab you will experimentally investigate the charging and discharging of capacitors and the characteristics exhibited by simple resistor-capacitor <span class="math notranslate nohighlight">\((RC)\)</span> circuits when a time-varying voltage is applied.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-2-charging-a-capacitor-at-a-constant-rate-60-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Charging a Capacitor at a Constant Rate (60 minutes)</span></div><a class="headerlink" href="#part-2-charging-a-capacitor-at-a-constant-rate-60-minutes" title="Link to this heading">#</a></h1>
+<p>Use a breadboard to construct the circuit in <strong>Fig. 8</strong>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/series_circuit.png" alt="Series RC Circuit" style="width: 30%; height: auto;" /><br>
+<b>Fig. 8: Series $RC$ circuit and differential voltage probes used in **Part 2**.</b>
+</center>
+</p>
+<p>Recall that in Lab #4 you measured the current in a long wire which served as our resistor.  For that measurement, the current meter (ammeter) had to be placed in <em>series</em> with the wire.  To measure a voltage across a component (such as a resistor, capacitor, or battery), the voltmeter needs to be placed in <em>parallel</em> with the component. <strong>Figure 8</strong> show two voltage measurements - one across a <span class="math notranslate nohighlight">\(10\rm\ k\Omega\)</span> resistor and another across a <span class="math notranslate nohighlight">\(2200\rm\ \mu F = 2.2\rm\ mF\)</span> capacitor.  Notice that, in each case, one terminal of the voltage probe is connected to the left side of the component and the other is connected to the right side of the component which completes the parallel connection.  Notice also that the positive lead of the voltage probe (<span style="color:red">red</span> wire) is connected to the side of the component closest to the positive terminal of the power supply and the negative lead (black wire) is connected closest to the negative terminal of the power supply.</p>
+<p>If the power supply attached to the capacitor is set to a fixed voltage, the flow of charge to the capacitor will decrease as the capacitor charges.  We saw in Lab #5 that:</p>
+<div class="math notranslate nohighlight">
+\[
+q(t) = q_\infty\left(1 - e^{-t/\tau}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau = RC\)</span> is the time constant.  However, if the current is held constant, the rate of flow of charge onto the capacitor plates is also constant since <span class="math notranslate nohighlight">\(I = \Delta q/\Delta t\)</span>. By continously adjusting the output voltage of the power supply, you should be able to keep the current in the circuit constant as the capacitor accumulates charge. For a constant current <span class="math notranslate nohighlight">\(I\)</span>, the charge <span class="math notranslate nohighlight">\(\Delta q\)</span> added to each plate of the capacitor in time <span class="math notranslate nohighlight">\(\Delta t\)</span> is given by <span class="math notranslate nohighlight">\(\Delta q = I\, \Delta t\)</span>.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the code cell below, input the printed values for the capacitance and resistance along with their associated uncertainties. Be sure to input the uncertainties as a value and not a percentage.  Resistors are assumed to have a <span class="math notranslate nohighlight">\(5\%\)</span> uncertainty and capacitors are assumed to have a <span class="math notranslate nohighlight">\(20\%\)</span> uncertainty.</p>
+<p>Replace the … in the cell below with your answer.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter the printed values for the capcitance and resistance along with their associated uncertainties.</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dC</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">R</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dR</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">C</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">dR</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;dC&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;dR&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plug two sets of differential voltage probes into CH1 and CH2 of the LabPro unit. Connect the leads of the voltage probes to the circuit, being sure to follow the polarities shown in <strong>Fig. 8</strong>.</p>
+<p>Open LoggerPro on the lab computer at your station and click on the <img alt="Sensor Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/sensor_icon.png" /> icon and make sure that the voltage probes are connected properly. If you do not see the <img alt="Sensor Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/sensor_icon.png" /> icon, then you need to click “Experiment” <span class="math notranslate nohighlight">\(\to\)</span> “Connect Interface” <span class="math notranslate nohighlight">\(\to\)</span> “Com1”.</p>
+<p>Next, click on the <img alt="Clock Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/clock_icon.png" /> icon and change the experiment length to <span class="math notranslate nohighlight">\(60\rm\ seconds\)</span>. Set the sampling rate to <span class="math notranslate nohighlight">\(10\rm\ samples~per~second\)</span>.</p>
+<p>Manually scale the <span class="math notranslate nohighlight">\(y\)</span>-axis from <span class="math notranslate nohighlight">\(-0.1\)</span> to <span class="math notranslate nohighlight">\(2\rm\ V\)</span> by right clicking on the graph and clicking on graph options. Click on the axes tab and you should be able to set the drop down menu to manually scale the axes. Rename each of your columns to a more descriptive titles than “Potential 1” or “Potential 2” by right clicking on the data table and selecting each column under column options. Change the respective columns to “VC” and “VR”. Make sure you include appropriate units and make sure that column name VR actually corresponds to the resistor voltage (and not the capacitor voltage).  Name the time column “Time”.</p>
+<p>Fully discharge the capacitor by touching the capacitor’s terminals together. Turn the power supply down to 0 volts and then zero all of the sensors. Click on <img alt="Start Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/start_icon.png" /> and continously increase the power supply so <span class="math notranslate nohighlight">\(V_\mathrm{R}\)</span> stays steady at <span class="math notranslate nohighlight">\(1.0\rm\ V\)</span>. <i>This requires some practice and reruns.</i>  Repeat the measurement until you are satisfied that resistor voltage remains relatively constant at <span class="math notranslate nohighlight">\(1.0\rm\ V\)</span> for the duration of the <span class="math notranslate nohighlight">\(60\rm\ s\)</span> measurement.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.2</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Next, the LoggerPro data needs to be imported into your Jupyter notebook. To do this, you’ll need to export the data from LoggerPro by selecting “File” <span class="math notranslate nohighlight">\(\to\)</span> “Export as” <span class="math notranslate nohighlight">\(\to\)</span> “CSV…”.</p>
+<p>In order for your submission to be graded properly, the file that you export <strong>MUST</strong> be named:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lab_6_Part_2_Data</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Keep track of where you save this file and then locate the folder containing the csv file you created.  Next, use the mouse to drag and drop “Lab_6_Part_2_Data.csv” into the frame along the left-hand side of the screen. This will add the data file to the same folder the contains this notebook so that it can be imported into a dataframe for further analysis.  If you need help, here is a <a href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/gifs/draganddrop.gif">GIF</a> that shows you how to complete the drag and drop.</p>
+<p>*** Please do not change anything in the cell below. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitting &#39;Shift&#39; + &#39;Enter&#39; will import the file and a data table will be printed below.</span>
+<span class="n">part2_filename</span> <span class="o">=</span> <span class="s1">&#39;Lab_6_Part_2_Data.csv&#39;</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part2_filename</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Latest: Time (s)&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: VR (V)&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: VC (V)&quot;</span><span class="p">])</span>
+
+<span class="c1"># Give the dateFrame columns more convenient (shorter) names</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Latest: Time (s)&quot;</span><span class="p">:</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: VR (V)&quot;</span><span class="p">:</span> <span class="s2">&quot;VR&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: VC (V)&quot;</span><span class="p">:</span> <span class="s2">&quot;VC&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display the dateFrame</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="c1"># Show all row of the dataFrame</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">part2_filename</span><span class="p">,</span> <span class="n">df2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;part2_filename&#39;</span><span class="p">,</span> <span class="s1">&#39;df2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Start by plotting <span class="math notranslate nohighlight">\(V_R\)</span>, <span class="math notranslate nohighlight">\(V_C\)</span>, and <span class="math notranslate nohighlight">\(V_R + V_C\)</span> versus <span class="math notranslate nohighlight">\(t\)</span> all in the same graph.  By the Kirchhoff voltage-loop rule, the sum of the voltages across the resistor and capacitor must be equal to the voltage supplied by the power supply.</p>
+<p>To make the plot, we’ll use a <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> function called ‘MulitScatter()’.  This function is similiar to ‘Scatter()’, but instead of inputting single lists of ‘xData’ and ‘yData’, we input multiple pair of x and y datasets using the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DataArray</span> <span class="o">=</span> <span class="p">[[</span><span class="n">xData1</span><span class="p">,</span> <span class="n">yData1</span><span class="p">],</span>
+             <span class="p">[</span><span class="n">xData2</span><span class="p">,</span> <span class="n">yData2</span><span class="p">],</span>
+             <span class="p">[</span><span class="n">xData3</span><span class="p">,</span> <span class="n">yData3</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>The example above shows three set of data, but you can include as many datasets as you’d like.</p>
+<p>Note that, for the plot that we wish to construct:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xData1</span> <span class="o">=</span> <span class="n">xData2</span> <span class="o">=</span> <span class="n">xData3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In the cell below, replace the instances of … with the appropriate column from the dataFrame df2.  One should be the resistor voltage, one should be the capacitor voltage, and one should the sum of the resistor and capacitor voltages (i.e. the voltage supplied by the power supply).</p>
+<p>For additional information about the ‘MultiScatter()’ function, see <strong>Appendix A</strong> near the end of this notebook.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">MultiScatter</span><span class="p">(</span><span class="n">DataArray</span> <span class="o">=</span> <span class="p">[</span>
+                                         <span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="c1"># First dataset</span>
+                                         <span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="c1"># Second dataset</span>
+                                         <span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="c1"># Third dataset</span>
+                                         <span class="p">],</span>
+                                         <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span>
+                                         <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Voltage&#39;</span><span class="p">,</span> 
+                                         <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                                         <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<p>The plot above should show that, shortly after starting the data collection, <span class="math notranslate nohighlight">\(V_C = q/C\)</span> increases linearly with time when <span class="math notranslate nohighlight">\(V_R = I/R\)</span> is held constant and the power supply voltage is increased linearly.</p>
+<p>We’ll now calculate the current <span class="math notranslate nohighlight">\(I\)</span> and charge on the capacitor <span class="math notranslate nohighlight">\(q\)</span> as a function of time using:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-15ed9423-3dda-43de-8842-6a5c88348bf5">
+<span class="eqno">(19)<a class="headerlink" href="#equation-15ed9423-3dda-43de-8842-6a5c88348bf5" title="Permalink to this equation">#</a></span>\[\begin{align}
+I = \frac{V_\mathrm{R}}{R}
+\tag{2}
+\end{align}\]</div>
+<p>and:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bbe92d2a-9f34-4ae8-86c8-6690d8d4d161">
+<span class="eqno">(20)<a class="headerlink" href="#equation-bbe92d2a-9f34-4ae8-86c8-6690d8d4d161" title="Permalink to this equation">#</a></span>\[\begin{align}
+q = I \Delta t
+\tag{3}
+\end{align}\]</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.4</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Use the cell below to calculate the current and add it as another column in your DataFrame. Recall you can access all values of a DataFrame column (such as your resistor voltages) as a list using the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;VR&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new columns in your DataFrame with the current I.</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;df2[&quot;I&quot;]&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.4&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Use the cell below to calculate the charge and add it as another column in your DataFrame. Recall you can access all values of a DataFrame column (such as the current) as a list using the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new columns in your DataFrame with the current I.</span>
+<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;df2[&quot;q&quot;]&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.6</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Now that we’ve created columns in our DataFrame for the capacitor charge <span class="math notranslate nohighlight">\(q\)</span>, we can generate a plot of <span class="math notranslate nohighlight">\(q\)</span> versus the capacitor voltage <span class="math notranslate nohighlight">\(V_C\)</span>.  Rearranging Eq. <span class="math notranslate nohighlight">\((1)\)</span> allows us to express <span class="math notranslate nohighlight">\(q\)</span> as a linear function of <span class="math notranslate nohighlight">\(V_C\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+q = C\,V_C
+\]</div>
+<p>Use the ‘LinearFit()’ function from <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> to plot <span class="math notranslate nohighlight">\(q\)</span> versus <span class="math notranslate nohighlight">\(V_C\)</span> and fit a straight line to the data.</p>
+<p>Fill in the missing data needed when calling the ‘LinearFit()’ function.  Remember that the ‘LinearFit()’ function accepts arrays or lists as inputs - to call a column from a DataFrame as a list, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;Column Name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For additional information about the ‘LinearFit()’ function, see <strong>Appendix B</strong> near the end of this notebook.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Capacitor Voltage&#39;</span><span class="p">,</span> 
+                <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;Charge&#39;</span><span class="p">,</span> 
+                <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> 
+                <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+                <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.7</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>The slope value is equivalent to the experimental value for the capacitance (i.e. slope <span class="math notranslate nohighlight">\(= C\)</span>) in units of Farads. The value of our capacitor is specified in microfarads. Use the cell below to enter the capacitance (and its uncertainity) obtained from the slope above into units of microfarads.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_exp</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dC_exp</span> <span class="o">=</span> <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The experimental capacitance is </span><span class="si">{</span><span class="n">C_exp</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">dC_exp</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> uF&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The nominal capacitance is </span><span class="si">{</span><span class="n">C</span><span class="o">*</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">dC</span><span class="o">*</span><span class="mf">1e6</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> uF&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">C_exp</span><span class="p">,</span> <span class="n">dC_exp</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;C_exp&#39;</span><span class="p">,</span> <span class="s1">&#39;dC_exp&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.7&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.8</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>How does the exeprimental value of capacitance compare to the nominal value stated on the capacitor? (i.e. Compare the two values of <span class="math notranslate nohighlight">\(C\)</span> and take into consideration their uncertainties. Are they within experimental uncertainty of each other?) If they aren’t within exeprimental uncertainty of each other, what are some reasons you can think of that might cause the observed difference?</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 2.8:</span></strong></p>
+<p>Double click this cell and enter your text.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text after entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-3-discharging-a-capacitor-40-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Discharging a Capacitor (40 minutes)</span></div><a class="headerlink" href="#part-3-discharging-a-capacitor-40-minutes" title="Link to this heading">#</a></h1>
+<p>If a charged capacitor is discharged through a resistor starting at <span class="math notranslate nohighlight">\(t=0\)</span>, the charge <span class="math notranslate nohighlight">\(q\)</span> varies with time as:</p>
+<div class="math notranslate nohighlight">
+\[
+q = q_0e^{-t/\tau}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_0\)</span> is the initial charge at <span class="math notranslate nohighlight">\(t = 0\)</span> and <span class="math notranslate nohighlight">\(\tau = RC\)</span> is the familiar time constant.  Since the voltage across a capacitor is equal to <span class="math notranslate nohighlight">\(V_C = q/C\)</span>, the time dependence of the voltage across a discharging capacitor can also be expressed as:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4292bc3c-cd9b-4079-a020-b657a68f664e">
+<span class="eqno">(21)<a class="headerlink" href="#equation-4292bc3c-cd9b-4079-a020-b657a68f664e" title="Permalink to this equation">#</a></span>\[\begin{align}
+V_C = V_0e^{-t/\tau}
+\tag{5}
+\end{align}\]</div>
+<p>where the initial voltage is related to the initial charge via <span class="math notranslate nohighlight">\(V_0 = q_0/C\)</span>.</p>
+<p>Assemble the circuit shown below in <strong>Fig. 9</strong>.  Connect the differential voltage probe to measure the voltage across either the capacitor or resistor.  Recall that, because the capacitor and resistor are in parallel in this circuit, they must always have the <em>same</em> voltage across them. Set up LoggerPro to collect voltage as a function of time. Once again, click on the <img alt="Clock Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/clock_icon.png" /> icon and change experiment length to <span class="math notranslate nohighlight">\(60\rm\ seconds\)</span> and collect <span class="math notranslate nohighlight">\(3\rm\ samples~per~second\)</span>.  For this measurement, please label your LoggerPro columns as “Time” and “V”.  Once again, include appropriate units.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/parallel_circuit.png" alt="Parallel RC Circuit" style="width: 50%; height: auto;" /><br>
+<b>Fig. 3: Parallel $RC$ circuit and differential voltage probe used in Part 3 of this experiment.</b>
+</center>
+</p>
+<p>First, charge the capacitor to an initial voltage <span class="math notranslate nohighlight">\(V_0\)</span> that is less than <span class="math notranslate nohighlight">\(6.0\rm\ V\)</span>. Next, simultaneously disconnect the power supply by pulling one of the leads out of the power supply (rather than just turning it off) and press <img alt="Start Icon" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/images/start_icon.png" /> to start the data collection.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.1</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Once again, we need to import the data into this notebook. To do this, you’ll need to first export the data from LoggerPro by selecting “File” <span class="math notranslate nohighlight">\(\to\)</span> “Export as” <span class="math notranslate nohighlight">\(\to\)</span> “CSV…”.</p>
+<p>In order for your submission to be graded properly, the file that you export <strong>MUST</strong> be named:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lab_6_Part_3_Data</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Save this file to a known location on the lab computer.  Then drag and drop “Lab_6_Part_3_Data.csv” into the frame along the left-hand side of this screen.  If you need help with this process, here is the same <a href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-6/gifs/draganddrop.gif">GIF</a> that was included with <strong>Question 2.2</strong>.</p>
+<p>*** Please do not change anything in the cell below. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitting &#39;Shift&#39; + &#39;Enter&#39; will import the file and a data table will be printed below.</span>
+<span class="n">part3_filename</span> <span class="o">=</span> <span class="s1">&#39;Lab_6_Part_3_Data.csv&#39;</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">part3_filename</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Latest: Time (s)&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: V (V)&quot;</span><span class="p">])</span>
+
+
+<span class="c1"># Give the dateFrame columns more convenient (shorter) names</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Latest: Time (s)&quot;</span><span class="p">:</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="s2">&quot;Latest: V (V)&quot;</span><span class="p">:</span> <span class="s2">&quot;V&quot;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display the dateFrame</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">part3_filename</span><span class="p">,</span> <span class="n">df3</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;part3_filename&#39;</span><span class="p">,</span> <span class="s1">&#39;df3&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Next, use the ‘Scatter()’ function from <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> to plot the voltage across the resistor/capacitor (remember they’re in parallel) as a function of time.</p>
+<p>Fill in the missing data needed when calling the ‘Scatter()’ function.  Remember that the scatter function accepts arrays or lists as inputs - to call a column from a DataFrame as a list, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s2">&quot;Column Name&quot;</span><span class="p">]</span> 
+</pre></div>
+</div>
+<p>For additional information about the ‘Scatter()’ function, see <strong>Appendix C</strong> near the end of this notebook.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> 
+                <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> 
+                <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;V&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>We now want to use this data to determine the time constant <span class="math notranslate nohighlight">\(\tau\)</span>. First, use the cell below to calculate the expected value of <span class="math notranslate nohighlight">\(\tau\)</span> and its uncertainty from the nominal values of <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(C\)</span>.  Recall that you’ve already done this calculation as part of the Pre-Lab assignment!</p>
+<p>Replace the instances of … in the cell below with the appropriate expressions needed to find <span class="math notranslate nohighlight">\(\tau\)</span> and its uncertainty.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calulate the expected value of tau and its uncertainty here </span>
+<span class="n">tau</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dtau</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">tau</span><span class="p">,</span> <span class="n">dtau</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;tau&#39;</span><span class="p">,</span> <span class="s1">&#39;dtau&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.3&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.4</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Next, we want to linearize the data ploted in <strong>Question 3.2</strong>. The linearization can be done by plotting <span class="math notranslate nohighlight">\(\ln(V)\)</span> as a function of time. We can then use a linear fit to determine the slope of the line.</p>
+<p><strong>REMEMBER</strong> that in Python <span class="math notranslate nohighlight">\(\ln(x)\)</span> must be entered as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fill in the missing data needed when calling the ‘LinearFit()’ function.  Remember that the scatter function accepts arrays or lists as inputs - to call a column from a DataFrame as a list, use the syntax</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s2">&quot;Column Name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where ‘df’ is the name of the DataFrame in question.</p>
+<p>For additional information about the ‘LinearFit()’ function, see <strong>Appendix B</strong> near the end of this notebook.</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>  
+                <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> 
+                <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;ln $(V)$&#39;</span><span class="p">,</span> 
+                <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> 
+                <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Use the slope and its uncertainty to determine experimental values for the time constant <span class="math notranslate nohighlight">\(\tau\)</span> and its uncertainty.  Remember, you already did this calculation as part of the Pre-Lab assignment!</p>
+<p>*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter the slope and uncertainty from the linear fit of Question 3.4:</span>
+<span class="n">m</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dm</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Use the slope and uncertainty entered above to calculate the value of tau and its uncertainty:</span>
+<span class="n">tau_exp</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dtau_exp</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The experimental time constant is </span><span class="si">{</span><span class="n">tau_exp</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">dtau_exp</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The expected time constant is </span><span class="si">{</span><span class="n">tau</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> +/- </span><span class="si">{</span><span class="n">dtau</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">m</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">tau_exp</span><span class="p">,</span> <span class="n">dtau_exp</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;dm&#39;</span><span class="p">,</span> <span class="s1">&#39;tau_exp&#39;</span><span class="p">,</span> <span class="s1">&#39;dtau_exp&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.6</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Compare the experimental time constant to the expected value calculated above with uncertainties. Are they within experimental uncertainty of each other? If they aren’t within uncertainty of each other, what are some reasons you can think of that might cause this?</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 3.6:</span></strong></p>
+<p>Double click this cell and enter your text.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text after entering your answer.</p>
+<hr class="docutils" />
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-4-reflection-and-statement-of-contributions-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div><a class="headerlink" href="#part-4-reflection-and-statement-of-contributions-20-minutes" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Below, you will briefly summarize the contributions that you and your partner made when completely this lab.  Please ensure that both partners have a chance to engage in all types of lab activities (developing the experimental methods/data collection strategies, hands-on interaction with the apparatus/data collection, and data processing/analysis in the Jupyter notebook).  Note that statements of contributions are common in science.  The figure below shows one example taken from a 2021 paper published in the journal <em>Nature Physics</em>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/contributions.jpg" alt="image info" style="width: 60%; height: auto;" /><br>
+<b>Figure: A sample statement of author contributions from a recent journal article.</b></center>
+</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1(a):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner A</strong> to this lab.  For example, worked with the experimental apparatus to collect data for Part 1 of the lab, entered and processed the data in the Jupyter notebook for Part 2 of the lab, …</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.1(a):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner A</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1(b):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner B</strong> to this lab.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.1(b):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner B</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-5-submission-5-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div><a class="headerlink" href="#part-5-submission-5-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1:</span></strong></p>
+<p>We welcome your feedback on the PHYS 121 labs!  Please feel free to include any comments you have about this lab in the cell below.  Your comments will be taken into consideration when revising/improving the PHYS 121 labs.  You can suggest improvements, point out anything that was unclear, comment on the strengths and weaknesses of the lab, …</p>
+<p>This question is optional and will have no impact on your lab grade.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 5.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Once you’ve completed this notebook:</p>
+<ul class="simple">
+<li><p>Save your work.</p></li>
+<li><p>Run ‘grader.check_all()’ to confirm that you’ve completed all required tasks.</p></li>
+<li><p>Run ‘grader.export()’ to generate a .zip file containing all of the materials that you will submit.</p></li>
+<li><p>Download the generated .zip file.</p></li>
+<li><p>Upload the .zip file to the PHYS 121 Canvas gradebook.</p></li>
+<li><p><strong>Do NOT change the number of the .zip file.</strong></p></li>
+<li><p><strong>Do NOT modify the contents of the .zip file.</strong></p></li>
+</ul>
+<p>Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/Submission.gif">GIF</a> showing how these steps are completed.  Once your completed notebook has been uploaded to the Canvas gradebook, you’re done!</p>
+<hr class="docutils" />
+<p>To double-check your work, the cell below will rerun all of the autograder tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. <strong>Please save before exporting!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your notebook first, then run this cell to export your submission.</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">part2_filename</span><span class="p">,</span> <span class="n">part3_filename</span><span class="p">,</span> <span class="s1">&#39;PHYS121_DataLogger.txt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-playground-optional">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part  - Playground (optional)</span></div><a class="headerlink" href="#part-playground-optional" title="Link to this heading">#</a></h1>
+<p>Feel free to add as many cells as you like below and use them as a playground for further independent investigations.  These cells won’t be graded, so feel free to use them in any way that you like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an empty code cell that you can use.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s another empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s yet another empty code cell that you can use.  </span>
+<span class="c1"># If you need more, you can add cells using the &#39;+&#39; icon in the menu bar at to the top of the screen.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="quadappendix-a-the-multiscatter-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The MultiScatter Function…</div><a class="headerlink" href="#quadappendix-a-the-multiscatter-function" title="Link to this heading">#</a></h2>
+<p>The function for generating multiple scatter plots on a single graph is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MultiScatter</span><span class="p">(</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘DataArray’ input is required, all other arguments are optional with default values set.  The function returns the a single output (the formatted plot):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+<p>DataArray takes the form of nested lists: DataArray = [[x1, y1, dy1], [x2, y2], [x3, y3, dy3], …], where x1, y1, dy1, x2, y2, … are themselves lists.  Notice that each sublist ([x1, y1, dy1] or [x2, y2]) can be either two or three elements long.  If the sublist contains three elements, a scatter plot with error bars will be generated.  If the sublist contains only two elements, a scatter plot with no error bars will be generated.  ‘DataArray’ can mix sublists with two and three elements.</p>
+</section>
+<section id="multiscatter-example-implmentation">
+<h2>MultiScatter Example Implmentation<a class="headerlink" href="#multiscatter-example-implmentation" title="Link to this heading">#</a></h2>
+<p>The code block below shows an implementation of ‘MultiScatter’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.412</span><span class="p">]</span>
+<span class="n">errI1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">]</span>
+
+<span class="n">V2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">I2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.405</span><span class="p">,</span> <span class="mf">0.602</span><span class="p">,</span> <span class="mf">.682</span><span class="p">]</span>
+
+<span class="n">V3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.155</span><span class="p">,</span> <span class="mf">0.252</span><span class="p">]</span>
+<span class="n">errI3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">]</span>
+
+<span class="n">V4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">])</span>
+<span class="n">I4</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.155</span><span class="p">,</span> <span class="o">-</span><span class="mf">.23</span><span class="p">]</span>
+
+<span class="n">DataArray</span> <span class="o">=</span> <span class="p">[[</span><span class="n">V1</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">errI1</span><span class="p">],</span> <span class="p">[</span><span class="n">V2</span><span class="p">,</span> <span class="n">I2</span><span class="p">],</span> <span class="p">[</span><span class="n">V3</span><span class="p">,</span> <span class="n">I3</span><span class="p">,</span> <span class="n">errI3</span><span class="p">],</span> <span class="p">[</span><span class="n">V4</span><span class="p">,</span> <span class="n">I4</span><span class="p">]]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">MultiScatter</span><span class="p">(</span><span class="n">DataArray</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The example above is demonstrated in the code cell below.  Instead of entering the data using comma-separated lists, the data_entry function will be used to generate the required vectors.  The ‘fig = …’ syntax is used to store the figure that is produced in a varible called ‘fig’.</p>
+<hr class="docutils" />
+</section>
+<section id="quadappendix-b-the-linearfit-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The LinearFit Function…</div><a class="headerlink" href="#quadappendix-b-the-linearfit-function" title="Link to this heading">#</a></h2>
+<p>The linear-fit function is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The xData and yData lists are required.  The others are optional with default values set.  The function returns the following outputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Slope</span><span class="p">,</span> <span class="n">Yintercept</span><span class="p">,</span> <span class="n">errSlope</span><span class="p">,</span> <span class="n">errYintercept</span><span class="p">,</span> <span class="n">fig</span>
+</pre></div>
+</div>
+<p>The first four outputs are numerical values and ‘fig’ is the formatted plot.</p>
+<p>If <span class="math notranslate nohighlight">\(y\)</span>-uncertainities are provided, the function will perform a weighted fit.  The <span class="math notranslate nohighlight">\(y\)</span>-uncertainties list must be the same length as <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-data lists.  If <span class="math notranslate nohighlight">\(y\)</span>-uncertainties are not provided, the fit will be unweighted.  The other optional arguments include <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis names and units for the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-datasets.  These must be entered as strings (enclosed in quotations) and they are used for formatting the outputs of the function.  If ‘fill’ is set to True, shading will be added around the best-fit line representing confindence intervals.</p>
+</section>
+<section id="unweighted-fit-example-implmentation">
+<h2>Unweighted Fit Example Implmentation<a class="headerlink" href="#unweighted-fit-example-implmentation" title="Link to this heading">#</a></h2>
+<p>The code block below shows the most basic use of ‘LinearFit’ for an unweighted fit without any of the optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.412</span><span class="p">]</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="weighted-fit-example-implmentation">
+<h2>Weighted Fit Example Implmentation<a class="headerlink" href="#weighted-fit-example-implmentation" title="Link to this heading">#</a></h2>
+<p>This second blcok of code shows how to use ‘LinearFit’ to do a weighted fit.  It also makes use of all of the other optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.412</span><span class="p">]</span>
+<span class="n">errI</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">]</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">errI</span><span class="p">,</span> <span class="s1">&#39;voltage&#39;</span> <span class="p">,</span> <span class="s1">&#39;current&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘m, b, dm, db, fig = …’ syntax is used to store the function outputs in varibles.  If you’re interested in details of the fitting process, see the following Python-based tutorial: <a class="reference external" href="https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter%20Weighted%20Linear%20Fit.html">https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter Weighted Linear Fit.html</a></p>
+<hr class="docutils" />
+</section>
+<section id="quadappendix-c-the-scatter-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The Scatter Function…</div><a class="headerlink" href="#quadappendix-c-the-scatter-function" title="Link to this heading">#</a></h2>
+<p>The function for generating scatter plots is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Scatter</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘xData’ and ‘yData’ inputs are required, all other arguments are optional with default values set.  The function returns the a single output (the formatted plot):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+<p>The function will do a simple scatter plot if no ‘yError’ are included.  It will included error bars if ‘yErrors’ are passed to the function.  The ‘fill’ and ‘show’ arguments should generally be false.</p>
+<p>If the ‘xData’ list is empty, as in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xData</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>then the x-axis will be the trial number.  For example, is ‘xData’ is empty and ‘yData’ has 10 elements, the x-axis will span 1 to 10.</p>
+</section>
+<section id="scatter-example-implmentation">
+<h2>Scatter Example Implmentation<a class="headerlink" href="#scatter-example-implmentation" title="Link to this heading">#</a></h2>
+<p>The code block below shows an implementation of ‘Scatter’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="c1"># degrees</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.02</span><span class="p">,</span> <span class="mf">1.95</span><span class="p">,</span> <span class="mf">2.13</span><span class="p">]</span> <span class="c1"># s</span>
+<span class="n">errT</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">]</span> <span class="c1"># s</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">errT</span><span class="p">,</span> <span class="s1">&#39;initial angle&#39;</span> <span class="p">,</span> <span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you’re interested in generating your own plots with customized formatting, see the following Python-based plotting tutorial: <a class="reference external" href="https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter%20Basic%20Plots.html">https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter Basic Plots.html</a>.</p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" style="width: 500px;" /></a>
+<p>Last update: March 5, 2024</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lab6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab5/PHYS%20121%20-%20Lab%205.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lab7/PHYS%20121%20-%20Lab%207.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-rc-circuits">Electric <span class="math notranslate nohighlight">\(RC\)</span> Circuits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-introduction-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Introduction (20 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-data-collection">Automated Data Collection…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breadboards">Breadboards…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistors">Resistors…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitors">Capacitors…</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-charging-a-capacitor-at-a-constant-rate-60-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Charging a Capacitor at a Constant Rate (60 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-discharging-a-capacitor-40-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Discharging a Capacitor (40 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part  - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-multiscatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The MultiScatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiscatter-example-implmentation">MultiScatter Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-b-the-linearfit-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The LinearFit Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unweighted-fit-example-implmentation">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-fit-example-implmentation">Weighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-c-the-scatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The Scatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-example-implmentation">Scatter Example Implmentation</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jake Bobowski and Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

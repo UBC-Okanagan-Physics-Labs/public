@@ -1,0 +1,1893 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHYS 121 Lab #4 \(\to\) (24 possible marks) &#8212; Autograded Physics labs with Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_layouts.css?v=def72667" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pdf_print.css?v=5f6255d3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extra.css?v=6df0ab2b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "UBC-Okanagan-Physics-Labs/public");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab4/PHYS 121 - Lab 4';</script>
+    <script src="../../_static/plausible_alt_jake_jupyterphysics.js?v=ae2bec75"></script>
+    <link rel="canonical" href="https://firas.moosvi.com/oer/autograded_physics_labs/content/lab4/PHYS 121 - Lab 4.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PHYS 121 Lab #5 \(\to\) (24 possible marks)" href="../lab5/PHYS%20121%20-%20Lab%205.html" />
+    <link rel="prev" title="PHYS 121 Lab #3 \(\to\) (14 possible marks)" href="../lab3/PHYS%20121%20-%20Lab%203.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../files/home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/noun-physics-6249939.png" class="logo__image only-light" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>
+    <script>document.write(`<img src="../../_static/noun-physics-6249939.png" class="logo__image only-dark" alt="Autograded Physics labs with Jupyter Notebooks - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../files/home.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About this Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../files/about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/bio.html">Project Team</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lab0/PHYS%20121%20-%20Lab%200.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #0</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (15 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab1/PHYS%20121%20-%20Lab%201.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #1</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab2/PHYS%20121%20-%20Lab%202.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #2</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (22 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab3/PHYS%20121%20-%20Lab%203.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab5/PHYS%20121%20-%20Lab%205.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab6/PHYS%20121%20-%20Lab%206.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #6</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (18 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab7/PHYS%20121%20-%20Lab%207.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #7</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (12 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../lab8/PHYS%20121%20-%20Lab%208.html"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #8</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (19 possible marks)</span> </span></div></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UBC-Okanagan-Physics-Labs/public/main?urlpath=lab/tree/content/lab4/PHYS 121 - Lab 4.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/edit/main/content/lab4/PHYS 121 - Lab 4.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UBC-Okanagan-Physics-Labs/public/issues/new?title=Issue%20on%20page%20%2Fcontent/lab4/PHYS 121 - Lab 4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab4/PHYS 121 - Lab 4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #4<span style="color:red"> \to (24 possible marks)</span> </span></div></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-hydraulic-circuits-week-1">Electric &amp; Hydraulic Circuits – Week 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Introduction</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-analogues"><em>Hydraulic Analogues</em></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-electric-resistance-45-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Electric Resistance (45 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-hydraulic-current-75-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Hydraulic Current (75 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-hydraulic-resistance-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Hydraulic Resistance (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-scatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Scatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-example-implmentation">Scatter Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-b-the-powerlaw-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The PowerLaw Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unweighted-fit-example-implmentation">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-fit-example-implmentation">Weighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-c-the-linearfit-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The LinearFit Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Weighted Fit Example Implmentation</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phys-121-lab-4-to-24-possible-marks">
+<h1><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div><a class="headerlink" href="#phys-121-lab-4-to-24-possible-marks" title="Link to this heading">#</a></h1>
+<p><font size ="4"><span style="color:purple">We recommend that you complete this notebook using either the <a class="reference external" href="https://www.google.com/intl/en_ca/chrome/">Google Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Mozilla Firefox</a> browser.  Chrome and Firefox are both available for Windows, Mac, and Linux operating systems.  The PHYS 121 Jupyter notebooks should work in other browsers, but we have specifically verfied that they work well in both Chrome and Firefox.</span></font></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="electric-hydraulic-circuits-week-1">
+<h1>Electric &amp; Hydraulic Circuits – Week 1<a class="headerlink" href="#electric-hydraulic-circuits-week-1" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Use concepts and mathematical tools developed to solve a problem in one field of physics to solve seemingly unrelated problems from other fields of physics.</span></b></p></li>
+<li><p><b><span style="color:rgba(0, 153, 76, 1);">Use analogies between two distinct physical systems to gain new insights into the underlying nature of those systems.</span></b></p></li>
+</ul>
+<p>Over the next two weeks, you will work with both electric and hydraulic circuits.  You will see that concepts developed to analyze electrical circuits can also be applied to their hydraulic analogues.  In addition, you will attempt to uncover differences in the behaviour of the two systems and thus identify limitations of the analogy.</p>
+</section>
+<hr class="docutils" />
+<section id="autograding">
+<h2>Autograding:<a class="headerlink" href="#autograding" title="Link to this heading">#</a></h2>
+<p>The PHYS 121 Pre-lab assignments and Labs will make use of some autograding.  To make the autograding work, the two cells below needs to be executed.  The first one installs the required packages and the second imports required packages/modules.  If ‘PHYS121.Installer()’ reports that some functions have been installed, the user should restart the “kernel” and then exectute the PHYS121.Installer() cell a second time.  The second time the installer function is run, it should report that <strong>“All packages already installed. Please proceed”</strong>.</p>
+<p>If necessary, the kernel can be restarted by selecting <strong>Kernel</strong> <span class="math notranslate nohighlight">\(\to\)</span> <strong>Restart Kernel</strong> from the menu options at to the top of the page.  Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/restartKernel.gif">GIF</a> showing how to restart the kernel.</p>
+<p>The ‘PHYS121.Installer()’ command requires the file ‘<a class="reference external" href="http://PHYS121.py">PHYS121.py</a>’, which you should see included in the list of files along the left-hand side of the screen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab4/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab4/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/public/public/content/lab4/PHYS121.py:401: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = m\,x + b$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:521: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,x^N + C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:523: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,(x/1$ &#39; + xUnits + &#39;$)^N\,+ \,C$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:773: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:775: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Markdown(&#39;$y = A\,\sin(2\pi/T x + \phi)$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:803: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:807: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:811: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi), &#39;Units&#39;: &#39;rad&#39;}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:815: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  &#39;phase&#39;:{&#39;&#39;:&#39;$\phi =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(phi)}}
+/home/runner/work/public/public/content/lab4/PHYS121.py:898: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Markdown(&#39;$y = v_\mathrm{T}\\tau\left[\dfrac{x}{\\tau} - 1 + e^{-x/ \\tau}\\right]$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:919: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits + &#39;/&#39; + xUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:922: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: &#39;1/&#39; + xUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:925: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v), &#39;Units&#39;: yUnits},
+/home/runner/work/public/public/content/lab4/PHYS121.py:928: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  my_dict = {&#39;Terminal Velocity&#39; :{&#39;&#39;:&#39;$v_\mathrm{t} =$&#39;, &#39;Value&#39;: &#39;{:0.2ug}&#39;.format(v)},
+/home/runner/work/public/public/content/lab4/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1019: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {num}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1020: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDev}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1021: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = \mathrm{stdError}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1026: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The average of the data is $\mu = {coeff}&#39; + r&#39;\times&#39; +  f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1027: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard deviation of the data is $\sigma = {stdDevPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+/home/runner/work/public/public/content/lab4/PHYS121.py:1028: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+  display(Latex(f&#39;The standard error of the data is $\sigma_\mu = \sigma/\sqrt{{N}} = {stdErrorPrint}&#39; + r&#39;\times&#39; + f&#39;10^{{ {power} }}\, \mathrm{{ {xUnits} }}.$&#39;))
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PHYS121.py and then run the installer function.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Installer</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">lab4</span><span class="o">/</span><span class="n">PHYS121</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Otter</span>
+<span class="kn">import</span> <span class="nn">otter</span>
+<span class="n">grader</span> <span class="o">=</span> <span class="n">otter</span><span class="o">.</span><span class="n">Notebook</span><span class="p">(</span><span class="s2">&quot;PHYS 121 - Lab 4.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="import-modules">
+<h2>Import Modules:<a class="headerlink" href="#import-modules" title="Link to this heading">#</a></h2>
+<p>Execute the cell below to import a number of useful pre-built Python modules that will be used in the PHYS 121 pre-labs and labs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">cm</span> <span class="c1"># used to generate a sequence of colours for plotting</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span> <span class="k">as</span> <span class="n">html_print</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="name-student-number">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div><a class="headerlink" href="#name-student-number" title="Link to this heading">#</a></h1>
+<p>To ensure that both you and your partner receive credit for you lab work, both your name and student number and your partner’s name and student number need to appear in the notebooks used during the labs.  In the cells below this text, enter your name and student number and your partner’s name and student number as strings (i.e. place your names and student numbers between single or double quotes.</p>
+<p>Examples of valid entries are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s1">&#39;Jane&#39;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s1">&#39;12345678&#39;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name_1</span> <span class="o">=</span> <span class="s2">&quot;Doe&quot;</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="s2">&quot;12345678&quot;</span>
+</pre></div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<section id="partner-1-0-5-marks">
+<h2><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-1-0-5-marks" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 1.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_1</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="partner-2-0-5-marks">
+<h2><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong><a class="headerlink" href="#partner-2-0-5-marks" title="Link to this heading">#</a></h2>
+<p>If you are working on your own, leave all of last_name_2, first_name_2, and student_number_2 as …  Please still exectute these cells and then run the ‘grader.check(“name_and_student_number_2”)’ cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter LAST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">last_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter FIRST name of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">first_name_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter STUDENT NUMBER of partner 2.  Delete the ... below and type your entry between the single quotes.</span>
+<span class="c1"># Once you&#39;ve completed your entry, press SHIFT + ENTER to execute the cell.</span>
+<span class="c1"># *** Please do not change anything to the left of the equals sign. ***</span>
+<span class="n">student_number_2</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">last_name_1</span><span class="p">,</span> <span class="n">first_name_1</span><span class="p">,</span> <span class="n">student_number_1</span><span class="p">,</span> <span class="n">last_name_2</span><span class="p">,</span> <span class="n">first_name_2</span><span class="p">,</span> <span class="n">student_number_2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;last_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_1&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_1&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name_2&#39;</span><span class="p">,</span> <span class="s1">&#39;student_number_2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;name_and_student_number&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Introduction</span></div><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>It is often the case in physics that the techniques developed to solve one type of problem can be applied to other problems in a different field of physics.  For example, the methods developed to analyze simple electric circuits can be applied to numerous other types of problems.  Here are three examples:</p>
+<ul class="simple">
+<li><p>Heat transfer in a complex system, such as a low-temperature physics experiment, can be analyzed in terms of a thermal circuit.</p></li>
+<li><p>Mechanical resonators, such as a mass on a spring, can be analyzed as a mechanical <span class="math notranslate nohighlight">\(LRC\)</span> circuit.</p></li>
+<li><p>Fluid flow in a system of pipes and pumps (or the circulatory system of the body) can be modeled and analyzed using circuit concepts.</p></li>
+</ul>
+<section id="hydraulic-analogues">
+<h2><em>Hydraulic Analogues</em><a class="headerlink" href="#hydraulic-analogues" title="Link to this heading">#</a></h2>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-4/images/analog.png" alt="image info" style="width: 45%; height: auto;" /><br>
+<b>Fig. 1: Comparing a simple electrical circuit (left) to an analogous hydraulic circuit (right).  Figure adapted from HyperPhysics (<a href = "http://hyperphysics.phy-astr.gsu.edu/hbase/electric/watcir2.html">http://hyperphysics.phy-astr.gsu.edu/hbase/electric/watcir2.html</a>).</b></center>
+</p>
+<p>Imagine the simplest possible single-loop electric circuit made using a battery, resistor, and ideal or zero-resistance connecting wires (left-hand side of Fig. 1).  The voltage difference <span class="math notranslate nohighlight">\(\Delta V\)</span> of the battery drives the flow of charge <span class="math notranslate nohighlight">\(q\)</span> around the loop.  The current at any point in the circuit is given by <span class="math notranslate nohighlight">\(I=dq/dt\)</span>, which represents the amount of charge <span class="math notranslate nohighlight">\(dq\)</span> crossing a surface in time <span class="math notranslate nohighlight">\(dt\)</span>.  The resistance <span class="math notranslate nohighlight">\(R\)</span> is related to the voltage difference and current via <span class="math notranslate nohighlight">\(R=\Delta V/I\)</span>.</p>
+<p>Now, imagine an analogous hydraulic or water circuit (right-hand side of Fig. 1).  Instead of a flow of charge, there is a flow of a quantity or volume <span class="math notranslate nohighlight">\(v\)</span> of water.  To avoid confusion with voltage, we will use lowercase <span class="math notranslate nohighlight">\(v\)</span> as our symbol for volume.  The analogue of current is, therefore, the volume flow rate <span class="math notranslate nohighlight">\(Q = dv/dt\)</span>.  It is conventional to use capital <span class="math notranslate nohighlight">\(Q\)</span> as the symbol for volume flow rate and we will need to take care not to confuse it with charge in electrical circuits which we will represent with a lowercase <span class="math notranslate nohighlight">\(q\)</span>.  It is pressure differences <span class="math notranslate nohighlight">\(\Delta P\)</span> that drive the flow of water in hydraulic circuits.  A pump is one way to establish a constant pressure difference in a hydraulic circuit.  Wide pipes serve as our ideal connecting wires and narrow tubes act as hydraulic resistors.  By analogy with electrical resistance, we can define a hydraulic resistance as <span class="math notranslate nohighlight">\(R_\mathrm{H}=\Delta P/Q\)</span>.</p>
+<p>The analogy between electric and hydraulic circuits is summarized in the table below.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><div style="width:150px">electric</div></p></th>
+<th class="head text-center"><p><div style="width:50px"> </div></p></th>
+<th class="head text-left"><p><div style="width:190px">hydraulic</div></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>charge: <span class="math notranslate nohighlight">\(q\rm\ [C]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Longleftrightarrow\)</span></p></td>
+<td class="text-left"><p>volume: <span class="math notranslate nohighlight">\(v\rm\ [m^3]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>current: <span class="math notranslate nohighlight">\( I = dq/dt\rm\ [A = C/s]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Longleftrightarrow\)</span></p></td>
+<td class="text-left"><p>volume flow rate: <span class="math notranslate nohighlight">\(Q = dv/dt\rm\ [m^3/s]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>voltage: <span class="math notranslate nohighlight">\(\Delta V\rm\ [V]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Longleftrightarrow\)</span></p></td>
+<td class="text-left"><p>pressure: <span class="math notranslate nohighlight">\(\Delta P\rm\ [Pa = N/m^2]\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>resistance: <span class="math notranslate nohighlight">\(R=\Delta V/I\rm\ [\Omega = V/A]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Longleftrightarrow\)</span></p></td>
+<td class="text-left"><p>hydraulic resistance: <span class="math notranslate nohighlight">\(R_\mathrm{H}=\Delta P/Q\rm\ [kg/m^4 s]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In this lab, you will work with both electric and hydraulic circuits.  For the electric circuit, you will investigate how the measured resistance depends on the diameter of the wire.  For the hydraulic circuit, you will investigate how the measured hydraulic resistance depends on the the inner diameter of the resistance tube.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-electric-resistance-45-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Electric Resistance (45 minutes)</span></div><a class="headerlink" href="#part-1-electric-resistance-45-minutes" title="Link to this heading">#</a></h1>
+<p>In this first part of the lab, you will measure the resistance of some long wires.  The wires that you will work with are all made of the same material.  The wires are all the same length, but have different diameters.  You will use a power supply to apply a voltage across the wires and a hand-held multimeter to measure current.  The voltage applied across the wires can be read directly from the display of the power supply.  To measure the current, the multimeter must be placed in <em>series</em> with the power supply.  Specifically, the positive output of the power supply (red) should be connected directly to the positive current input of the multimeter.  The other terminal of the multimeter can then be connected to one end of the wire of interest while the opposite of end of the wire is connected to the negative terminal of the power supply (black).  A schematic diagram of a typical current measurement is shown in Fig. 2.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-4/images/ammeter_wiki.png" alt="image info" style="width: 45%; height: auto;" /><br>
+    <b>Fig. 2: A current measurement.  The current meter (ammeter) is in <i>series</i> with both the battery and the light bulb.  The positive terminal of the ammeter is connected to the positive terminal of the battery.  Figure adapted from wikiHow (<a href = "https://www.wikihow.com/Use-an-Ammeter">https://www.wikihow.com/Use-an-Ammeter</a>)</b></center>
+</p><!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.1</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>First, for each wire, make a single measurement of voltage and current.  Include uncertainties in your measurements.  If the voltage/current reading is fluctuating, you can use the size of the fluctuations to estimate the uncertainty in the reading.  If, on the other hand, the reading is stable, you can use <span class="math notranslate nohighlight">\(\pm 1\)</span> in the least significant decimal place as the uncertainty.  For example, if a voltage reading is stable at <span class="math notranslate nohighlight">\(0.38\rm\ V\)</span>, you would report its value as <span class="math notranslate nohighlight">\(0.38\pm 0.01\rm\ V\)</span>.</p>
+<p>For each of your measurements, start with the voltage knob on the power supply turned all the way down (counterclockwise).  Then, turn the voltage up and watch the current reading.  For the data you record, you can use any value of the current that you like as long as it does not exceed <span class="math notranslate nohighlight">\(0.100\rm\ A\)</span> or <span class="math notranslate nohighlight">\(100\rm\ mA\)</span>.  Higher currents may cause the wires to heat up which could change their resistance.</p>
+<p>Use the code cell below to create a DataFrame with your measurements and the associated uncertainties. The first list contains the wire diameters (in <span class="math notranslate nohighlight">\(\rm mm\)</span>) that will be used. Enter your measurements in the appropriate lists <em>in the same order</em> as they appear in the diameter column.  Replace the … in the cell below with the appropriate experimental data.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;d&quot;</span>  <span class="p">:</span> <span class="p">[</span><span class="mf">0.200</span><span class="p">,</span> <span class="mf">0.290</span><span class="p">,</span> <span class="mf">0.315</span><span class="p">,</span> <span class="mf">0.375</span><span class="p">,</span> <span class="mf">0.457</span><span class="p">,</span> <span class="mf">0.558</span><span class="p">,</span> <span class="mf">0.712</span><span class="p">,</span> <span class="mf">0.900</span><span class="p">],</span>
+                     <span class="s2">&quot;V&quot;</span>  <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                     <span class="s2">&quot;dV&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                     <span class="s2">&quot;I&quot;</span>  <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                     <span class="s2">&quot;dI&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+                    <span class="p">})</span>
+
+<span class="c1"># Display the dataframe.</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Use the cell below to calculate the resistance of each wire and the uncertainty in the calculated resistance.  That is, replace the … in the cell below with an expression that will calculate resistance from the voltage and current measurements that you’ve made.</p>
+<p>The syntax used to access a specific column from a DataFrame is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;column_name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where df is the name of whatever DataFrame you’re working with and column_name is the name given to the specific column you want to access.</p>
+<p>The cell below is also used to calculate the error in the calculated resistance.  This first error propagation calculation has been done for you.  Later in the lab, you will be required to complete your own error propagation calculations.</p>
+<p>Because <span class="math notranslate nohighlight">\(R = V/I\)</span>, we know that
+$<span class="math notranslate nohighlight">\(
+\frac{\Delta R}{R} = \frac{\Delta I}{I} + \frac{\Delta V}{V}.
+\)</span><span class="math notranslate nohighlight">\(
+Solving this expression for \)</span>\Delta R<span class="math notranslate nohighlight">\( yields 
+\)</span><span class="math notranslate nohighlight">\(
+\Delta R = R\left[\frac{\Delta I}{I} + \frac{\Delta V}{V}\right].
+\)</span>$</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter an expression to calculate the wire resistance.</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Here&#39;s an expression that can be used to find the uncertainty in the experimentally-determined resistances.</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;dR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;dV&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;V&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;dI&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">])</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;data[&quot;R&quot;]&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Use the cell below to make a scatter plot of <span class="math notranslate nohighlight">\(R\pm \Delta R\)</span> versus <span class="math notranslate nohighlight">\(d^{-1}\)</span>, where <span class="math notranslate nohighlight">\(d\)</span> is the wire diameter. Fill in the missing data needed when calling the ‘Scatter’ function.  Remember that the Scatter function accepts arrays or lists as inputs - to call a column from the ‘data’ DataFrame as a list, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;column_name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For additional information about the ‘Scatter’ function, see <strong>Appendix A</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                       <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>  
+                       <span class="n">yErrors</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+                       <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;1/d&quot;</span><span class="p">,</span> 
+                       <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> 
+                       <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;1/mm&quot;</span><span class="p">,</span> 
+                       <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\u03A9</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># &quot;\u03A9&quot; is the unicode string for Omega, or the ohms symbol.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.4</span></strong> <strong><span style="color:red">(2 marks)</span></strong></p>
+<p>Use the ‘PowerLaw’ function in <a class="reference external" href="http://PHYS121.py">PHYS121.py</a> to fit the <span class="math notranslate nohighlight">\(R\pm\Delta R\)</span> versus <span class="math notranslate nohighlight">\(d^{-1}\)</span> data to a function of the form <span class="math notranslate nohighlight">\(y = A\,x^N + C\)</span>, where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is a coefficient</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is a power</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> is an offset.</p></li>
+</ul>
+<p>The ‘PowerLaw’ function is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">dA</span><span class="p">,</span> <span class="n">dN</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">yData</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="n">erry</span><span class="p">,</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For additional information about the ‘PowerLaw’ function, see <strong>Appendix B</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">dA</span><span class="p">,</span> <span class="n">dN</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">yErrors</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                            <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;1/d&quot;</span><span class="p">,</span> 
+                                            <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> 
+                                            <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;1/mm&quot;</span><span class="p">,</span> 
+                                            <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\u03A9</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 1.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Based on your experimental determination of <span class="math notranslate nohighlight">\(N\pm \Delta N\)</span>, what would happen to the resistance of a wire if its diameter was doubled?</p>
+<p>(a) The resistance would increase by a factor of 16.<br />
+(b) The resistance would increase by a factor of 8.<br />
+(c) The resistance would increase by a factor of 4.<br />
+(d) The resistance would increase by a factor of 2.<br />
+(e) The resistance would remain unchanged.<br />
+(f) The resistance would decrease by a factor of 2.<br />
+(g) The resistance would decrease by a factor of 4.<br />
+(h) The resistance would decrease by a factor of 8.<br />
+(i) The resistance would decrease by a factor of 16.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 1.5:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, c, d, e, f, g, h, or i) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<p><span style="color:purple">For this question, the ‘PHYS121.graderCheck(…)’ statements only check that answers have been entered in the correct format.  They do <strong>NOT</strong> check that you’ve entered the correct answer.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1_5</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a1_5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a1_5&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q1.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-2-hydraulic-current-75-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Hydraulic Current (75 minutes)</span></div><a class="headerlink" href="#part-2-hydraulic-current-75-minutes" title="Link to this heading">#</a></h1>
+<p>In the second part of the lab, you will make measurements of hydraulic resistance.  However, before beginning, it is important to highlight the differences between the hydraulic circuit shown in on the right of Fig. 1 and the experimental setup that you’ll be using, which is shown schematically in Fig. 3.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/Lab-4/images/hydraulic_ohms_law.png" alt="image info" style="width: 45%; height: auto;" /><br>
+<b>Fig. 3: A schematic drawing of the experimental setup.  The vessel of water serves as a hydraulic battery and a long narrow tube is the hydraulic resistance.  Measuring the mass of water collected in a beaker as a function of time allows the volume flow rate (i.e. the hydraulic current) to be deduced.</b></center>
+</p>
+<p>Rather than using a pump, in your experiment the pressure difference will be supplied using a large vessel of water equipped with an outlet and valve near the bottom.  The pressure difference between the top of the surface of the water and the outlet is given by <span class="math notranslate nohighlight">\(\Delta P = \rho g\Delta h\)</span>, where <span class="math notranslate nohighlight">\(\rho = 0.998\rm\ g/cm^3\)</span> is the density of water, <span class="math notranslate nohighlight">\(g=9.81\rm\ m/s^2\)</span> is the gravitational acceleration, and <span class="math notranslate nohighlight">\(\Delta h\)</span> is the height difference shown in Fig. 3.  Once the valve is opened, water will flow through a narrow Teflon tube (i.e. the hydraulic resistor) and into a beaker that sits on a scale.  As long as the volume of water in the vessel is large compared to the amount of water collected by the beaker, the value of <span class="math notranslate nohighlight">\(\Delta h\)</span> will remain approximately constant during the experiment.  As a result the pressure difference <span class="math notranslate nohighlight">\(\Delta P\)</span> is also approximately constant and vessel of water acts as a hydraulic battery.</p>
+<p>You will measure mass of water collected as function of time for two different resistance tubes.  The inner diameters of the tubes available in the lab are: <span class="math notranslate nohighlight">\(0.965\)</span>, <span class="math notranslate nohighlight">\(1.397\)</span>, <span class="math notranslate nohighlight">\(1.676\)</span>, <span class="math notranslate nohighlight">\(1.930\)</span>, and <span class="math notranslate nohighlight">\(2.413\rm\ mm\)</span>. Two of the tubes have been placed on your workbench.  Please use these tubes for your measurements and do <strong>not</strong> take tubes from or move your tubes to another bench.</p>
+<p>To make your measurements:</p>
+<ul class="simple">
+<li><p>First make sure the beaker is empty and place it on the scale.</p></li>
+<li><p>Zero the scale so that, when the beaker is empty, the scale reads <span class="math notranslate nohighlight">\(0.00\rm\ g\)</span>.</p></li>
+<li><p>Position the open end of Teflon tube above the beaker.  The height of this end should be the same as the height of the opposite end that is inserted into the outlet of the water vessel. The Teflon tube should also be relatively straight without any major bends or curves.  Arrange it so that the tube is straight <em>without</em> being stretched.  If the tube is stretched, its inner diameter will change which will adversely affect your data analysis.</p></li>
+<li><p>In order to maintain a pressure of <span class="math notranslate nohighlight">\(1\rm\ atm\)</span> above the water surface, the cap at the top of the water vessel should be removed while data is being collected.  To prevent accidental spills, please replace and tighten the cap when not actively collecting data.</p></li>
+<li><p>Open the valve to start the flow of water</p></li>
+<li><p>When the first drop of water enters the beaker, start a timer.</p></li>
+<li><p>Record at least <span class="math notranslate nohighlight">\(12\)</span> measurements of the mass at approximately equally-spaced time intervals.</p></li>
+<li><p>At the end of your set of measurements, close the valve and carefully dump the water that was collected in the beaker back into the top of the vessel.</p></li>
+</ul>
+<p>For largest diameter tubes, the flow of water will be fast and time intervals of about <span class="math notranslate nohighlight">\(10\rm\ s\)</span> may be suitable.  It is difficult to simultaneously watch a timer and record the mass.  Coordinate with your partner so that one person is watching the time while the other person writes down the values of the mass.  Alternatively, there are YouTube videos that will play a beep at fixed time intervals.  Here are some links:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>interval</p></th>
+<th class="head text-left"><p>link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(5\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=NMIZQcebfKI">https://www.youtube.com/watch?v=NMIZQcebfKI</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(10\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=Xjv2-F6Quls">https://www.youtube.com/watch?v=Xjv2-F6Quls</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(15\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=LaUe-Hf0uSM">https://www.youtube.com/watch?v=LaUe-Hf0uSM</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(30\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=2AFro8meJGI">https://www.youtube.com/watch?v=2AFro8meJGI</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(60\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=-22N-qs5PHE">https://www.youtube.com/watch?v=-22N-qs5PHE</a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(120\rm\ s\)</span></p></td>
+<td class="text-left"><p><a class="reference external" href="https://www.youtube.com/watch?v=2dAorgAB0I4">https://www.youtube.com/watch?v=2dAorgAB0I4</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>The lab computers do not have speakers.  To hear the beeps while using a lab computer, you will need to use headphones plugged into the lab computer’s audio port.  Of course, you could also play the YouTube videos on your own device (laptop, tablet, smart phone).  If you do this, please keep the sound low to avoid unnecessarily disturbing others in the lab.</p>
+<p>Another option is to use your smart phone to record the display of the digital scale as it collects water.  You can then play the video back and periodically pause it at regular intervals in order to record the mass displayed on the screen of the scale.</p>
+<p>In addition to the tube diameters listed above, we also have narrow Teflon tubes with inner diameters of <span class="math notranslate nohighlight">\(0.305\)</span> and <span class="math notranslate nohighlight">\(0.559\rm\ mm\)</span>.  These tubes have very low flow rates and the data collection can take between <span class="math notranslate nohighlight">\(20\)</span> and <span class="math notranslate nohighlight">\(30\)</span> minutes.  We have collected data using these two tubes, and we will provide you with their hydraulic resistance at the end of the lab.</p>
+<p><strong>Do NOT allow the beaker to overflow</strong>. Exposure to water may irreversibly damage the scale.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Collect your data (in <em>seconds</em> and <em>grams</em>) and enter the measurements into the “tube1” DataFrame below.</p>
+<p>Enter your tube’s diameter (in <em>milimeters</em>) in the “tube1_diameter” variable below.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 1 DataFrame</span>
+<span class="n">tube1_diameter</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># mm</span>
+<span class="n">tube1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;time&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="s2">&quot;mass&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+                      <span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Results for tube with diameter </span><span class="si">{</span><span class="n">tube1_diameter</span><span class="si">}</span><span class="s2"> mm:&quot;</span><span class="p">)</span>
+<span class="n">tube1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">tube1_diameter</span><span class="p">,</span> <span class="n">tube1</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;tube1_diameter&#39;</span><span class="p">,</span> <span class="s1">&#39;tube1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the cell below, convert your mass measurements (taken in <em>grams</em>) to volume (in cubic metres [<span class="math notranslate nohighlight">\(\rm m^3\)</span>]) for tube 1 and add the volumes to the ‘tube1’ DataFrame..</p>
+<p><strong>NOTE:</strong> The density of water is (<span class="math notranslate nohighlight">\(\rho = 9.98\times 10^5\rm\ g/m^3\)</span>).</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">density</span> <span class="o">=</span> <span class="mf">9.98e5</span> <span class="c1"># g/m^3</span>
+<span class="n">tube1</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the updated dataframe</span>
+<span class="n">tube1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">tube1</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;tube1[&quot;volume&quot;]&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Create a scatter plot of volume (hydraulic charge) versus time along with appropriate axis labels, with units, for tube 1.</p>
+<p>For additional information about the ‘Scatter’ function, refer to <strong>Appendix A</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span> <span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+                        <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                        <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> 
+                        <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> 
+                        <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Volume&quot;</span><span class="p">,</span> 
+                        <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;m$^3$&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.4</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>The slope of your volume versus time plot gives the volume flow rate <span class="math notranslate nohighlight">\(Q\)</span> or hydraulic current.  In the cell below, use the ‘LinearFit’ function to fit your volume versus time data and determine the volume flow rate and its uncertainty.</p>
+<p>For additional information about the ‘LinearFit’ function, see <strong>Appendix C</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">dm1</span><span class="p">,</span> <span class="n">db1</span><span class="p">,</span> <span class="n">fig1</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                           <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                           <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> 
+                                           <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Volume&quot;</span><span class="p">,</span> 
+                                           <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> 
+                                           <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;m$^3$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the cell below, for your first tube enter the:</p>
+<ul class="simple">
+<li><p>Volume flow rate (Q1)</p></li>
+<li><p>Uncertainty in the volume flow rate (dQ1)</p></li>
+</ul>
+<p>Both entries should be in units of [<span class="math notranslate nohighlight">\(\rm\ m^3/s\)</span>].</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 1</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dQ1</span> <span class="o">=</span> <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For tube 1 with diameter </span><span class="si">{</span><span class="n">tube1_diameter</span><span class="si">}</span><span class="s2"> mm, we found Q = (</span><span class="si">{</span><span class="n">Q1</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">dQ1</span><span class="si">:</span><span class="s2">.1e</span><span class="si">}</span><span class="s2">) m^3/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">Q1</span><span class="p">,</span> <span class="n">dQ1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;dQ1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Next, we will repeat questions 2.1-2.5 for the second tube.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.6</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Collect your data (in <em>seconds</em> and <em>grams</em>) and enter it into the “tube2” DataFrame below.</p>
+<p>Enter your tube’s diameter (in <em>milimeters</em>) in the “tube2_diameter” variable below.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 2 DataFrame</span>
+<span class="n">tube2_diameter</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># mm</span>
+<span class="n">tube2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;time&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="s2">&quot;mass&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+                      <span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Results for tube with diameter </span><span class="si">{</span><span class="n">tube2_diameter</span><span class="si">}</span><span class="s2"> mm:&quot;</span><span class="p">)</span>
+<span class="n">tube2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">tube2_diameter</span><span class="p">,</span> <span class="n">tube2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;tube2_diameter&#39;</span><span class="p">,</span> <span class="s1">&#39;tube2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.6&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.7</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the cell below, convert your mass measurements (taken in <em>grams</em>) to volume (in cubic metres [<span class="math notranslate nohighlight">\(m^3\)</span>]) for tube 2.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tube2</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the updated dataframe</span>
+<span class="n">tube2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">tube2</span><span class="p">[</span><span class="s2">&quot;volume&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()],</span> <span class="p">[</span><span class="s1">&#39;tube2[&quot;volume&quot;]&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.7&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.8</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Create a scatter plot of volume (hydraulic charge) versus time along with appropriate axis labels, with units, for tube 2.</p>
+<p>For additional information about the ‘Scatter’ function, refer to <strong>Appendix A</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig2</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span> <span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+                        <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                        <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> 
+                        <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> 
+                        <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Volume&quot;</span><span class="p">,</span> 
+                        <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;m$^3$&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.9</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>The slope of your volume versus time plot gives the volume flow rate or hydraulic current.  In the cell below, use the ‘LinearFit’ function to fit your volume versus time data and determine the volume flow rate and its uncertainty, for tube 2.</p>
+<p>For additional information about the ‘LinearFit’ function, see <strong>Appendix C</strong> near the end of this notebook.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">dm2</span><span class="p">,</span> <span class="n">db2</span><span class="p">,</span> <span class="n">fig2</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                           <span class="n">yData</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> 
+                                           <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span><span class="p">,</span> 
+                                           <span class="n">ylabel</span> <span class="o">=</span> <span class="s2">&quot;Volume&quot;</span><span class="p">,</span> 
+                                           <span class="n">xUnits</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> 
+                                           <span class="n">yUnits</span> <span class="o">=</span> <span class="s2">&quot;m$^3$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 2.10</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the cell below, for your second tube enter the:</p>
+<ul class="simple">
+<li><p>Volume flow rate (Q2)</p></li>
+<li><p>Uncertainty in the volume flow rate (dQ2)</p></li>
+</ul>
+<p>Both entries should be in units of [<span class="math notranslate nohighlight">\(\rm m^3/s\)</span>].</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 2</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">dQ2</span> <span class="o">=</span> <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For tube 2 with diameter </span><span class="si">{</span><span class="n">tube2_diameter</span><span class="si">}</span><span class="s2"> mm, we found Q = (</span><span class="si">{</span><span class="n">Q2</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">dQ2</span><span class="si">:</span><span class="s2">.1e</span><span class="si">}</span><span class="s2">) m^3/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">Q2</span><span class="p">,</span> <span class="n">dQ2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;dQ2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q2.10&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-3-hydraulic-resistance-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Hydraulic Resistance (20 minutes)</span></div><a class="headerlink" href="#part-3-hydraulic-resistance-20-minutes" title="Link to this heading">#</a></h1>
+<p>In this part of the lab, you will calculate the hydraulic resistance <span class="math notranslate nohighlight">\(R_\mathrm{H}\)</span> of your Teflon tubes.</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>First, for your water vessel, measure the difference in height between the top surface of the water and the outlet (in units of [<span class="math notranslate nohighlight">\(\rm m\)</span>]).  Include uncertainties. Enter the measurement in the cell below.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter the measured height difference, in meters.</span>
+<span class="n">h</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Enter the uncertainty in the measured height difference, in meters.</span>
+<span class="n">dh</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">h</span><span class="p">,</span> <span class="n">dh</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;dh&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.2</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In the cell below, calculate the pressure difference supplied by the hydraulic battery.  Calculate the uncertainty in the pressure difference.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s the pressure calculation done for you.</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># m/s^2</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">998</span> <span class="c1"># kg/m^3</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">rho</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">h</span> <span class="c1"># N/m^2</span>
+
+<span class="c1"># You complete the calculation of the uncertainty in the pressure difference</span>
+<span class="n">dP</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the calculated values.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;P = (</span><span class="si">{</span><span class="n">P</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">dP</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">) Pa&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">dP</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;dP&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.2&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.3</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Calculate the hydraulic resistance (and its uncertainty) for your first tube.</p>
+<p>Recall that <span class="math notranslate nohighlight">\(R_\mathrm{H} \equiv \Delta P/Q\)</span>.  See <strong>Question 1.2</strong> for an example of this type of calculation.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 1</span>
+<span class="c1"># Calculate the hydraulic resistance.</span>
+<span class="n">RH1</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Calculate the uncertainty in the hydraulic resistance.</span>
+<span class="c1"># See Question 1.2 for an example of this type of calculation.</span>
+<span class="n">dRH1</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the calculated values.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For the tube with diameter d = </span><span class="si">{</span><span class="n">tube1_diameter</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> mm, we found RH1 = (</span><span class="si">{</span><span class="n">RH1</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">dRH1</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">) kg/m^4s&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">RH1</span><span class="p">,</span> <span class="n">dRH1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RH1&#39;</span><span class="p">,</span> <span class="s1">&#39;dRH1&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.3&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.4</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>Calculate the hydraulic resistance (and its uncertainty) for your second tube.</p>
+<p>*** Please do not change any of the variable names in the cell below ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tube 2</span>
+<span class="c1"># Calculate the hydraulic resistance.</span>
+<span class="n">RH2</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Calculate the uncertainty in the hydraulic resistance.</span>
+<span class="c1"># See Question 1.2 for an example of this type of calculation.</span>
+<span class="n">dRH2</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Display the calculated values.</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For the tube with diameter d = </span><span class="si">{</span><span class="n">tube2_diameter</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> mm, we found RH2 = (</span><span class="si">{</span><span class="n">RH2</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">dRH2</span><span class="si">:</span><span class="s2">.3e</span><span class="si">}</span><span class="s2">) kg/m^4s&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">RH2</span><span class="p">,</span> <span class="n">dRH2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;RH2&#39;</span><span class="p">,</span> <span class="s1">&#39;dRH2&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.4&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are seven different Teflon tube sizes in the lab, but you’ve only measured two of them.  To get a more complete picture of how <span class="math notranslate nohighlight">\(R_\mathrm{H}\)</span> depends on the inner diameter of the tube, we will collaborate with the rest of the groups in the various lab sections of PHYS 121.</p>
+<p>A Google Sheets document has been created to facilitate sharing of data.  The document has a tab for each section of the PHYS 121 lab.  When you navigate to the shared document, <strong>please select the tab that corresponds to your lab section</strong>.  Here is the <a class="reference external" href="https://docs.google.com/spreadsheets/d/1BCeJboA1V6BY9LYW8Yyb8QwEOUXmWDtQglrZTukf02c/edit?usp=sharing">link to the Google Sheets document</a></p>
+<p>Before the end of the lab, enter your results from <strong>Question 3.3</strong> and <strong>Question 3.4</strong> into the Google Sheets document.  Enter your data into the row that corresponds to your Group Number.  The Group Number is the same as the number on the computer tower behind your work station.</p>
+<p>The data collected in this document will be used at the start of next week’s lab.  Specifically, you will use the data to investigate how the hydraulic resistance depends on the inner diameter of the Teflon tube.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 3.5</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>My partner (if applicable) and I entered our measured <span class="math notranslate nohighlight">\(R_\mathrm{H}\pm \Delta R_\mathrm{H}\)</span> values in the Google Sheets document.</p>
+<p>(a) True<br />
+(b) False</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 3.5:</span></strong></p>
+<p>Replace the … in the cell below with your answer.  Your answer should be a single character (a, b, T, or F) between single or double quotes.<br />
+*** Please do not change anything to the left of the equals sign. ***</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a3_5</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PHYS121</span><span class="o">.</span><span class="n">graderCheck</span><span class="p">([</span><span class="n">a3_5</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a3_5&#39;</span><span class="p">],</span> <span class="n">grader</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="s1">&#39;q3.5&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-4-reflection-and-statement-of-contributions-20-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div><a class="headerlink" href="#part-4-reflection-and-statement-of-contributions-20-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<p>Questions 4.1 is used to reflect on the learning objectives stated at beginning of the notebook.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.1</span></strong> <strong><span style="color:red">(1 mark)</span></strong></p>
+<p>In a few short sentences, describe at least one new insight about electrical circuits that you came to appreciate after working with and thinking about hydraulic circuits.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Below, you will briefly summarize the contributions that you and your partner made when completely this lab.  Please ensure that both partners have a chance to engage in all types of lab activities (developing the experimental methods/data collection strategies, hands-on interaction with the apparatus/data collection, and data processing/analysis in the Jupyter notebook).  Note that statements of contributions are common in science.  The figure below shows one example taken from a 2021 paper published in the journal <em>Nature Physics</em>.</p>
+<p>
+<center>
+<img src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/contributions.jpg" alt="image info" style="width: 60%; height: auto;" /><br>
+<b>Fig. 2: A sample statement of author contributions from a recent journal article.</b></center>
+</p>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.2(a):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner A</strong> to this lab.  For example, worked with the experimental apparatus to collect data for Part 1 of the lab, entered and processed the data in the Jupyter notebook for Part 2 of the lab, …</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.2(a):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner A</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 4.2(b):</span></strong></p>
+<p>Answer this question only if you worked with a partner to complete this lab.</p>
+<p>In two or three sentences describe the specific contributions of <strong>Partner B</strong> to this lab.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 4.2(b):</span></strong></p>
+<p>Double click this cell and enter your text here.  Please start be entering the name and student number of <strong>Partner B</strong>.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-5-submission-5-minutes">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div><a class="headerlink" href="#part-5-submission-5-minutes" title="Link to this heading">#</a></h1>
+<!-- BEGIN QUESTION -->
+<hr class="docutils" />
+<p><strong><span style="color:blue">Question 5.1:</span></strong></p>
+<p>We welcome your feedback on the PHYS 121 labs!  Please feel free to include any comments you have about this lab in the cell below.  Your comments will be taken into consideration when revising/improving the PHYS 121 labs.  You can suggest improvements, point out anything that was unclear, comment on the strengths and weaknesses of the lab, …</p>
+<p>This question is optional and will have no impact on your lab grade.</p>
+<hr class="docutils" />
+<p><strong><span style="color:blue">Answer 5.1:</span></strong></p>
+<p>Double click this cell and enter your text here.  When done, hit ‘Shift’ + ‘Enter’ to execute the cell.  You may delete this text when entering your answer.</p>
+<!-- END QUESTION -->
+<hr class="docutils" />
+<p>Once you’ve completed this notebook:</p>
+<ul class="simple">
+<li><p>Save your work.</p></li>
+<li><p>Run ‘grader.check_all()’ to confirm that you’ve completed all required tasks.</p></li>
+<li><p>Run ‘grader.export()’ to generate a .zip file containing all of the materials that you will submit.</p></li>
+<li><p>Download the generated .zip file.</p></li>
+<li><p>Upload the .zip file to the PHYS 121 Canvas gradebook.</p></li>
+<li><p><strong>Do NOT change the number of the .zip file.</strong></p></li>
+<li><p><strong>Do NOT modify the contents of the .zip file.</strong></p></li>
+</ul>
+<p>Here is a <a href = "https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/gifs/Submission.gif">GIF</a> showing how these steps are completed.  Once your completed notebook has been uploaded to the Canvas gradebook, you’re done!</p>
+<hr class="docutils" />
+<p>To double-check your work, the cell below will rerun all of the autograder tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grader</span><span class="o">.</span><span class="n">check_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="submission">
+<h2>Submission<a class="headerlink" href="#submission" title="Link to this heading">#</a></h2>
+<p>Make sure you have run all cells in your notebook in order before running the cell below, so that all images/graphs appear in the output. The cell below will generate a zip file for you to submit. <strong>Please save before exporting!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your notebook first, then run this cell to export your submission.</span>
+<span class="n">grader</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PHYS121_DataLogger.txt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-6-playground-optional">
+<h1><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Playground (optional)</span></div><a class="headerlink" href="#part-6-playground-optional" title="Link to this heading">#</a></h1>
+<p>Feel free to add as many cells as you like below and use them as a playground for further independent investigations.  These cells won’t be graded, so feel free to use them in any way that you like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an empty code cell that you can use.  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s another empty code cell that you can use.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s yet another empty code cell that you can use.  </span>
+<span class="c1"># If you need more, you can add cells using the &#39;+&#39; icon in the menu bar at to the top of the screen.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="quadappendix-a-the-scatter-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Scatter Function…</div><a class="headerlink" href="#quadappendix-a-the-scatter-function" title="Link to this heading">#</a></h2>
+<p>The function for generating scatter plots is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Scatter</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">show</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘xData’ and ‘yData’ inputs are required, all other arguments are optional with default values set.  The function returns the a single output (the formatted plot):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+<p>The function will do a simple scatter plot if no ‘yError’ are included.  It will included error bars if ‘yErrors’ are passed to the function.  The ‘fill’ and ‘show’ arguments should generally be false.</p>
+<p>If the ‘xData’ list is empty, as in:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xData</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>then the x-axis will be the trial number.  For example, is ‘xData’ is empty and ‘yData’ has 10 elements, the x-axis will span 1 to 10.</p>
+</section>
+<section id="scatter-example-implmentation">
+<h2>Scatter Example Implmentation<a class="headerlink" href="#scatter-example-implmentation" title="Link to this heading">#</a></h2>
+<p>The code block below shows an implementation of ‘Scatter’.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="c1"># degrees</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.02</span><span class="p">,</span> <span class="mf">1.95</span><span class="p">,</span> <span class="mf">2.13</span><span class="p">]</span> <span class="c1"># s</span>
+<span class="n">errT</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">]</span> <span class="c1"># s</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">errT</span><span class="p">,</span> <span class="s1">&#39;initial angle&#39;</span> <span class="p">,</span> <span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you’re interested in generating your own plots with customized formatting, see the following Python-based plotting tutorial: <a class="reference external" href="https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter%20Basic%20Plots.html">https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter Basic Plots.html</a>.</p>
+<hr class="docutils" />
+</section>
+<section id="quadappendix-b-the-powerlaw-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The PowerLaw Function…</div><a class="headerlink" href="#quadappendix-b-the-powerlaw-function" title="Link to this heading">#</a></h2>
+<p>The power law function fits data to a function of the form <span class="math notranslate nohighlight">\(y=A\,x^N + C\)</span> and is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The xData and yData lists are required.  The others are optional with default values set.  The function returns the following outputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">errA</span><span class="p">,</span> <span class="n">errN</span><span class="p">,</span> <span class="n">errC</span><span class="p">,</span> <span class="n">fig</span>
+</pre></div>
+</div>
+<p>The first six outputs are numerical values and ‘fig’ is the formatted plot.</p>
+<p>If <span class="math notranslate nohighlight">\(y\)</span>-uncertainties are provided, the function will perform a weighted fit.  The <span class="math notranslate nohighlight">\(y\)</span>-uncertainties list must be the same length as <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-data lists.  If <span class="math notranslate nohighlight">\(y\)</span>-uncertainties are not provided, the fit will be unweighted.  The other optional arguments include <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis names and units for the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-datasets.  These must be entered as strings (enclosed in quotations) and they are used for formatting the outputs of the function.</p>
+</section>
+<section id="unweighted-fit-example-implmentation">
+<h2>Unweighted Fit Example Implmentation<a class="headerlink" href="#unweighted-fit-example-implmentation" title="Link to this heading">#</a></h2>
+<p>The code block below shows the most basic use of ‘PowerLaw’ for an unweighted fit without any of the optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">]</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">dA</span><span class="p">,</span> <span class="n">dN</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="weighted-fit-example-implmentation">
+<h2>Weighted Fit Example Implmentation<a class="headerlink" href="#weighted-fit-example-implmentation" title="Link to this heading">#</a></h2>
+<p>This second blcok of code shows how to use ‘PowerLaw’ to do a weighted fit.  It also makes use of all of the other optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">]</span>
+<span class="n">erry</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">dA</span><span class="p">,</span> <span class="n">dN</span><span class="p">,</span> <span class="n">dC</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">PowerLaw</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">erry</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span> <span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘A, N, C, dA, dN, dC, fig = …’ syntax is used to store the function outputs in variables.</p>
+<hr class="docutils" />
+</section>
+<section id="quadappendix-c-the-linearfit-function">
+<h2><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The LinearFit Function…</div><a class="headerlink" href="#quadappendix-c-the-linearfit-function" title="Link to this heading">#</a></h2>
+<p>The linear-fit function is called as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LinearFit</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">yErrors</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;x-axis&#39;</span><span class="p">,</span> <span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;y-axis&#39;</span><span class="p">,</span> <span class="n">xUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">yUnits</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The xData and yData lists are required.  The others are optional with default values set.  The function returns the following outputs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Slope</span><span class="p">,</span> <span class="n">Yintercept</span><span class="p">,</span> <span class="n">errSlope</span><span class="p">,</span> <span class="n">errYintercept</span><span class="p">,</span> <span class="n">fig</span>
+</pre></div>
+</div>
+<p>The first four outputs are numerical values and ‘fig’ is the formatted plot.</p>
+<p>If <span class="math notranslate nohighlight">\(y\)</span>-uncertainities are provided, the function will perform a weighted fit.  The <span class="math notranslate nohighlight">\(y\)</span>-uncertainties list must be the same length as <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-data lists.  If <span class="math notranslate nohighlight">\(y\)</span>-uncertainties are not provided, the fit will be unweighted.  The other optional arguments include <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis names and units for the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-datasets.  These must be entered as strings (enclosed in quotations) and they are used for formatting the outputs of the function.  If ‘fill’ is set to True, shading will be added around the best-fit line representing confindence intervals.</p>
+</section>
+<section id="id1">
+<h2>Unweighted Fit Example Implmentation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The code block below shows the most basic use of ‘LinearFit’ for an unweighted fit without any of the optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.412</span><span class="p">]</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Weighted Fit Example Implmentation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>This second blcok of code shows how to use ‘LinearFit’ to do a weighted fit.  It also makes use of all of the other optional arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">PHYS121</span>
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.198</span><span class="p">,</span> <span class="mf">0.285</span><span class="p">,</span> <span class="mf">0.412</span><span class="p">]</span>
+<span class="n">errI</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.012</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">]</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">PHYS121</span><span class="o">.</span><span class="n">LinearFit</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">errI</span><span class="p">,</span> <span class="s1">&#39;voltage&#39;</span> <span class="p">,</span> <span class="s1">&#39;current&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The ‘m, b, dm, db, fig = …’ syntax is used to store the function outputs in varibles.  If you’re interested in details of the fitting process, see the following Python-based tutorial: <a class="reference external" href="https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter%20Weighted%20Linear%20Fit.html">https://cmps-people.ok.ubc.ca/jbobowsk/Python/html/Jupyter Weighted Linear Fit.html</a></p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg"><img alt="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" src="https://raw.githubusercontent.com/UBC-Okanagan-Physics-Labs/PHYS-121-images/main/general/images/ubc-logo-full.jpg" style="width: 500px;" /></a>
+<p>Last update: February 20, 2024</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/lab4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lab3/PHYS%20121%20-%20Lab%203.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);">PHYS 121 Lab #3</span><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (14 possible marks)</span></div></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../lab5/PHYS%20121%20-%20Lab%205.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #5</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><div style="background-color:rgba(204, 229, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(0, 76, 153, 1);"><strong>PHYS 121 Lab #4</strong><span style="color:red"> <span class="math notranslate nohighlight">\(\to\)</span> (24 possible marks)</span> </span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-hydraulic-circuits-week-1">Electric &amp; Hydraulic Circuits – Week 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autograding">Autograding:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import Modules:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#name-student-number"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Name &amp; Student Number</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-1-0-5-marks"><strong><span style="color:blue">Partner #1</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-2-0-5-marks"><strong><span style="color:blue">Partner #2</span></strong> <strong><span style="color:red">(0.5 marks)</span></strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Introduction</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydraulic-analogues"><em>Hydraulic Analogues</em></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-electric-resistance-45-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 1 - Electric Resistance (45 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-hydraulic-current-75-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 2 - Hydraulic Current (75 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-hydraulic-resistance-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 3 - Hydraulic Resistance (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-reflection-and-statement-of-contributions-20-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 4 - Reflection and statement of contributions (20 minutes)</span></div></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-submission-5-minutes"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 5 - Submission (5 minutes)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submission">Submission</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-playground-optional"><div style="background-color:rgba(255, 204, 255, 0.5); text-align:center; vertical-align: middle; padding:40px 0; margin-top:30px"><span style="color:rgba(102, 0, 204, 1);">Part 6 - Playground (optional)</span></div></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-a-the-scatter-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix A – The Scatter Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-example-implmentation">Scatter Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-b-the-powerlaw-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix B – The PowerLaw Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unweighted-fit-example-implmentation">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-fit-example-implmentation">Weighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadappendix-c-the-linearfit-function"><div style="background-color:rgba(255, 255, 102, 0.5); text-align:left; padding:20px 0; margin-top:20px"><span class="math notranslate nohighlight">\(\quad\)</span>Appendix C – The LinearFit Function…</div></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Unweighted Fit Example Implmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Weighted Fit Example Implmentation</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jake Bobowski and Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png"></a>
+    All content on this site (unless otherwise specified) is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 license</a>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
