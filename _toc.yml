@@ -7,6 +7,23 @@ parts:
     title: About
   - file: files/bio
     title: Project Team
-# - caption: Labs
-#   chapters:
-#   - file: content/
+- caption: Labs
+  chapters:
+  - file: "content/lab0/PHYS 121 - Lab 0"
+    title: Lab 0
+  - file: "content/lab1/PHYS 121 - Lab 1"
+    title: Lab 1
+  - file: "content/lab2/PHYS 121 - Lab 2"
+    title: Lab 2
+  - file: "content/lab3/PHYS 121 - Lab 3"
+    title: Lab 3
+  - file: "content/lab4/PHYS 121 - Lab 4"
+    title: Lab 4
+  - file: "content/lab5/PHYS 121 - Lab 5"
+    title: Lab 5
+  - file: "content/lab6/PHYS 121 - Lab 6"
+    title: Lab 6
+  - file: "content/lab7/PHYS 121 - Lab 7"
+    title: Lab 7
+  - file: "content/lab8/PHYS 121 - Lab 8"
+    title: Lab 8
